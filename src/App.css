@@ -1,0 +1,219 @@
+/* Structure de base */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  text-align: center;
+  font-family: "Arial", sans-serif;
+  background-color: #7d8fcd;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header contenant le menu + boutons années */
+/* Barre en haut avec le menu + boutons années */
+.header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 70px; */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* centre le contenu horizontalement */
+  /* padding: 0 20px; */
+  z-index: 1000;
+  background-color: #7d8fcd;
+  pointer-events: none; /* évite les blocages sur d'autres éléments */
+}
+
+/* Positionnement précis du menu hamburger */
+.hamburger-menu {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+  z-index: 1001;
+  pointer-events: auto; /* autorise les clics */
+}
+
+/* Conteneur des boutons années centré */
+.year-buttons {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto; /* autorise les clics */
+}
+
+/* Style des boutons années */
+.year-buttons button {
+  background-color: #414b6f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.year-buttons button:hover {
+  background-color: #626f9f;
+}
+
+.year-buttons button.active {
+  background-color: #1e90ff;
+}
+
+/* Fond d'écran interactif */
+.interactive-room {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url("assets/chambre-2025.png"); */
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #ddd;
+  overflow: hidden;
+}
+
+/* Points interactifs façon H5P */
+.interactive-object {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #414b6f;
+  border: 3px solid white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  z-index: 3; /* << Ajoute ceci */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interactive-object:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Menu hamburger */
+.hamburger-menu {
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Barre latérale */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #414b6f;
+  color: white;
+  transition: left 0.3s ease;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 20px;
+}
+
+.sidebar-menu li {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.sidebar-menu li span {
+  margin-left: 10px;
+}
+
+/* Reveal.js styles (si utilisés dans le projet) */
+.reveal .slides section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal .slides section img {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Calques d’époques superposées avec fondu */
+.background-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 1s ease;
+  opacity: 0;
+  z-index: 1;
+}
+
+.background-layer.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .interactive-object {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .interactive-object {
+    width: 18px;
+    height: 18px;
+  }
+
+  .sidebar-menu li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .interactive-object {
+    width: 16px;
+    height: 16px;
+  }
+
+  .sidebar-menu li {
+    font-size: 0.9rem;
+  }
+}

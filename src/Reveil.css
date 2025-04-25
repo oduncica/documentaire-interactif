@@ -1,0 +1,29 @@
+.reveal .slides {
+  background: none !important; /* Supprime le fond par défaut de Reveal.js */
+}
+
+.reveal .slides section {
+  background-color: #414b6f !important; /* Applique votre fond violet */
+}
+
+.img-div {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+/* .reveal .slides section {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  background-color: #414b6f !important; 
+  color: white; 
+} */
+
+/* Style des images */
+/* .reveal .slides section img {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 200px;
+} */
