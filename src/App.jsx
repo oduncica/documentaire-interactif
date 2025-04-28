@@ -8,6 +8,7 @@ import {
   FaFilm,
   FaBook,
   FaInfoCircle,
+  FaPlay,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -19,6 +20,7 @@ const objects = [
     y: "10%",
     sound: "transport.mp3",
     video: "transport.mp4",
+    type: "video", // Ajout du type pour afficher la bonne icône
   },
   {
     id: 2,
@@ -27,6 +29,7 @@ const objects = [
     y: "20%",
     sound: "classroom.mp3",
     video: "hagwon.mp4",
+    type: "video",
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const objects = [
     y: "15%",
     sound: "schoolbag.mp3",
     video: "daily-life.mp4",
+    type: "video",
   },
   {
     id: 4,
@@ -43,6 +47,7 @@ const objects = [
     y: "25%",
     sound: "laptop.mp3",
     video: "laptop.mp4",
+    type: "info", // Imaginons ici une icône différente
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ const objects = [
     y: "30%",
     sound: "phone.mp3",
     video: "phone.mp4",
+    type: "info",
   },
 ];
 
@@ -73,11 +79,13 @@ function App() {
 
   return (
     <div className="app">
-      {/* Header avec menu hamburger et boutons d'époque */}
+      {/* Header */}
       <div className="header">
         <div className="hamburger-menu" onClick={toggleSidebar}>
-          <FaBars size={30} color="#fff" />
+          <FaBars className="icon" size={30} color="#fff" />
+          <div>MENU</div>
         </div>
+
         <div className="year-buttons">
           {["1980", "2010", "2025"].map((year) => (
             <button
@@ -117,7 +125,7 @@ function App() {
         </ul>
       </div>
 
-      {/* Interactive Room avec fond animé */}
+      {/* Interactive Room */}
       <div className="interactive-room">
         {["1980", "2010", "2025"].map((year) => (
           <motion.div
@@ -126,21 +134,21 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: selectedYear === year ? 1 : 0 }}
             transition={{ duration: 1 }}
-            style={{
-              backgroundImage: `url(/chambre-${year}.png)`,
-            }}
+            style={{ backgroundImage: `url(/chambre-${year}.png)` }}
           />
         ))}
 
         {objects.map((obj) => (
           <motion.div
             key={obj.id}
-            className="interactive-object"
-            style={{ left: obj.x, top: obj.y }}
+            className="poi-icon" // Changement ici !
+            style={{ left: obj.x, top: obj.y, position: "absolute" }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => handleObjectClick(obj)}
-          />
+          >
+            {obj.type === "info" ? <FaInfoCircle /> : <FaPlay />}
+          </motion.div>
         ))}
       </div>
     </div>
