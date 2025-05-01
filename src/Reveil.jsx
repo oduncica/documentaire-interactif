@@ -16,6 +16,7 @@ function Reveil() {
         hash: true,
         keyboard: true,
         touch: true,
+        embedded: true, // 👈 active un mode plus adapté au scroll mobile
       });
 
       deck.initialize();
@@ -30,7 +31,6 @@ function Reveil() {
         height: "100vh",
         width: "100%",
         overflow: "hidden",
-        // textAlign: "center",
         backgroundColor: "#414B6F",
         color: "#fff",
         fontFamily: "Arial, sans-serif",
@@ -57,26 +57,13 @@ function Reveil() {
 
       <div className="slides">
         {/* Slide horizontale 1 */}
-        <section
-          style={{
-            // padding: "60px 80px",
-            // display: "flex",
-            // flexDirection: "row",
-            // justifyContent: "flex-start",
-            // alignItems: "center",
-            // gap: "60px",
-            // minHeight: "100vh",
-            boxSizing: "border-box",
-          }}
-          className="img-div"
-        >
-          <div>
+        <section className="img-div">
+          <div className="left-image">
             <img
               src="/chambre-2010.png"
               alt="Uniforme scolaire"
               style={{
-                width: "468px",
-                // height: "472px",
+                width: "100%",
                 objectFit: "cover",
                 borderRadius: "10px",
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
@@ -87,7 +74,7 @@ function Reveil() {
             </p>
           </div>
 
-          <div style={{ maxWidth: "800px", textAlign: "left" }}>
+          <div className="right-text">
             <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>
               The Uniform
             </h2>
@@ -120,24 +107,15 @@ function Reveil() {
           </div>
         </section>
 
-        {/* Exemple d'une slide verticale liée à la précédente */}
+        {/* Slide verticale */}
         <section>
-          <section
-            style={{
-              // padding: "60px 80px",
-              // alignItems: "center",
-              // gap: "60px",
-              // minHeight: "100vh",
-              boxSizing: "border-box",
-            }}
-          >
-            <div>
+          <section className="img-div">
+            <div className="left-image">
               <img
-                src="/chambre.png"
+                src="/chambre-2025.png"
                 alt="Peinture école coréenne"
                 style={{
-                  width: "468px",
-                  height: "472px",
+                  width: "100%",
                   objectFit: "cover",
                   borderRadius: "10px",
                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
@@ -148,7 +126,7 @@ function Reveil() {
               </p>
             </div>
 
-            <div style={{ maxWidth: "800px", textAlign: "left" }}>
+            <div className="right-text">
               <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>
                 Historical Education
               </h2>

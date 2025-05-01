@@ -1,3 +1,24 @@
+.reveal .slides section.img-div {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 60px 80px;
+  box-sizing: border-box;
+  height: 100vh; /* Conserver une hauteur de 100vh pour la section entière */
+}
+
+.reveal .slides section.img-div .left-image {
+  flex: 0 0 45%; /* L'image occupe 45% de l'espace */
+  height: 60%; /* L'image occupe toute la hauteur de la section */
+}
+
+.reveal .slides section.img-div .right-text {
+  flex: 0 0 55%; /* Le texte occupe 55% de l'espace */
+  height: 100%; /* Le texte occupe toute la hauteur de la section */
+}
+
 .reveal .slides {
   background: none !important; /* Supprime le fond par défaut de Reveal.js */
 }
@@ -12,18 +33,53 @@
   margin: 0 auto;
 }
 
-/* .reveal .slides section {
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  background-color: #414b6f !important; 
-  color: white; 
-} */
-
 /* Style des images */
-/* .reveal .slides section img {
-  border: 2px solid #ddd;
+.reveal .slides section img {
+  width: 100%;
+  height: 100%; /* L'image prend toute la hauteur disponible */
+  object-fit: cover; /* L'image couvre entièrement la zone sans être déformée */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-left: 200px;
-} */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .reveal .slides section.img-div {
+    flex-direction: column;
+    padding: 30px 20px;
+    height: auto;
+    min-height: 100svh; /* Utilise small viewport height */
+  }
+
+  .reveal .slides section.img-div .left-image,
+  .reveal .slides section.img-div .right-text {
+    flex: 0 0 100%;
+    height: auto;
+  }
+
+  .reveal .slides section.img-div .right-text {
+    margin-top: 20px;
+  }
+}
+
+/* ==== RESPONSIVE SMARTPHONES ==== */
+@media (max-width: 480px) {
+  .reveal .slides section.img-div {
+    padding: 20px 15px;
+    gap: 20px;
+    min-height: 100svh;
+  }
+
+  .reveal .slides section.img-div .right-text {
+    margin-top: 10px;
+  }
+
+  .reveal .slides section.img-div img {
+    height: auto;
+  }
+}
+
+/* ==== GLOBAL SCROLL SETTINGS ==== */
+body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}

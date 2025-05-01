@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import SceneManager from "./components/SceneManager";
 import {
   FaBars,
   FaTimes,
@@ -8,57 +9,8 @@ import {
   FaFilm,
   FaBook,
   FaInfoCircle,
-  FaPlay,
 } from "react-icons/fa";
 import "./App.css";
-
-const objects = [
-  {
-    id: 1,
-    name: "Ticket de transport",
-    x: "5%",
-    y: "10%",
-    sound: "transport.mp3",
-    video: "transport.mp4",
-    type: "video", // Ajout du type pour afficher la bonne icône
-  },
-  {
-    id: 2,
-    name: "Manuel scolaire",
-    x: "30%",
-    y: "20%",
-    sound: "classroom.mp3",
-    video: "hagwon.mp4",
-    type: "video",
-  },
-  {
-    id: 3,
-    name: "Sac à dos",
-    x: "50%",
-    y: "15%",
-    sound: "schoolbag.mp3",
-    video: "daily-life.mp4",
-    type: "video",
-  },
-  {
-    id: 4,
-    name: "Ordinateur portable",
-    x: "70%",
-    y: "25%",
-    sound: "laptop.mp3",
-    video: "laptop.mp4",
-    type: "info", // Imaginons ici une icône différente
-  },
-  {
-    id: 5,
-    name: "Téléphone portable",
-    x: "20%",
-    y: "30%",
-    sound: "phone.mp3",
-    video: "phone.mp4",
-    type: "info",
-  },
-];
 
 function App() {
   const navigate = useNavigate();
@@ -127,29 +79,7 @@ function App() {
 
       {/* Interactive Room */}
       <div className="interactive-room">
-        {["1980", "2010", "2025"].map((year) => (
-          <motion.div
-            key={year}
-            className="background-layer"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: selectedYear === year ? 1 : 0 }}
-            transition={{ duration: 1 }}
-            style={{ backgroundImage: `url(/chambre-${year}.png)` }}
-          />
-        ))}
-
-        {objects.map((obj) => (
-          <motion.div
-            key={obj.id}
-            className="poi-icon" // Changement ici !
-            style={{ left: obj.x, top: obj.y, position: "absolute" }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => handleObjectClick(obj)}
-          >
-            {obj.type === "info" ? <FaInfoCircle /> : <FaPlay />}
-          </motion.div>
-        ))}
+        <SceneManager year={selectedYear} onObjectClick={handleObjectClick} />
       </div>
     </div>
   );
