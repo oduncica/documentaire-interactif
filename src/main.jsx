@@ -5,6 +5,7 @@ import App from "./App";
 import Intro from "./Intro";
 import ObjectPage from "./ObjectPage";
 import Reveil from "./Reveil";
+import LandingPage from "./LandingPage";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -12,8 +13,8 @@ const root = createRoot(container);
 root.render(
   <Router>
     <Routes>
-      <Route path="/" element={<Intro />} />{" "}
-      {/* 👈 intro devient la page d'accueil */}
+      <Route path="/" element={<LandingPage />} />{" "}
+      <Route path="/intro-interactif" element={<Intro />} />{" "}
       <Route path="/chambre" element={<App />} />{" "}
       {/* 👈 ancien accueil déplacé ici */}
       <Route path="/reveil" element={<Reveil />} />

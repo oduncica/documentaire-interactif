@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url("/eleves-ecole.jpg"); /* Place ton image ici */
+  background-image: url("/chambre-1980.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -11,7 +11,7 @@
 }
 
 .intro-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* filtre sombre */
+  background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
   display: flex;
@@ -29,19 +29,66 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
+/* Titres plus grands */
 .intro-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-.intro-content p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.intro-content h2 {
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 
+/* Paragraphe machine à écrire */
+.paragraphs p {
+  overflow: hidden;
+  border-right: 0.15em solid #fff;
+  white-space: pre-wrap;
+  opacity: 0;
+  animation: typing 3s steps(200, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  animation-fill-mode: forwards;
+  margin-bottom: 1.5rem;
+}
+
+.paragraphs p:nth-child(1) {
+  animation-delay: 0s;
+}
+.paragraphs p:nth-child(2) {
+  animation-delay: 3s;
+}
+.paragraphs p:nth-child(3) {
+  animation-delay: 6s;
+}
+.paragraphs p:nth-child(4) {
+  animation-delay: 9s;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+    opacity: 1;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+/* Bouton "Enter" avec icône */
 .enter-button {
-  background-color: #28407d;
+  background-color: #698958;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -49,6 +96,9 @@
   font-size: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .enter-button:hover {
@@ -58,10 +108,14 @@
 /* Responsive */
 @media (max-width: 768px) {
   .intro-content h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .intro-content p {
+  .intro-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .paragraphs p {
     font-size: 1rem;
   }
 

@@ -32,9 +32,10 @@ function App() {
   return (
     <div className="app">
       {/* Header */}
+
       <div className="header">
         <div className="hamburger-menu" onClick={toggleSidebar}>
-          <FaBars className="icon" size={30} color="#fff" />
+          <FaBars className="icon" size={30} color="#414B6F" />
           <div>MENU</div>
         </div>
 
