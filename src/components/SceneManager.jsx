@@ -1,8 +1,9 @@
-import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Scene1980 from "./Scene1980";
 import Scene2010 from "./Scene2010";
 import Scene2025 from "./Scene2025";
+import LanguesDrapeau from "./LanguesDrapeau";
 
 export default function SceneManager({ year, onObjectClick }) {
   const getSceneComponent = () => {
@@ -40,13 +41,13 @@ export default function SceneManager({ year, onObjectClick }) {
         overflow: "hidden",
       }}
     >
-      {/* ✅ Image de fond persistante */}
+      {/* ✅ Fond flouté */}
       <div
         style={{
           backgroundImage: `url(${getBackgroundImage()})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          filter: "blur(4px)", // facultatif : un léger flou
+          filter: "blur(4px)",
           position: "absolute",
           width: "100%",
           height: "100%",
@@ -54,7 +55,7 @@ export default function SceneManager({ year, onObjectClick }) {
         }}
       />
 
-      {/* ✅ Animation des scènes par-dessus */}
+      {/* ✅ Scène animée */}
       <AnimatePresence mode="wait">
         <motion.div
           key={year}
@@ -74,6 +75,13 @@ export default function SceneManager({ year, onObjectClick }) {
           {getSceneComponent()}
         </motion.div>
       </AnimatePresence>
+
+      {/* ✅ Drapeaux au-dessus de tout */}
+      <LanguesDrapeau
+        style={{
+          zIndex: 1000, // très élevé pour ne jamais être recouvert
+        }}
+      />
     </div>
   );
 }

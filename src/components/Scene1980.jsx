@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaPlay,
-  FaEye,
-  FaInfoCircle,
-  FaTimes,
-  FaArrowRight,
-} from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { FaEye, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
+import ReactPlayer from "react-player";
 
 export default function Scene1980({ onObjectClick }) {
-  const [stage, setStage] = useState("initial"); // 'initial' | 'video' | 'detail'
-  const navigate = useNavigate();
+  const [stage, setStage] = useState("initial"); // 'initial' | 'video-vimeo' | 'video-vimeo3' | 'video' | 'detail'
 
   const handleEyeClick = () => {
-    setStage(stage === "initial" ? "video" : "initial");
+    if (stage === "initial") {
+      setStage("video"); // De l'image initiale à la vidéo
+    } else if (stage === "video") {
+      setStage("detail"); // De la vidéo à l'image zoomée
+    } else if (stage === "detail") {
+      setStage("initial"); // Retour à l'image de départ
+    }
   };
 
-  const handleCloseVideo = () => {
+  const closeVimeoVideo = () => {
     setStage("initial");
   };
 
@@ -27,21 +26,35 @@ export default function Scene1980({ onObjectClick }) {
       x: "15%",
       y: "61%",
       icon: <FaPlay />,
-      action: () => setStage("video"),
+      action: () => setStage("video-vimeo"),
     },
     {
       id: "init-2",
       x: "50%",
       y: "25%",
       icon: <FaPlay />,
-      action: () => alert("Objet interactif 2 : lecture d'une autre vidéo"),
+      action: () => setStage("video-vimeo3"),
     },
     {
       id: "init-3",
-      x: "70%",
-      y: "70%",
+      x: "44%",
+      y: "19%",
       icon: <FaInfoCircle />,
       action: () => alert("Objet interactif 3 : info sur un objet"),
+    },
+    {
+      id: "init-4",
+      x: "70%",
+      y: "50%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Infos sur le livre"),
+    },
+    {
+      id: "init-5",
+      x: "80%",
+      y: "80%",
+      icon: <FaPlay />,
+      action: () => setStage("video-vimeo-s6"),
     },
   ];
 
@@ -72,7 +85,7 @@ export default function Scene1980({ onObjectClick }) {
       x: "30%",
       y: "30%",
       icon: <FaPlay />,
-      action: () => alert("Lecture d'une autre vidéo"),
+      action: () => setStage("video-vimeo-s6"),
     },
   ];
 
@@ -101,8 +114,8 @@ export default function Scene1980({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        bottom: "20px",
-        right: "20px",
+        top: "50%",
+        left: "50%",
         background: "rgba(0,0,0,0.6)",
         borderRadius: "50%",
         padding: "12px",
@@ -138,29 +151,23 @@ export default function Scene1980({ onObjectClick }) {
         </div>
       )}
 
-      {stage === "video" && (
-        <div
-          style={{
-            position: "relative",
-            width: "100%",
-            height: "100%",
-            backgroundColor: "black",
-          }}
-        >
+      {stage === "video-vimeo" && (
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
           <iframe
-            src="https://player.vimeo.com/video/1081536214?autoplay=1&title=0&byline=0&portrait=0"
-            width="100%"
-            height="100%"
+            src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
             frameBorder="0"
-            allow="autoplay; fullscreen"
-            allowFullScreen
-            title="Vimeo Video"
-            style={{ position: "absolute", top: 0, left: 0 }}
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            title="S9"
           ></iframe>
-
-          {/* Close Button */}
           <motion.div
-            onClick={handleCloseVideo}
+            onClick={closeVimeoVideo}
             style={{
               position: "absolute",
               top: "20px",
@@ -175,31 +182,85 @@ export default function Scene1980({ onObjectClick }) {
           >
             <FaTimes size={24} color="#fff" />
           </motion.div>
+        </div>
+      )}
 
-          {/* More Details Button */}
-          <motion.button
-            onClick={() => navigate("/reveil")}
+      {stage === "video-vimeo3" && (
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <iframe
+            src="https://player.vimeo.com/video/1081720802?h=a29f97c0f4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
             style={{
               position: "absolute",
-              bottom: "20px",
-              left: "20px",
-              backgroundColor: "#007BFF",
-              color: "white",
-              padding: "10px 16px",
-              borderRadius: "20px",
-              border: "none",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            title="S3"
+          ></iframe>
+          <motion.div
+            onClick={closeVimeoVideo}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(0, 0, 0, 0.6)",
+              borderRadius: "50%",
+              padding: "10px",
               cursor: "pointer",
-              fontSize: "16px",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
               zIndex: 20,
             }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.2 }}
           >
-            More details <FaArrowRight />
-          </motion.button>
+            <FaTimes size={24} color="#fff" />
+          </motion.div>
         </div>
+      )}
+      {stage === "video-vimeo-s6" && (
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <iframe
+            src="https://player.vimeo.com/video/1081719738?h=3a90542dc3&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            title="S6"
+          ></iframe>
+          <motion.div
+            onClick={closeVimeoVideo}
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              background: "rgba(0, 0, 0, 0.6)",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+              zIndex: 20,
+            }}
+            whileHover={{ scale: 1.2 }}
+          >
+            <FaTimes size={24} color="#fff" />
+          </motion.div>
+        </div>
+      )}
+
+      {stage === "video" && (
+        <ReactPlayer
+          url="/chambre-1-a-bureau.mp4"
+          playing
+          controls={false}
+          onEnded={() => setStage("detail")}
+          width="100%"
+          height="100%"
+        />
       )}
 
       {stage === "detail" && (
@@ -215,7 +276,50 @@ export default function Scene1980({ onObjectClick }) {
           }}
         >
           {renderEyeIcon()}
-          {renderIcons(detailInteractiveObjects)}
+
+          {/* Icône Play personnalisée */}
+          <motion.div
+            className="custom-play"
+            style={{
+              position: "absolute",
+              top: "30%",
+              left: "60%",
+              zIndex: 10,
+              background: "rgba(0,0,0,0.6)",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+            }}
+            whileHover={{ scale: 1.2 }}
+            onClick={() => {
+              // Ton action ici
+              alert("Lecture d'une vidéo contextuelle");
+              // ou setStage("video-vimeo-custom")
+            }}
+          >
+            <FaPlay color="#fff" size={20} />
+          </motion.div>
+
+          {/* Icône Info personnalisée */}
+          <motion.div
+            className="custom-info"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "40%",
+              zIndex: 10,
+              background: "rgba(255,255,255,0.8)",
+              borderRadius: "50%",
+              padding: "10px",
+              cursor: "pointer",
+            }}
+            whileHover={{ scale: 1.2 }}
+            onClick={() => {
+              alert("Informations sur l'objet");
+            }}
+          >
+            <FaInfoCircle color="" size={20} />
+          </motion.div>
         </div>
       )}
     </div>

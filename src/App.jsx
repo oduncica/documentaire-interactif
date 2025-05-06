@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import SceneManager from "./components/SceneManager";
+import LanguesDrapeau from "./components/LanguesDrapeau"; // adapte le chemin si besoin
 import {
   FaBars,
   FaTimes,
@@ -15,7 +16,7 @@ import "./App.css";
 function App() {
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedYear, setSelectedYear] = useState("2025");
+  const [selectedYear, setSelectedYear] = useState("1980");
 
   const handleObjectClick = (obj) => {
     navigate(`/object/${obj.id}`);
@@ -51,6 +52,7 @@ function App() {
           ))}
         </div>
       </div>
+      <LanguesDrapeau />
 
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
