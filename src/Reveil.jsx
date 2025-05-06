@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/white.css";
@@ -6,6 +7,7 @@ import "./Reveil.css";
 
 function Reveil() {
   const revealRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (revealRef.current) {
@@ -32,28 +34,29 @@ function Reveil() {
         width: "100%",
         overflow: "hidden",
         backgroundColor: "#E3D8E2",
-        color: "#fff",
+        color: "#4A5B41", // Couleur des textes
         fontFamily: "Arial, sans-serif",
       }}
     >
       {/* Icône Home */}
-      <a
-        href="/chambre"
+      <div
+        onClick={() => navigate("/chambre")} // Utilisation de navigate pour rediriger
         style={{
           position: "absolute",
           top: "20px",
           left: "20px",
           textDecoration: "none",
-          color: "#fff",
+          color: "#4A5B41",
           fontSize: "24px",
           zIndex: 10,
           display: "flex",
           alignItems: "center",
+          cursor: "pointer", // Ajout d'un curseur pointer pour indiquer que c'est cliquable
         }}
       >
         <span style={{ marginRight: "8px", fontSize: "20px" }}>🏠</span>
         Home
-      </a>
+      </div>
 
       <div className="slides">
         {/* Slide horizontale 1 */}
@@ -69,7 +72,7 @@ function Reveil() {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
               }}
             />
-            <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
+            <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
               Rose Efron Bragelson. School girls at a picnic.
             </p>
           </div>
@@ -107,7 +110,7 @@ function Reveil() {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
               }}
             />
-            <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
+            <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
               Les élèves plus jeunes encouragent les lycéens alors qu’ils se
               rendent, ce jeudi, à l’examen d’entrée à l’université, déterminant
               pour leur avenir. Comme à l’accoutumée, la police a assuré
@@ -149,7 +152,7 @@ function Reveil() {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
               }}
             />
-            <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
+            <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
               Lycéennes prenant la pose devant leur établissement Années 1970
               Auteur inconnu{" "}
             </p>
@@ -189,7 +192,7 @@ function Reveil() {
                 boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
               }}
             />
-            <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
+            <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
               Williams, Hanson A., Jr. (1952), Class in session, Pepperdine
               University Special Collections and University Archives, URL
             </p>

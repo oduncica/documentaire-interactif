@@ -33,7 +33,7 @@ export default function LandingPage() {
   return (
     <div
       style={{
-        backgroundImage: "url('/eleves-ecole.jpg')",
+        backgroundColor: "#4A5B41",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100vw",
@@ -102,7 +102,7 @@ export default function LandingPage() {
           {/* Contenu avec texte traduit */}
           <div
             style={{
-              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              // backgroundColor: "rgba(0, 0, 0, 0.5)",
               width: "100%",
               height: "auto",
               maxWidth: "700px",
