@@ -60,7 +60,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/lyceennes.jpg"
+              src="/examen-table.jpg"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -98,7 +98,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/examen-table.jpg"
+              src="/jour-examen.png"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -140,7 +140,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/examen-table.jpg"
+              src="/lyceennes.jpg"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -150,10 +150,8 @@ function Reveil() {
               }}
             />
             <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
-              Les élèves plus jeunes encouragent les lycéens alors qu’ils se
-              rendent, ce jeudi, à l’examen d’entrée à l’université, déterminant
-              pour leur avenir. Comme à l’accoutumée, la police a assuré
-              l’escorte des candidats en retard. © Elise Hu/NPR{" "}
+              Lycéennes prenant la pose devant leur établissement Années 1970
+              Auteur inconnu{" "}
             </p>
           </div>
 
@@ -182,7 +180,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/examen-table.jpg"
+              src="/cours-archives-filles.png"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -192,10 +190,8 @@ function Reveil() {
               }}
             />
             <p style={{ fontSize: "12px", marginTop: "8px", color: "white" }}>
-              Les élèves plus jeunes encouragent les lycéens alors qu’ils se
-              rendent, ce jeudi, à l’examen d’entrée à l’université, déterminant
-              pour leur avenir. Comme à l’accoutumée, la police a assuré
-              l’escorte des candidats en retard. © Elise Hu/NPR{" "}
+              Williams, Hanson A., Jr. (1952), Class in session, Pepperdine
+              University Special Collections and University Archives, URL
             </p>
           </div>
 

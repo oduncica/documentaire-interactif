@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-export default function Scene2010({ onObjectClick }) {
+export default function Scene2010() {
+  const navigate = useNavigate();
+
   const interactiveObjects = [
     {
       id: "2010-1",
@@ -16,14 +19,14 @@ export default function Scene2010({ onObjectClick }) {
       x: "55%",
       y: "40%",
       icon: <FaInfoCircle />,
-      action: () => alert("Information 2010"),
+      action: () => navigate("/reveil#/3"),
     },
     {
       id: "2010-3",
       x: "70%",
       y: "75%",
-      icon: <FaPlay />,
-      action: () => onObjectClick?.({ id: 2 }),
+      icon: <FaInfoCircle />,
+      action: () => alert("Lecture info"),
     },
   ];
 

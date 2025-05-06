@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEye, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
 import ReactPlayer from "react-player";
+import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
   const [stage, setStage] = useState("initial"); // 'initial' | 'video-vimeo' | 'video-vimeo3' | 'video' | 'detail'
@@ -128,6 +129,7 @@ export default function Scene1980({ onObjectClick }) {
       <FaEye size={24} color="#fff" />
     </motion.div>
   );
+  const navigate = useNavigate();
 
   return (
     <div
@@ -166,6 +168,8 @@ export default function Scene1980({ onObjectClick }) {
             }}
             title="S9"
           ></iframe>
+
+          {/* Bouton Fermer */}
           <motion.div
             onClick={closeVimeoVideo}
             style={{
@@ -181,6 +185,27 @@ export default function Scene1980({ onObjectClick }) {
             whileHover={{ scale: 1.2 }}
           >
             <FaTimes size={24} color="#fff" />
+          </motion.div>
+
+          {/* ✅ Bouton More Details */}
+          <motion.div
+            onClick={() => navigate("/reveil")}
+            style={{
+              position: "absolute",
+              bottom: "20px",
+              right: "20px",
+              background: "#698958", // Vert personnalisé
+              color: "#fff",
+              padding: "10px 16px",
+              borderRadius: "8px",
+              cursor: "pointer",
+              zIndex: 20,
+              fontSize: "14px",
+              fontWeight: "bold",
+            }}
+            whileHover={{ scale: 1.1 }}
+          >
+            More details
           </motion.div>
         </div>
       )}
@@ -253,14 +278,32 @@ export default function Scene1980({ onObjectClick }) {
       )}
 
       {stage === "video" && (
-        <ReactPlayer
-          url="/chambre-1-a-bureau.mp4"
-          playing
-          controls={false}
-          onEnded={() => setStage("detail")}
-          width="100%"
-          height="100%"
-        />
+        <div
+          style={{
+            position: "absolute", // Position absolue pour couvrir tout l'écran
+            top: 0,
+            left: 0,
+            width: "100vw", // Largeur de l'écran
+            height: "100vh", // Hauteur de l'écran
+            overflow: "hidden", // Évitez tout débordement
+            backgroundColor: "black", // Ajout d'un fond noir pour éviter tout espace visible
+          }}
+        >
+          <ReactPlayer
+            url="/chambre-1-a-bureau.mp4"
+            playing
+            controls={false}
+            onEnded={() => setStage("detail")}
+            width="100%"
+            height="100%"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              objectFit: "cover",
+            }}
+          />
+        </div>
       )}
 
       {stage === "detail" && (
@@ -301,7 +344,7 @@ export default function Scene1980({ onObjectClick }) {
           </motion.div>
 
           {/* Icône Info personnalisée */}
-          <motion.div
+          {/* <motion.div
             className="custom-info"
             style={{
               position: "absolute",
@@ -319,7 +362,7 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <FaInfoCircle color="" size={20} />
-          </motion.div>
+          </motion.div> */}
         </div>
       )}
     </div>

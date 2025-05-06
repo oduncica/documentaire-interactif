@@ -5,10 +5,11 @@ import LanguesDrapeau from "./components/LanguesDrapeau"; // adapte le chemin si
 export default function LandingPage() {
   const navigate = useNavigate();
   const [langue, setLangue] = useState("fr"); // 'fr' ou 'kr'
+  const [showVideo, setShowVideo] = useState(false); // État pour afficher la vidéo
 
   const textes = {
     fr: {
-      titre: "Education Under Pressure",
+      titre: "Education sous pression",
       paragraphe: `Derrière l’image d’excellence que projette le système éducatif
       sud-coréen se cache une mécanique strictement codifiée, héritée d’une
       culture réglementaire longtemps valorisée. Issue de décennies de
@@ -46,81 +47,136 @@ export default function LandingPage() {
         boxSizing: "border-box",
       }}
     >
-      {/* Drapeaux */}
-      <LanguesDrapeau selectedLang={langue} setSelectedLang={setLangue} />
-
-      {/* Contenu avec texte traduit */}
-      <div
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          width: "100%",
-          height: "auto",
-          maxWidth: "700px",
-          textAlign: "center",
-          padding: "20px",
-          borderRadius: "10px",
-        }}
-      >
-        <h1
-          style={{ color: "#ffffff", fontSize: "3rem", marginBottom: "1rem" }}
-        >
-          {textes[langue].titre}
-        </h1>
-
-        <p
-          style={{
-            color: "#ffffff",
-            fontSize: "18px",
-            fontWeight: "400",
-            lineHeight: "1.6",
-            maxWidth: "600px",
-            margin: "0 auto",
-          }}
-        >
-          {textes[langue].paragraphe}
-        </p>
-
+      {/* Si la vidéo est affichée */}
+      {showVideo ? (
         <div
           style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "black",
+            zIndex: 1000,
             display: "flex",
-            gap: "16px",
-            marginTop: "20px",
             justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <button
-            onClick={() => navigate("/film-complet")}
+          <iframe
+            src="https://player.vimeo.com/video/1081789878?h=b390d023c4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
             style={{
-              backgroundColor: "#ffffff",
-              color: "#414B6F",
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+            }}
+            title="Documentaire complet"
+          ></iframe>
+          <button
+            onClick={() => setShowVideo(false)} // Fermer la vidéo
+            style={{
+              position: "absolute",
+              top: "20px",
+              right: "20px",
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              color: "#fff",
               border: "none",
-              padding: "12px 24px",
-              borderRadius: "20px",
-              fontSize: "16px",
-              fontWeight: "bold",
+              padding: "10px 20px",
+              borderRadius: "5px",
               cursor: "pointer",
+              zIndex: 1001,
             }}
           >
-            {textes[langue].bouton1}
-          </button>
-
-          <button
-            onClick={() => navigate("/intro-interactif")}
-            style={{
-              backgroundColor: "#ffffff",
-              color: "#414B6F",
-              border: "none",
-              padding: "12px 24px",
-              borderRadius: "20px",
-              fontSize: "16px",
-              fontWeight: "bold",
-              cursor: "pointer",
-            }}
-          >
-            {textes[langue].bouton2}
+            Fermer
           </button>
         </div>
-      </div>
+      ) : (
+        <>
+          {/* Drapeaux */}
+          <LanguesDrapeau selectedLang={langue} setSelectedLang={setLangue} />
+
+          {/* Contenu avec texte traduit */}
+          <div
+            style={{
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+              width: "100%",
+              height: "auto",
+              maxWidth: "700px",
+              textAlign: "center",
+              padding: "20px",
+              borderRadius: "10px",
+            }}
+          >
+            <h1
+              style={{
+                color: "#ffffff",
+                fontSize: "3rem",
+                marginBottom: "1rem",
+              }}
+            >
+              {textes[langue].titre}
+            </h1>
+
+            <p
+              style={{
+                color: "#ffffff",
+                fontSize: "18px",
+                fontWeight: "400",
+                lineHeight: "1.6",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              {textes[langue].paragraphe}
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "16px",
+                marginTop: "20px",
+                justifyContent: "center",
+              }}
+            >
+              <button
+                onClick={() => setShowVideo(true)} // Afficher la vidéo
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#414B6F",
+                  border: "none",
+                  padding: "12px 24px",
+                  borderRadius: "20px",
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                {textes[langue].bouton1}
+              </button>
+
+              <button
+                onClick={() => navigate("/intro-interactif")}
+                style={{
+                  backgroundColor: "#ffffff",
+                  color: "#414B6F",
+                  border: "none",
+                  padding: "12px 24px",
+                  borderRadius: "20px",
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                }}
+              >
+                {textes[langue].bouton2}
+              </button>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 }

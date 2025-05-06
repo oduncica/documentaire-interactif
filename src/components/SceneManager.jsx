@@ -54,7 +54,6 @@ export default function SceneManager({ year, onObjectClick }) {
           zIndex: 0,
         }}
       />
-
       {/* ✅ Scène animée */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -75,13 +74,12 @@ export default function SceneManager({ year, onObjectClick }) {
           {getSceneComponent()}
         </motion.div>
       </AnimatePresence>
-
-      {/* ✅ Drapeaux au-dessus de tout */}
-      <LanguesDrapeau
+      ✅ Drapeaux au-dessus de tout
+      {/* <LanguesDrapeau
         style={{
           zIndex: 1000, // très élevé pour ne jamais être recouvert
         }}
-      />
+      /> */}
     </div>
   );
 }
