@@ -75,11 +75,11 @@ export default function SceneManager({ year, onObjectClick }) {
         </motion.div>
       </AnimatePresence>
       ✅ Drapeaux au-dessus de tout
-      {/* <LanguesDrapeau
+      <LanguesDrapeau
         style={{
           zIndex: 1000, // très élevé pour ne jamais être recouvert
         }}
-      /> */}
+      />
     </div>
   );
 }
