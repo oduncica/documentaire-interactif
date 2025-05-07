@@ -8,21 +8,21 @@ export default function Scene2010() {
 
   const interactiveObjects = [
     {
-      id: "2010-1",
+      id: "2000-1",
       x: "30%",
       y: "60%",
       icon: <FaPlay />,
-      action: () => alert("Lecture vidéo 2010"),
+      action: () => alert("Lecture vidéo 2000"),
     },
     {
-      id: "2010-2",
+      id: "2000-2",
       x: "55%",
       y: "40%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/3"),
     },
     {
-      id: "2010-3",
+      id: "2000-3",
       x: "70%",
       y: "75%",
       icon: <FaInfoCircle />,
@@ -34,7 +34,7 @@ export default function Scene2010() {
     <div
       className="scene-container"
       style={{
-        backgroundImage: "url(/chambre-2010.png)",
+        backgroundImage: "url(/chambre-2000.png)",
         width: "100%",
         height: "100%",
         backgroundSize: "cover",

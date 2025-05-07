@@ -90,7 +90,7 @@ function App() {
             </div>
 
             <div className="year-buttons">
-              {["1980", "2010", "2025"].map((year) => (
+              {["1980", "2000", "2025"].map((year) => (
                 <button
                   key={year}
                   className={selectedYear === year ? "active" : ""}

@@ -205,7 +205,7 @@ export default function Scene1980({ onObjectClick }) {
             }}
             whileHover={{ scale: 1.1 }}
           >
-            More details
+            Plus de détails
           </motion.div>
         </div>
       )}

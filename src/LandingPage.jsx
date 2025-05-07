@@ -63,7 +63,7 @@ export default function LandingPage() {
             alignItems: "center",
           }}
         >
-          <iframe
+          {/* <iframe
             src="https://player.vimeo.com/video/1081789878?h=b390d023c4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
             frameBorder="0"
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
@@ -75,7 +75,28 @@ export default function LandingPage() {
               height: "100%",
             }}
             title="Documentaire complet"
-          ></iframe>
+          ></iframe> */}
+          <a
+            href="https://vimeo.com/1082031152"
+            target="_blank"
+            rel="noopener noreferrer" // Sécurité pour ouvrir dans un nouvel onglet
+            style={{
+              display: "block",
+              width: "100%",
+              maxWidth: "640px",
+              height: "360px",
+              backgroundImage:
+                "url('https://i.vimeocdn.com/video/2012937618-5b85854c86d8d88b6962451c0bc289d084f56f2440391eae7dc94a7f13359756-d?mw=3100&mh=854&q=70')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+              borderRadius: "12px",
+              overflow: "hidden",
+            }}
+          >
+            {/* Placeholder pour l'image */}
+          </a>
+
           <button
             onClick={() => setShowVideo(false)} // Fermer la vidéo
             style={{
@@ -102,7 +123,6 @@ export default function LandingPage() {
           {/* Contenu avec texte traduit */}
           <div
             style={{
-              // backgroundColor: "rgba(0, 0, 0, 0.5)",
               width: "100%",
               height: "auto",
               maxWidth: "700px",
@@ -143,7 +163,13 @@ export default function LandingPage() {
               }}
             >
               <button
-                onClick={() => setShowVideo(true)} // Afficher la vidéo
+                onClick={() =>
+                  window.open(
+                    "https://vimeo.com/1082031152",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                } // Redirige vers Vimeo
                 style={{
                   backgroundColor: "#ffffff",
                   color: "#414B6F",
