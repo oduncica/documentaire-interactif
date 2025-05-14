@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa"; // Import de l'icône de flèche
 import { PiDoorOpenDuotone } from "react-icons/pi";
 import "./Intro.css";
 import LanguesDrapeau from "./components/LanguesDrapeau";
@@ -35,6 +36,25 @@ function Intro() {
 
   return (
     <div className="intro-container">
+      {/* Flèche "Retour à l'accueil" */}
+      <div
+        onClick={() => navigate("/")} // Redirection vers la page LandingPage
+        style={{
+          position: "absolute",
+          top: "20px",
+          left: "20px",
+          display: "flex",
+          alignItems: "center",
+          cursor: "pointer",
+          color: "#ffffff",
+          fontSize: "18px",
+          textDecoration: "none",
+        }}
+      >
+        <FaArrowLeft size={20} style={{ marginRight: "8px" }} />
+        <span>Accueil</span>
+      </div>
+
       <LanguesDrapeau selectedLang={langue} setSelectedLang={setLangue} />
 
       <div className="intro-overlay">

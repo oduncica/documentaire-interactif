@@ -4,6 +4,7 @@ import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/white.css";
 import "./Reveil.css";
+import { FaArrowLeft } from "react-icons/fa"; // Import de l'icône de flèche
 
 function Reveil() {
   const revealRef = useRef(null);
@@ -54,8 +55,9 @@ function Reveil() {
           cursor: "pointer", // Ajout d'un curseur pointer pour indiquer que c'est cliquable
         }}
       >
-        <span style={{ marginRight: "8px", fontSize: "20px" }}>🏠</span>
-        Home
+        <FaArrowLeft style={{ marginRight: "8px", fontSize: "20px" }} />{" "}
+        {/* Icône flèche */}
+        <span>Retour</span>
       </div>
 
       <div className="slides">
@@ -63,7 +65,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/examen-table.jpg"
+              src="/examen-1.png"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -73,7 +75,8 @@ function Reveil() {
               }}
             />
             <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
-              Rose Efron Bragelson. School girls at a picnic.
+              Classe de terminale, 2020 “L’éducation en Corée du Sud” © Korea's
+              Owls{" "}
             </p>
           </div>
 
@@ -101,7 +104,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/jour-examen.png"
+              src="/examen-2.png"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -143,7 +146,7 @@ function Reveil() {
         <section className="img-div">
           <div className="left-image">
             <img
-              src="/lyceennes.jpg"
+              src="/examen-3.png"
               alt="Uniforme scolaire"
               style={{
                 width: "100%",
@@ -153,8 +156,8 @@ function Reveil() {
               }}
             />
             <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
-              Lycéennes prenant la pose devant leur établissement Années 1970
-              Auteur inconnu{" "}
+              Des parents prient pour la réussite de leurs enfants dans un
+              temple à Séoul. © Ed Jones/AFP/Getty Images{" "}
             </p>
           </div>
 
@@ -167,16 +170,60 @@ function Reveil() {
               l’empreinte d’un passé où l'éducation a toujours été perçue comme
               le moyen ultime de réussite sociale. Depuis des siècles, la
               culture coréenne valorise le travail acharné et la discipline, des
-              valeurs transmises de génération en génération. Dans un pays où
-              l’histoire a souvent été marquée par des bouleversements, de la
-              guerre à la division, l’éducation a été vue comme un levier pour
-              garantir un avenir plus stable.
+              valeurs transmises de génération en génération.
               <br />
               <br />
-              Aujourd'hui, cette vision est toujours présente, car les
-              étudiants, encore soumis à une pression intense pour réussir,
-              héritent de l’idée que leur avenir dépend largement de leur
-              performance à cet examen.
+              Dans un pays où l’histoire a souvent été marquée par des
+              bouleversements, de la guerre à la division, l’éducation a été vue
+              comme un levier pour garantir un avenir plus stable. Aujourd'hui,
+              cette vision est toujours présente, car les étudiants, encore
+              soumis à une pression intense pour réussir, héritent de l’idée que
+              leur avenir dépend largement de leur performance à cet examen.
+            </p>
+          </div>
+        </section>
+
+        <section className="img-div">
+          <div className="left-image">
+            <img
+              src="/soldats-uniformes.png"
+              alt="Uniforme scolaire"
+              style={{
+                width: "100%",
+                objectFit: "cover",
+                borderRadius: "10px",
+                boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+              }}
+            />
+            <p style={{ fontSize: "12px", marginTop: "8px", color: "#4A5B41" }}>
+              Williams, Hanson A., Jr. (1952), Three South Korean students
+              posing by a car, Pepperdine University Special Collections and
+              University Archives,URL {" "}
+            </p>
+          </div>
+
+          <div className="right-text">
+            <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>
+              The uniform{" "}
+            </h2>
+            <p style={{ fontSize: "14px", lineHeight: "1.8" }}>
+              In South Korea, school uniforms are essential to school life,
+              symbolizing discipline, equality, and unity. From elementary
+              school to high school, all students wear similar uniforms: a white
+              shirt, blazer, skirt for girls, and pants for boys. The goal is to
+              eliminate social differences and focus attention on education
+              rather than appearance. Strict rules regarding uniforms include
+              details such as: Hair length: Boys must have short hair, and girls
+              must have well-groomed hair that does not exceed shoulder length.
+              Dyed or unnaturally colored hair is prohibited.
+              <br />
+              <br />
+              Skirt length: Girls' skirts must be knee-length and cannot be
+              shortened. Shoes and accessories: Only black shoes are allowed,
+              and accessories (jewelry, bracelets) are generally prohibited.
+              Socks and makeup: Socks must be plain (white or black) with no
+              visible patterns, and makeup is forbidden. Failure to comply with
+              these rules can lead to sanctions.
             </p>
           </div>
         </section>

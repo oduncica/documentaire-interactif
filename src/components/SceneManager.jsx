@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Scene1980 from "./Scene1980";
-import Scene2010 from "./Scene20O0";
+import Scene2010 from "./Scene2000";
 import Scene2025 from "./Scene2025";
 import LanguesDrapeau from "./LanguesDrapeau";
 
 export default function SceneManager({ year, onObjectClick }) {
+  const [isLoading, setIsLoading] = useState(true);
+
   const getSceneComponent = () => {
     switch (year) {
       case "1980":
@@ -23,7 +25,7 @@ export default function SceneManager({ year, onObjectClick }) {
     switch (year) {
       case "1980":
         return "/chambre-1980.png";
-      case "2010":
+      case "2000":
         return "/chambre-2000.png";
       case "2025":
         return "/chambre-2025.png";
@@ -31,6 +33,30 @@ export default function SceneManager({ year, onObjectClick }) {
         return "";
     }
   };
+
+  // Préchargement des images
+  useEffect(() => {
+    const preloadImages = () => {
+      const images = [
+        "/chambre-1980.png",
+        "/chambre-2000.png",
+        "/chambre-2025.png",
+      ];
+      images.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+
+    preloadImages();
+  }, []);
+
+  // Charger l'image de fond pour l'année sélectionnée
+  useEffect(() => {
+    const img = new Image();
+    img.src = getBackgroundImage();
+    img.onload = () => setIsLoading(false);
+  }, [year]);
 
   return (
     <div
@@ -41,40 +67,57 @@ export default function SceneManager({ year, onObjectClick }) {
         overflow: "hidden",
       }}
     >
-      {/* ✅ Fond flouté */}
-      <div
-        style={{
-          backgroundImage: `url(${getBackgroundImage()})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          filter: "blur(4px)",
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-        }}
-      />
-      {/* ✅ Scène animée */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={year}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+      {isLoading ? (
+        <div
           style={{
             position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            zIndex: 1,
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            color: "#4A5B41",
+            fontSize: "24px",
           }}
         >
-          {getSceneComponent()}
-        </motion.div>
-      </AnimatePresence>
-      ✅ Drapeaux au-dessus de tout
+          Chargement...
+        </div>
+      ) : (
+        <>
+          {/* ✅ Fond flouté */}
+          <div
+            style={{
+              backgroundImage: `url(${getBackgroundImage()})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "blur(4px)",
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+            }}
+          />
+          {/* ✅ Scène animée */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={year}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              style={{
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                top: 0,
+                left: 0,
+                zIndex: 1,
+              }}
+            >
+              {getSceneComponent()}
+            </motion.div>
+          </AnimatePresence>
+        </>
+      )}
+      {/* ✅ Drapeaux au-dessus de tout */}
       <LanguesDrapeau
         style={{
           zIndex: 1000, // très élevé pour ne jamais être recouvert

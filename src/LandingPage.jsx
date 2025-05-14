@@ -33,7 +33,7 @@ export default function LandingPage() {
   return (
     <div
       style={{
-        backgroundColor: "#4A5B41",
+        backgroundColor: "#414B6F",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100vw",
