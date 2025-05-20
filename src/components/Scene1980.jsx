@@ -1,20 +1,25 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaEye, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
+import { FaSearch, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
-  const [stage, setStage] = useState("initial"); // 'initial' | 'video-vimeo' | 'video-vimeo3' | 'video' | 'detail'
+  const [stage, setStage] = useState("initial"); // 'initial' | 'video1' | 'detail1' | 'video2' | 'detail2' | autres stages...
+  const navigate = useNavigate();
 
-  const handleEyeClick = () => {
-    if (stage === "initial") {
-      setStage("video"); // De l'image initiale à la vidéo
-    } else if (stage === "video") {
-      setStage("detail"); // De la vidéo à l'image zoomée
-    } else if (stage === "detail") {
-      setStage("initial"); // Retour à l'image de départ
-    }
+  // Loupe 1
+  const handleLoupe1Click = () => {
+    if (stage === "initial") setStage("video1");
+    else if (stage === "video1") setStage("detail1");
+    else if (stage === "detail1") setStage("initial");
+  };
+
+  // Loupe 2
+  const handleLoupe2Click = () => {
+    if (stage === "initial") setStage("video2");
+    else if (stage === "video2") setStage("detail2");
+    else if (stage === "detail2") setStage("initial");
   };
 
   const closeVimeoVideo = () => {
@@ -24,38 +29,43 @@ export default function Scene1980({ onObjectClick }) {
   const initialInteractiveObjects = [
     {
       id: "init-1",
-      x: "15%",
-      y: "61%",
+      x: "13%",
+      y: "59%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo"),
+      bgColor: "#5E9197",
     },
     {
       id: "init-2",
-      x: "50%",
-      y: "25%",
+      x: "44%",
+      y: "19%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo3"),
+      bgColor: "#5E9197",
     },
     {
       id: "init-3",
-      x: "44%",
-      y: "19%",
+      x: "53%",
+      y: "15%",
       icon: <FaInfoCircle />,
       action: () => alert("Objet interactif 3 : info sur un objet"),
+      bgColor: "#A96860",
     },
     {
       id: "init-4",
-      x: "70%",
-      y: "50%",
+      x: "93%",
+      y: "53%",
       icon: <FaInfoCircle />,
       action: () => alert("Infos sur le livre"),
+      bgColor: "#A96860",
     },
     {
       id: "init-5",
       x: "80%",
-      y: "80%",
+      y: "66%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo-s6"),
+      bgColor: "#5E9197",
     },
   ];
 
@@ -66,6 +76,7 @@ export default function Scene1980({ onObjectClick }) {
       y: "60%",
       icon: <FaPlay />,
       action: () => onObjectClick({ id: 1 }),
+      bgColor: "#5E9197",
     },
     {
       id: "detail-2",
@@ -73,6 +84,7 @@ export default function Scene1980({ onObjectClick }) {
       y: "57%",
       icon: <FaPlay />,
       action: () => onObjectClick({ id: 1 }),
+      bgColor: "#5E9197",
     },
     {
       id: "detail-3",
@@ -80,6 +92,7 @@ export default function Scene1980({ onObjectClick }) {
       y: "40%",
       icon: <FaInfoCircle />,
       action: () => alert("Information sur l'objet final"),
+      bgColor: "#A96860",
     },
     {
       id: "detail-4",
@@ -87,6 +100,25 @@ export default function Scene1980({ onObjectClick }) {
       y: "30%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo-s6"),
+      bgColor: "#5E9197",
+    },
+  ];
+  const detail2InteractiveObjects = [
+    {
+      id: "detail2-1",
+      x: "30%",
+      y: "30%",
+      icon: <FaPlay />,
+      action: () => alert("Vidéo spéciale détail 2"),
+      bgColor: "#5E9197",
+    },
+    {
+      id: "detail2-2",
+      x: "60%",
+      y: "70%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Info spéciale détail 2"),
+      bgColor: "#A96860",
     },
   ];
 
@@ -106,36 +138,76 @@ export default function Scene1980({ onObjectClick }) {
         whileTap={{ scale: 0.9 }}
         onClick={obj.action}
       >
-        <div className="poi-icon">{obj.icon}</div>
+        <div
+          className="poi-icon"
+          style={{
+            backgroundColor: obj.bgColor, // Prioritaire sur le CSS
+            color: obj.color || "white",
+          }}
+        >
+          {obj.icon}
+        </div>
       </motion.div>
     ));
 
-  const renderEyeIcon = () => (
+  // Loupe 1
+  const renderLoupe1 = () => (
     <motion.div
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "50%",
-        left: "50%",
-        background: "rgba(0,0,0,0.6)",
+        top: "38%",
+        left: "48%",
+        backgroundColor: "#698958",
+        color: "white",
         borderRadius: "50%",
         padding: "12px",
         cursor: "pointer",
         zIndex: 10,
+        transform: "translate(-50%, -50%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
-      whileHover={{ scale: 1.2 }}
-      onClick={handleEyeClick}
+      // whileHover={{ scale: 1.2 }}
+      onClick={handleLoupe1Click}
     >
-      <FaEye size={24} color="#fff" />
+      <FaSearch size={24} color="#fff" />
     </motion.div>
   );
-  const navigate = useNavigate();
+
+  // Loupe 2
+  const renderLoupe2 = () => (
+    <motion.div
+      className="eye-icon"
+      style={{
+        position: "absolute",
+        top: "35%",
+        left: "65%",
+        backgroundColor: "#698958",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        transform: "translate(-50%, -50%)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      // whileHover={{ scale: 1.2 }}
+      onClick={handleLoupe2Click}
+    >
+      <FaSearch size={24} color="#fff" />
+    </motion.div>
+  );
 
   return (
     <div
       className="scene-container"
       style={{ width: "100%", height: "100%", position: "relative" }}
     >
+      {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
       {stage === "initial" && (
         <div
           className="initial-image"
@@ -148,11 +220,105 @@ export default function Scene1980({ onObjectClick }) {
             position: "relative",
           }}
         >
-          {renderEyeIcon()}
+          {renderLoupe1()}
+          {renderLoupe2()}
           {renderIcons(initialInteractiveObjects)}
         </div>
       )}
 
+      {/* LOUPE 1 : vidéo puis détail */}
+      {stage === "video1" && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            overflow: "hidden",
+            backgroundColor: "black",
+          }}
+        >
+          <ReactPlayer
+            url="/chambre-1-a-bureau.mp4" // Remplace par ta vidéo 1
+            playing
+            controls={false}
+            onEnded={() => setStage("detail1")}
+            width="100%"
+            height="100%"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      )}
+      {stage === "detail1" && (
+        <div
+          className="zoomed-image"
+          style={{
+            backgroundImage: "url(/chambre-1980-bureau.png)", // Remplace par ton image de détail 1
+            width: "100%",
+            height: "100%",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+          }}
+        >
+          {renderLoupe1()}
+          {renderIcons(detailInteractiveObjects)}
+        </div>
+      )}
+
+      {/* LOUPE 2 : vidéo puis détail */}
+      {stage === "video2" && (
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            overflow: "hidden",
+            backgroundColor: "black",
+          }}
+        >
+          <ReactPlayer
+            url="/chambre-1-a-biblio.mp4" // Remplace par ta vidéo 2
+            playing
+            controls={false}
+            onEnded={() => setStage("detail2")}
+            width="100%"
+            height="100%"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              objectFit: "cover",
+            }}
+          />
+        </div>
+      )}
+      {stage === "detail2" && (
+        <div
+          className="zoomed-image"
+          style={{
+            backgroundImage: "url(/chambre-1980-bureau.png)", // Remplace par ton image de détail 2
+            width: "100%",
+            height: "100%",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+          }}
+        >
+          {renderLoupe2()}
+          {renderIcons(detail2InteractiveObjects)}
+        </div>
+      )}
+
+      {/* Autres scènes déjà présentes dans ton code */}
       {stage === "video-vimeo" && (
         <div style={{ position: "relative", width: "100%", height: "100%" }}>
           <iframe
@@ -168,8 +334,6 @@ export default function Scene1980({ onObjectClick }) {
             }}
             title="S9"
           ></iframe>
-
-          {/* Bouton Fermer */}
           <motion.div
             onClick={closeVimeoVideo}
             style={{
@@ -186,15 +350,13 @@ export default function Scene1980({ onObjectClick }) {
           >
             <FaTimes size={24} color="#fff" />
           </motion.div>
-
-          {/* ✅ Bouton More Details */}
           <motion.div
             onClick={() => navigate("/reveil")}
             style={{
               position: "absolute",
               bottom: "20px",
               right: "20px",
-              background: "#698958", // Vert personnalisé
+              background: "#698958",
               color: "#fff",
               padding: "10px 16px",
               borderRadius: "8px",
@@ -243,6 +405,7 @@ export default function Scene1980({ onObjectClick }) {
           </motion.div>
         </div>
       )}
+
       {stage === "video-vimeo-s6" && (
         <div style={{ position: "relative", width: "100%", height: "100%" }}>
           <iframe
@@ -274,95 +437,6 @@ export default function Scene1980({ onObjectClick }) {
           >
             <FaTimes size={24} color="#fff" />
           </motion.div>
-        </div>
-      )}
-
-      {stage === "video" && (
-        <div
-          style={{
-            position: "absolute", // Position absolue pour couvrir tout l'écran
-            top: 0,
-            left: 0,
-            width: "100vw", // Largeur de l'écran
-            height: "100vh", // Hauteur de l'écran
-            overflow: "hidden", // Évitez tout débordement
-            backgroundColor: "black", // Ajout d'un fond noir pour éviter tout espace visible
-          }}
-        >
-          <ReactPlayer
-            url="/chambre-1-a-bureau.mp4"
-            playing
-            controls={false}
-            onEnded={() => setStage("detail")}
-            width="100%"
-            height="100%"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              objectFit: "cover",
-            }}
-          />
-        </div>
-      )}
-
-      {stage === "detail" && (
-        <div
-          className="zoomed-image"
-          style={{
-            backgroundImage: "url(/chambre-1980-bureau.png)",
-            width: "100%",
-            height: "100%",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-          }}
-        >
-          {renderEyeIcon()}
-
-          {/* Icône Play personnalisée */}
-          <motion.div
-            className="custom-play"
-            style={{
-              position: "absolute",
-              top: "30%",
-              left: "60%",
-              zIndex: 10,
-              background: "rgba(0,0,0,0.6)",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-            }}
-            whileHover={{ scale: 1.2 }}
-            onClick={() => {
-              // Ton action ici
-              alert("Lecture d'une vidéo contextuelle");
-              // ou setStage("video-vimeo-custom")
-            }}
-          >
-            <FaPlay color="#fff" size={20} />
-          </motion.div>
-
-          {/* Icône Info personnalisée */}
-          {/* <motion.div
-            className="custom-info"
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "40%",
-              zIndex: 10,
-              background: "rgba(255,255,255,0.8)",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-            }}
-            whileHover={{ scale: 1.2 }}
-            onClick={() => {
-              alert("Informations sur l'objet");
-            }}
-          >
-            <FaInfoCircle color="" size={20} />
-          </motion.div> */}
         </div>
       )}
     </div>

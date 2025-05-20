@@ -1,22 +1,25 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa"; // Import de l'icône de flèche
+import { FaArrowLeft } from "react-icons/fa";
 import { PiDoorOpenDuotone } from "react-icons/pi";
 import "./Intro.css";
 import LanguesDrapeau from "./components/LanguesDrapeau";
+import HamburgerMenu from "./components/HamburgerMenu";
 
 function Intro() {
   const navigate = useNavigate();
   const [langue, setLangue] = useState("fr");
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   const textes = {
     fr: {
       titre: "Éducation sous pression",
       sousTitre: "Le documentaire interactif",
-      p1: "Nous vous invitons à découvrir les univers personnels de lycéens sud-coréens sur plusieurs générations.",
-      p2: "Une chambre d'un lycéen des années 1980, une autre des années 2000, et une dernière de 2025.",
-      p3: "Ces chambres sont de véritables capsules temporelles, révélant comment la discipline, les attentes sociétales et le quotidien ont évolué… ou sont restés les mêmes.",
-      p4: "Chaque espace raconte une histoire, non seulement sur l'éducation, mais aussi sur l'identité, la résistance, la pression et l'adaptation à un système réglementaire puissant.",
+      p1: "Nous vous invitons à découvrir deux chambres de lycéens sud-coréens : l’une du passé, l’autre du présent.",
+      p2: "Ces espaces personnels, véritables capsules temporelles, racontent bien plus qu’un parcours scolaire : ils révèlent des récits d’identité, de résistance, de pression et d’adaptation face à un système éducatif particulièrement strict.",
       bouton: "Entrer",
     },
     kr: {
@@ -36,9 +39,10 @@ function Intro() {
 
   return (
     <div className="intro-container">
+      <HamburgerMenu onClick={toggleSidebar} />
       {/* Flèche "Retour à l'accueil" */}
       <div
-        onClick={() => navigate("/")} // Redirection vers la page LandingPage
+        onClick={() => navigate("/")}
         style={{
           position: "absolute",
           top: "20px",

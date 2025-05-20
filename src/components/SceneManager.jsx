@@ -4,9 +4,11 @@ import Scene1980 from "./Scene1980";
 import Scene2010 from "./Scene2000";
 import Scene2025 from "./Scene2025";
 import LanguesDrapeau from "./LanguesDrapeau";
+import ToastMessages from "./ToastMessages";
 
 export default function SceneManager({ year, onObjectClick }) {
   const [isLoading, setIsLoading] = useState(true);
+  const [showToast, setShowToast] = useState(true); // État pour afficher les toasts
 
   const getSceneComponent = () => {
     switch (year) {
@@ -117,6 +119,31 @@ export default function SceneManager({ year, onObjectClick }) {
           </AnimatePresence>
         </>
       )}
+      {/* ✅ Toasts */}
+      {showToast && <ToastMessages onFinish={() => setShowToast(false)} />}
+      {!showToast && (
+        <button
+          onClick={() => setShowToast(true)}
+          style={{
+            position: "absolute",
+            bottom: 20,
+            left: 20,
+            backgroundColor: "#4a5b41",
+            color: "white",
+            border: "none",
+            borderRadius: "50%",
+            width: 40,
+            height: 40,
+            fontSize: 20,
+            cursor: "pointer",
+            zIndex: 999,
+          }}
+          title="Afficher l'introduction"
+        >
+          ?
+        </button>
+      )}
+
       {/* ✅ Drapeaux au-dessus de tout */}
       <LanguesDrapeau
         style={{

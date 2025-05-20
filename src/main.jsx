@@ -16,7 +16,6 @@ root.render(
       <Route path="/" element={<LandingPage />} />{" "}
       <Route path="/intro-interactif" element={<Intro />} />{" "}
       <Route path="/chambre" element={<App />} />{" "}
-      {/* 👈 ancien accueil déplacé ici */}
       <Route path="/reveil" element={<Reveil />} />
       <Route path="/object/:id" element={<ObjectPage />} />
       <Route path="*" element={<h1>404 - Page non trouvée</h1>} />

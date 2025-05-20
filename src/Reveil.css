@@ -1,3 +1,24 @@
+/* Changer la couleur des flèches de direction */
+.reveal .navigate-left,
+.reveal .navigate-right,
+.reveal .navigate-up,
+.reveal .navigate-down {
+  color: #698958 !important; /* Couleur personnalisée */
+}
+
+/* Changer la couleur de la ligne de progression */
+.reveal .progress {
+  background: #e3d8e2 !important; /* Couleur de fond de la barre de progression */
+}
+
+.reveal .progress span {
+  background: #698958 !important; /* Couleur de la barre de progression */
+}
+/* Changer la couleur des titres des slides */
+.reveal .slides section h2 {
+  color: #4a5b41 !important; /* Couleur personnalisée */
+}
+
 .reveal .slides section.img-div {
   display: flex !important;
   flex-direction: row;
@@ -35,8 +56,8 @@
 
 /* Style des images */
 .reveal .slides section img {
-  width: 100%;
-  height: 100%; /* L'image prend toute la hauteur disponible */
+  /* width: 100%;
+  height: 100%;  */
   object-fit: cover; /* L'image couvre entièrement la zone sans être déformée */
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import SceneManager from "./components/SceneManager";
-import LanguesDrapeau from "./components/LanguesDrapeau"; // adapte le chemin si besoin
+import LanguesDrapeau from "./components/LanguesDrapeau";
+import HamburgerMenu from "./components/HamburgerMenu";
 import {
   FaBars,
   FaTimes,
@@ -84,19 +85,19 @@ function App() {
         <>
           {/* Header */}
           <div className="header">
-            <div className="hamburger-menu" onClick={toggleSidebar}>
-              <FaBars className="icon" size={30} color="#414B6F" />
-              <div>MENU</div>
-            </div>
+            <HamburgerMenu onClick={toggleSidebar} />
 
             <div className="year-buttons">
-              {["1980", "2000", "2025"].map((year) => (
+              {[
+                { value: "1980", label: "Passé" },
+                { value: "2025", label: "Présent" },
+              ].map((year) => (
                 <button
-                  key={year}
-                  className={selectedYear === year ? "active" : ""}
-                  onClick={() => handleYearChange(year)}
+                  key={year.value}
+                  className={selectedYear === year.value ? "active" : ""}
+                  onClick={() => handleYearChange(year.value)}
                 >
-                  {year}
+                  {year.label}
                 </button>
               ))}
             </div>

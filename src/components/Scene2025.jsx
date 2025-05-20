@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaPlay, FaInfoCircle } from "react-icons/fa";
+import { FaPlay, FaInfoCircle, FaSearch } from "react-icons/fa";
 
 export default function Scene2025({ onObjectClick }) {
   const [showVideo, setShowVideo] = useState(false);
+  const [loupeStage, setLoupeStage] = useState("initial"); // 'initial' | 'video' | 'detail'
 
   const interactiveObjects = [
     {
@@ -12,13 +13,15 @@ export default function Scene2025({ onObjectClick }) {
       y: "50%",
       icon: <FaPlay />,
       action: () => alert("Information 2025"),
+      bgColor: "#5E9197",
     },
     {
       id: "2025-2",
       x: "48%",
       y: "35%",
       icon: <FaPlay />,
-      action: () => setShowVideo(true), // Affiche la vidéo
+      action: () => setShowVideo(true),
+      bgColor: "#5E9197",
     },
     {
       id: "2025-3",
@@ -26,8 +29,87 @@ export default function Scene2025({ onObjectClick }) {
       y: "62%",
       icon: <FaInfoCircle />,
       action: () => onObjectClick?.({ id: 3 }),
+      bgColor: "#A96860",
     },
   ];
+
+  // Nouvelle icône info
+  const renderInfoIcon = () => (
+    <motion.div
+      className="info-icon"
+      style={{
+        position: "absolute",
+        top: "20%",
+        left: "80%",
+        backgroundColor: "#A96860",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={() => alert("Nouvelle info 2025")}
+    >
+      <FaInfoCircle size={24} color="#fff" />
+    </motion.div>
+  );
+
+  // Nouvelle icône play
+  const renderPlayIcon = () => (
+    <motion.div
+      className="play-icon"
+      style={{
+        position: "absolute",
+        top: "30%",
+        left: "30%",
+        backgroundColor: "#5E9197",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={() => setShowVideo(true)}
+    >
+      <FaPlay size={24} color="#fff" />
+    </motion.div>
+  );
+
+  // Icône loupe avec cycle vidéo > détail > retour
+  const handleLoupeClick = () => {
+    if (loupeStage === "initial") setLoupeStage("video");
+    else if (loupeStage === "video") setLoupeStage("detail");
+    else if (loupeStage === "detail") setLoupeStage("initial");
+  };
+
+  const renderLoupeIcon = () => (
+    <motion.div
+      className="loupe-icon"
+      style={{
+        position: "absolute",
+        top: "60%",
+        left: "60%",
+        backgroundColor: "#698958",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={handleLoupeClick}
+    >
+      <FaSearch size={24} color="#fff" />
+    </motion.div>
+  );
 
   return (
     <div
@@ -56,9 +138,71 @@ export default function Scene2025({ onObjectClick }) {
           whileTap={{ scale: 0.9 }}
           onClick={obj.action}
         >
-          <div className="poi-icon">{obj.icon}</div>
+          <div
+            className="poi-icon"
+            style={{
+              backgroundColor: obj.bgColor,
+            }}
+          >
+            {obj.icon}
+          </div>
         </motion.div>
       ))}
+
+      {renderInfoIcon()}
+      {renderPlayIcon()}
+      {loupeStage === "initial" && renderLoupeIcon()}
+      {loupeStage === "video" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.9)",
+            zIndex: 100,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <video
+            src="/video-loupe-2025.mp4"
+            autoPlay
+            onEnded={() => setLoupeStage("detail")}
+            style={{ width: "80vw", height: "auto", borderRadius: "12px" }}
+          />
+        </div>
+      )}
+      {loupeStage === "detail" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.7)",
+            zIndex: 100,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          onClick={handleLoupeClick}
+        >
+          <img
+            src="/detail-loupe-2025.png"
+            alt="Détail loupe"
+            style={{
+              maxWidth: "80vw",
+              maxHeight: "80vh",
+              borderRadius: "12px",
+              cursor: "pointer",
+            }}
+          />
+        </div>
+      )}
 
       {showVideo && (
         <div

@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import LanguesDrapeau from "./components/LanguesDrapeau"; // adapte le chemin si besoin
+import LanguesDrapeau from "./components/LanguesDrapeau";
+import HamburgerMenu from "./components/HamburgerMenu";
+import "./App.css";
+import { FaPlay } from "react-icons/fa";
+import { PiDoorOpenDuotone } from "react-icons/pi";
 
+import { FaTimes, FaHome, FaFilm, FaBook, FaInfoCircle } from "react-icons/fa";
 export default function LandingPage() {
   const navigate = useNavigate();
-  const [langue, setLangue] = useState("fr"); // 'fr' ou 'kr'
-  const [showVideo, setShowVideo] = useState(false); // État pour afficher la vidéo
+  const [langue, setLangue] = useState("fr");
+  const [showVideo, setShowVideo] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
   const textes = {
     fr: {
       titre: "Education sous pression",
-      paragraphe: `Derrière l’image d’excellence que projette le système éducatif
-      sud-coréen se cache une mécanique strictement codifiée, héritée d’une
-      culture réglementaire longtemps valorisée. Issue de décennies de
-      développement intensif, cette approche structure encore fortement le
-      quotidien des élèves. Mais comment cette culture réglementaire se
-      manifeste-t-elle aujourd’hui, et comment est-elle vécue par les jeunes
-      générations sud-coréennes ?`,
-      bouton1: "Documentaire complet",
-      bouton2: "Expérience Interactive",
+      paragraphe: `Derrière l’image d’excellence que projette le système éducatif sud-coréen se cache une mécanique strictement codifiée, héritée d’une culture réglementaire longtemps valorisée.`,
+      bouton1: "Le documentaire complet",
+      bouton2: "L'expérience interactive",
     },
     kr: {
       titre: "한국 교육 속 규제문화",
@@ -33,7 +34,7 @@ export default function LandingPage() {
   return (
     <div
       style={{
-        backgroundColor: "#414B6F",
+        backgroundImage: "url('/home.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100vw",
@@ -47,6 +48,63 @@ export default function LandingPage() {
         boxSizing: "border-box",
       }}
     >
+      {/* Menu hamburger en haut à gauche */}
+      <div
+        style={{
+          position: "absolute",
+          top: 20,
+          left: 20,
+          zIndex: 1001,
+        }}
+      >
+        <HamburgerMenu onClick={toggleSidebar} />
+      </div>
+      {/* Menu latéral */}
+
+      <div className={`sidebar${isSidebarOpen ? " open" : ""}`}>
+        {isSidebarOpen && (
+          <>
+            <div className="sidebar-header">
+              <button className="close-btn" onClick={toggleSidebar}>
+                <FaTimes size={30} color="#fff" />
+              </button>
+            </div>
+            <ul className="sidebar-menu">
+              <li
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  navigate("/chambre");
+                }}
+              >
+                <FaHome size={20} /> <span>The Room</span>
+              </li>
+              <li
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  setShowVideo(true);
+                }}
+              >
+                <FaFilm size={20} /> <span>Complete Documentary</span>
+              </li>
+              <li
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  navigate("/reveil");
+                }}
+              >
+                <FaBook size={20} /> <span>Bibliographie</span>
+              </li>
+              <li>
+                <FaInfoCircle size={20} /> <span>Scènes Complémentaires</span>
+              </li>
+              <li>
+                <FaInfoCircle size={20} /> <span>Crédit</span>
+              </li>
+            </ul>
+          </>
+        )}
+      </div>
+
       {/* Si la vidéo est affichée */}
       {showVideo ? (
         <div
@@ -63,23 +121,10 @@ export default function LandingPage() {
             alignItems: "center",
           }}
         >
-          {/* <iframe
-            src="https://player.vimeo.com/video/1081789878?h=b390d023c4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-            }}
-            title="Documentaire complet"
-          ></iframe> */}
           <a
             href="https://vimeo.com/1082031152"
             target="_blank"
-            rel="noopener noreferrer" // Sécurité pour ouvrir dans un nouvel onglet
+            rel="noopener noreferrer"
             style={{
               display: "block",
               width: "100%",
@@ -98,7 +143,7 @@ export default function LandingPage() {
           </a>
 
           <button
-            onClick={() => setShowVideo(false)} // Fermer la vidéo
+            onClick={() => setShowVideo(false)}
             style={{
               position: "absolute",
               top: "20px",
@@ -169,40 +214,74 @@ export default function LandingPage() {
                     "_blank",
                     "noopener,noreferrer"
                   )
-                } // Redirige vers Vimeo
+                }
                 style={{
-                  backgroundColor: "#ffffff",
-                  color: "#414B6F",
+                  backgroundColor: "#32465A",
+                  color: "#ffffff",
                   border: "none",
                   padding: "12px 24px",
                   borderRadius: "20px",
                   fontSize: "16px",
                   fontWeight: "bold",
                   cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
                 }}
               >
+                <FaPlay size={18} style={{ marginRight: "8px" }} />
                 {textes[langue].bouton1}
               </button>
 
               <button
-                onClick={() => navigate("/intro-interactif")}
+                onClick={() => navigate("/chambre")}
                 style={{
-                  backgroundColor: "#ffffff",
-                  color: "#414B6F",
+                  backgroundColor: "#698958",
+                  color: "#ffffff",
                   border: "none",
                   padding: "12px 24px",
                   borderRadius: "20px",
                   fontSize: "16px",
                   fontWeight: "bold",
                   cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "8px",
                 }}
               >
+                <PiDoorOpenDuotone size={20} style={{ marginRight: "8px" }} />
                 {textes[langue].bouton2}
               </button>
             </div>
           </div>
         </>
       )}
+      {/* Logos en bas à gauche et à droite */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 20,
+          left: 0,
+          width: "95vw",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          pointerEvents: "none", // pour ne pas gêner les clics sur le contenu
+          zIndex: 1001,
+          padding: "0 32px",
+        }}
+      >
+        <img
+          src="/logo.png"
+          alt="Logo gauche"
+          style={{ height: "48px", pointerEvents: "auto" }}
+        />
+        <img
+          src="/logo2.png"
+          alt="Logo droite"
+          style={{ height: "48px", pointerEvents: "auto" }}
+        />
+      </div>
     </div>
   );
 }
