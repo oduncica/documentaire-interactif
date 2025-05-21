@@ -57,7 +57,7 @@ export default function LandingPage() {
           zIndex: 1001,
         }}
       >
-        <HamburgerMenu onClick={toggleSidebar} />
+        <HamburgerMenu onClick={toggleSidebar} langue={langue} />{" "}
       </div>
       {/* Menu latéral */}
 

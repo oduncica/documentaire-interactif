@@ -19,6 +19,7 @@ function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedYear, setSelectedYear] = useState("1980");
   const [showVideo, setShowVideo] = useState(false); // État pour afficher la vidéo
+  const [langue, setLangue] = useState("fr"); // Ajout de la langue
 
   const handleObjectClick = (obj) => {
     navigate(`/object/${obj.id}`);
@@ -30,6 +31,31 @@ function App() {
 
   const handleYearChange = (year) => {
     setSelectedYear(year);
+  };
+
+  // Traductions pour les boutons année et sidebar
+  const yearLabels = {
+    fr: { 1980: "Passé", 2025: "Présent" },
+    kr: { 1980: "과거", 2025: "현재" },
+  };
+
+  const sidebarTexts = {
+    fr: {
+      room: "The Room",
+      doc: "Complete Documentary",
+      biblio: "Bibliographie",
+      scenes: "Scènes Complémentaires",
+      credit: "Crédit",
+      close: "Fermer",
+    },
+    kr: {
+      room: "방",
+      doc: "전체 다큐멘터리",
+      biblio: "참고문헌",
+      scenes: "추가 장면",
+      credit: "크레딧",
+      close: "닫기",
+    },
   };
 
   return (
@@ -64,7 +90,7 @@ function App() {
             title="Documentaire complet"
           ></iframe>
           <button
-            onClick={() => setShowVideo(false)} // Fermer la vidéo
+            onClick={() => setShowVideo(false)}
             style={{
               position: "absolute",
               top: "20px",
@@ -78,56 +104,54 @@ function App() {
               zIndex: 1001,
             }}
           >
-            Fermer
+            {sidebarTexts[langue].close}
           </button>
         </div>
       ) : (
         <>
           {/* Header */}
           <div className="header">
-            <HamburgerMenu onClick={toggleSidebar} />
-
+            <HamburgerMenu onClick={toggleSidebar} langue={langue} />
             <div className="year-buttons">
-              {[
-                { value: "1980", label: "Passé" },
-                { value: "2025", label: "Présent" },
-              ].map((year) => (
+              {["1980", "2025"].map((year) => (
                 <button
-                  key={year.value}
-                  className={selectedYear === year.value ? "active" : ""}
-                  onClick={() => handleYearChange(year.value)}
+                  key={year}
+                  className={selectedYear === year ? "active" : ""}
+                  onClick={() => handleYearChange(year)}
                 >
-                  {year.label}
+                  {yearLabels[langue][year]}
                 </button>
               ))}
             </div>
           </div>
-          <LanguesDrapeau />
-
+          <LanguesDrapeau selectedLang={langue} setSelectedLang={setLangue} />
           {/* Sidebar */}
           <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
             <div className="sidebar-header">
               <button className="close-btn" onClick={toggleSidebar}>
                 <FaTimes size={30} color="#fff" />
+                <span style={{ marginLeft: 8 }}>
+                  {sidebarTexts[langue].close}
+                </span>
               </button>
             </div>
             <ul className="sidebar-menu">
               <li onClick={() => navigate("/chambre")}>
-                <FaHome size={20} /> <span>The Room</span>
+                <FaHome size={20} /> <span>{sidebarTexts[langue].room}</span>
               </li>
               <li onClick={() => setShowVideo(true)}>
-                {" "}
-                {/* Afficher la vidéo */}
-                <FaFilm size={20} /> <span>Complete Documentary</span>
+                <FaFilm size={20} /> <span>{sidebarTexts[langue].doc}</span>
               </li>
               <li onClick={() => navigate("/reveil")}>
-                <FaBook size={20} /> <span>Bibliographie</span>
+                <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
               </li>
               <li>
-                <FaInfoCircle size={20} /> <span>Scènes Complémentaires</span>
+                <FaInfoCircle size={20} />{" "}
+                <span>{sidebarTexts[langue].scenes}</span>
               </li>
               <li>
-                <FaInfoCircle size={20} /> <span>Crédit</span>
+                <FaInfoCircle size={20} />{" "}
+                <span>{sidebarTexts[langue].credit}</span>
               </li>
             </ul>
           </div>
@@ -137,6 +161,8 @@ function App() {
             <SceneManager
               year={selectedYear}
               onObjectClick={handleObjectClick}
+              langue={langue}
+              setLangue={setLangue}
             />
           </div>
         </>

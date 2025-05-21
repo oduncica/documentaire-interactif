@@ -6,7 +6,7 @@ import Scene2025 from "./Scene2025";
 import LanguesDrapeau from "./LanguesDrapeau";
 import ToastMessages from "./ToastMessages";
 
-export default function SceneManager({ year, onObjectClick }) {
+export default function SceneManager({ year, onObjectClick, langue = "fr", setLangue }) {
   const [isLoading, setIsLoading] = useState(true);
   const [showToast, setShowToast] = useState(true); // État pour afficher les toasts
 
@@ -55,6 +55,7 @@ export default function SceneManager({ year, onObjectClick }) {
 
   // Charger l'image de fond pour l'année sélectionnée
   useEffect(() => {
+    setIsLoading(true);
     const img = new Image();
     img.src = getBackgroundImage();
     img.onload = () => setIsLoading(false);
@@ -120,7 +121,9 @@ export default function SceneManager({ year, onObjectClick }) {
         </>
       )}
       {/* ✅ Toasts */}
-      {showToast && <ToastMessages onFinish={() => setShowToast(false)} />}
+      {showToast && (
+        <ToastMessages onFinish={() => setShowToast(false)} langue={langue} />
+      )}
       {!showToast && (
         <button
           onClick={() => setShowToast(true)}
@@ -146,7 +149,12 @@ export default function SceneManager({ year, onObjectClick }) {
 
       {/* ✅ Drapeaux au-dessus de tout */}
       <LanguesDrapeau
+        selectedLang={langue}
+        setSelectedLang={setLangue}
         style={{
+          position: "absolute",
+          top: 20,
+          right: 20,
           zIndex: 1000, // très élevé pour ne jamais être recouvert
         }}
       />
