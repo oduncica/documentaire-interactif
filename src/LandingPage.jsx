@@ -5,6 +5,7 @@ import HamburgerMenu from "./components/HamburgerMenu";
 import "./App.css";
 import { FaPlay } from "react-icons/fa";
 import { PiDoorOpenDuotone } from "react-icons/pi";
+import RotatePhone from "./components/RotatePhone";
 
 import { FaTimes, FaHome, FaFilm, FaBook, FaInfoCircle } from "react-icons/fa";
 export default function LandingPage() {
@@ -48,6 +49,7 @@ export default function LandingPage() {
         boxSizing: "border-box",
       }}
     >
+      <RotatePhone />
       {/* Menu hamburger en haut à gauche */}
       <div
         style={{
