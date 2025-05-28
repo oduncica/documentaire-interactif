@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import SceneManager from "./components/SceneManager";
 import LanguesDrapeau from "./components/LanguesDrapeau";
 import HamburgerMenu from "./components/HamburgerMenu";
+import RotatePhone from "./components/RotatePhone";
 import {
   FaBars,
   FaTimes,
@@ -15,6 +16,7 @@ import {
 import "./App.css";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedYear, setSelectedYear] = useState("1980");
@@ -46,7 +48,6 @@ function App() {
       biblio: "Bibliographie",
       scenes: "Scènes Complémentaires",
       credit: "Crédit",
-      close: "Fermer",
     },
     kr: {
       room: "방",
@@ -54,12 +55,12 @@ function App() {
       biblio: "참고문헌",
       scenes: "추가 장면",
       credit: "크레딧",
-      close: "닫기",
     },
   };
 
   return (
     <div className="app">
+      <RotatePhone />
       {/* Si la vidéo est affichée */}
       {showVideo ? (
         <div

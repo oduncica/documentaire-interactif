@@ -5,8 +5,9 @@ import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
-  const [stage, setStage] = useState("initial"); // 'initial' | 'video1' | 'detail1' | 'video2' | 'detail2' | autres stages...
+  const [stage, setStage] = useState("initial");
   const navigate = useNavigate();
+  const [showAllIcons, setShowAllIcons] = useState(false);
 
   // Loupe 1
   const handleLoupe1Click = () => {
@@ -32,7 +33,10 @@ export default function Scene1980({ onObjectClick }) {
       x: "13%",
       y: "59%",
       icon: <FaPlay />,
-      action: () => setStage("video-vimeo"),
+      action: () => {
+        setStage("video-vimeo");
+        setShowAllIcons(true); // Affichera les autres icônes après
+      },
       bgColor: "#5E9197",
     },
     {
@@ -201,7 +205,9 @@ export default function Scene1980({ onObjectClick }) {
       <FaSearch size={24} color="#fff" />
     </motion.div>
   );
-
+  // const visibleInitialObjects = showAllIcons
+  //   ? initialInteractiveObjects
+  //   : initialInteractiveObjects.filter((obj) => obj.id === "init-1");
   return (
     <div
       className="scene-container"

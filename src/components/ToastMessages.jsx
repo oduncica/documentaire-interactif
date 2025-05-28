@@ -12,12 +12,18 @@ const messages = {
     {
       id: 2,
       text: "Ces espaces personnels, véritables capsules temporelles, racontent bien plus qu’un parcours scolaire : ils révèlent des récits d’identité, de résistance et d’adaptation face à un système puissant.",
-      button: "Commencer",
+      button: "Suivant",
     },
     {
       id: 3,
-      text: "Vous pouvez désormais librement : Cliquer sur les objets et les découvrir, Naviguer vers la chambre du présent",
+      text: " Nous vous recommandons de cliquer d'abord sur le reveil. ",
       button: "D'accord",
+    },
+
+    {
+      id: 4,
+      text: "Ensuite, vous pourrez cliquer sur les autres objets et naviguer vers la chambre du présent",
+      button: "Commencer",
     },
   ],
   kr: [
@@ -36,6 +42,11 @@ const messages = {
       id: 3,
       text: "이제 자유롭게: 오브젝트를 클릭해 탐색하거나, 현재의 방으로 이동할 수 있습니다.",
       button: "확인",
+    },
+    {
+      id: 4,
+      text: "먼저 알람 시계를 클릭해 보세요.",
+      button: "알겠습니다",
     },
   ],
 };
