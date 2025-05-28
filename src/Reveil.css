@@ -99,6 +99,53 @@
   }
 }
 
+/* ==== LANDSCAPE SMARTPHONES ==== */
+@media (max-width: 900px) and (orientation: landscape) {
+  .reveal .slides section.img-div {
+    flex-direction: row;
+    gap: 24px;
+    padding: 20px 10px;
+    min-height: 100svh;
+    height: auto;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .reveal .slides section.img-div .left-image,
+  .reveal .slides section.img-div .right-text {
+    flex: 0 0 50%;
+    height: auto;
+  }
+
+  .reveal .slides section.img-div .right-text {
+    margin-top: 0;
+    padding-left: 10px;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .reveal .slides section.img-div img {
+    max-height: 60vw;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 900px) {
+  .reveal .slides section.img-div {
+    min-height: 100svh;
+    height: auto;
+  }
+  .reveal .slides section.img-div img {
+    max-width: 100%;
+    height: auto;
+  }
+  .reveal .slides section.img-div .right-text {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+}
+
 /* ==== GLOBAL SCROLL SETTINGS ==== */
 body {
   overflow-y: auto;
