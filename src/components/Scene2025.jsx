@@ -6,13 +6,14 @@ export default function Scene2025({ onObjectClick }) {
   const [showVideo, setShowVideo] = useState(false);
   const [loupeStage, setLoupeStage] = useState("initial"); // 'initial' | 'video' | 'detail'
 
+  // Ajout des nouvelles icônes dans le tableau, sans changer leur style ni leur taille
   const interactiveObjects = [
     {
       id: "2025-1",
       x: "16%",
       y: "50%",
       icon: <FaPlay />,
-      action: () => alert("Information 2025"),
+      action: () => alert("Information à venir"),
       bgColor: "#5E9197",
     },
     {
@@ -28,58 +29,20 @@ export default function Scene2025({ onObjectClick }) {
       x: "87%",
       y: "62%",
       icon: <FaInfoCircle />,
-      action: () => onObjectClick?.({ id: 3 }),
+      action: () => alert("Info à venir"),
       bgColor: "#A96860",
     },
+    // Nouvelle icône info
+    {
+      id: "info-2025",
+      x: "55%",
+      y: "20%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Info à venir"),
+      bgColor: "#A96860",
+    },
+    // Nouvelle icône play
   ];
-
-  // Nouvelle icône info
-  const renderInfoIcon = () => (
-    <motion.div
-      className="info-icon"
-      style={{
-        position: "absolute",
-        top: "20%",
-        left: "80%",
-        backgroundColor: "#A96860",
-        color: "white",
-        borderRadius: "50%",
-        padding: "12px",
-        cursor: "pointer",
-        zIndex: 10,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onClick={() => alert("Nouvelle info 2025")}
-    >
-      <FaInfoCircle size={24} color="#fff" />
-    </motion.div>
-  );
-
-  // Nouvelle icône play
-  const renderPlayIcon = () => (
-    <motion.div
-      className="play-icon"
-      style={{
-        position: "absolute",
-        top: "30%",
-        left: "30%",
-        backgroundColor: "#5E9197",
-        color: "white",
-        borderRadius: "50%",
-        padding: "12px",
-        cursor: "pointer",
-        zIndex: 10,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onClick={() => setShowVideo(true)}
-    >
-      <FaPlay size={24} color="#fff" />
-    </motion.div>
-  );
 
   // Icône loupe avec cycle vidéo > détail > retour
   const handleLoupeClick = () => {
@@ -149,8 +112,6 @@ export default function Scene2025({ onObjectClick }) {
         </motion.div>
       ))}
 
-      {renderInfoIcon()}
-      {renderPlayIcon()}
       {loupeStage === "initial" && renderLoupeIcon()}
       {loupeStage === "video" && (
         <div
