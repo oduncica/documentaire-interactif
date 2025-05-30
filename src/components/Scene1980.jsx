@@ -30,8 +30,8 @@ export default function Scene1980({ onObjectClick }) {
   const initialInteractiveObjects = [
     {
       id: "init-1",
-      x: "13%",
-      y: "59%",
+      x: "14%",
+      y: "60%",
       icon: <FaPlay />,
       action: () => {
         setStage("video-vimeo");
@@ -43,24 +43,25 @@ export default function Scene1980({ onObjectClick }) {
       id: "init-2",
       x: "44%",
       y: "19%",
-      icon: <FaPlay />,
-      action: () => setStage("video-vimeo3"),
+      icon: <FaInfoCircle />,
+      action: () => alert("Infos à venir"),
+
       bgColor: "#5E9197",
     },
     {
       id: "init-3",
       x: "53%",
       y: "15%",
-      icon: <FaInfoCircle />,
-      action: () => alert("Objet interactif 3 : info sur un objet"),
-      bgColor: "#A96860",
+      icon: <FaPlay />,
+      action: () => setStage("video-vimeo3"),
+      bgColor: "#5E9197",
     },
     {
       id: "init-4",
-      x: "93%",
-      y: "53%",
+      x: "92%",
+      y: "54%",
       icon: <FaInfoCircle />,
-      action: () => alert("Infos sur le livre"),
+      action: () => navigate("/reveil#/9"),
       bgColor: "#A96860",
     },
     {
@@ -76,32 +77,16 @@ export default function Scene1980({ onObjectClick }) {
   const detailInteractiveObjects = [
     {
       id: "detail-1",
-      x: "40%",
-      y: "60%",
-      icon: <FaPlay />,
-      action: () => onObjectClick({ id: 1 }),
-      bgColor: "#5E9197",
-    },
-    {
-      id: "detail-2",
-      x: "45%",
-      y: "57%",
-      icon: <FaPlay />,
-      action: () => onObjectClick({ id: 1 }),
-      bgColor: "#5E9197",
-    },
-    {
-      id: "detail-3",
-      x: "60%",
-      y: "40%",
+      x: "25%",
+      y: "63%",
       icon: <FaInfoCircle />,
       action: () => alert("Information sur l'objet final"),
       bgColor: "#A96860",
     },
     {
-      id: "detail-4",
-      x: "30%",
-      y: "30%",
+      id: "detail-2",
+      x: "49%",
+      y: "54%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo-s6"),
       bgColor: "#5E9197",
@@ -110,18 +95,18 @@ export default function Scene1980({ onObjectClick }) {
   const detail2InteractiveObjects = [
     {
       id: "detail2-1",
-      x: "30%",
-      y: "30%",
+      x: "50%",
+      y: "46%",
       icon: <FaPlay />,
-      action: () => alert("Vidéo spéciale détail 2"),
+      action: () => alert("Vidéo à venir"),
       bgColor: "#5E9197",
     },
     {
       id: "detail2-2",
-      x: "60%",
-      y: "70%",
+      x: "56%",
+      y: "10%",
       icon: <FaInfoCircle />,
-      action: () => alert("Info spéciale détail 2"),
+      action: () => navigate("/reveil#/12"),
       bgColor: "#A96860",
     },
   ];
@@ -311,7 +296,7 @@ export default function Scene1980({ onObjectClick }) {
         <div
           className="zoomed-image"
           style={{
-            backgroundImage: "url(/chambre-1980-bureau.png)", // Remplace par ton image de détail 2
+            backgroundImage: "url(/chambre-1980-biblio.png)", // Remplace par ton image de détail 2
             width: "100%",
             height: "100%",
             backgroundSize: "cover",

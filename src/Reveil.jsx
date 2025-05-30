@@ -17,7 +17,6 @@ function Reveil() {
       const deck = new Reveal(revealRef.current, {
         controls: true,
         progress: true,
-        slideNumber: true,
         hash: true,
         keyboard: true,
         touch: true,
@@ -32,6 +31,7 @@ function Reveil() {
     fr: {
       retour: "Retour",
       slides: [
+        // Objet Reveil Passé
         {
           img: "/examen-1.png",
           imgCredit: `Classe de terminale, 2020 “L’éducation en Corée du Sud” © Korea's Owls`,
@@ -43,7 +43,7 @@ L'examen intense de huit heures, qui teste diverses matières, est le résultat 
         {
           img: "/examen-2.png",
           imgCredit: `Les élèves plus jeunes encouragent les lycéens alors qu’ils se rendent, ce jeudi, à l’examen d’entrée à l’université, déterminant pour leur avenir. Comme à l’accoutumée, la police a assuré l’escorte des candidats en retard. © Elise Hu/NPR`,
-          title: "L’examen qui détermine une vie : Le Seungeung",
+          // title: "L’examen qui détermine une vie : Le Seungeung",
           text: `Le jour de l'examen, les rues sont presque désertes, car même les bureaux et magasins ajustent leurs horaires pour permettre à tout le monde de se concentrer sur cet événement. L'État déploie également des mesures de soutien, comme des augmentations du nombre de transports publics pour faciliter les déplacements des candidats et des policiers qui régulent la circulation pour éviter tout retard.
 
 L'examen Seungeung n'est pas seulement une épreuve académique, il incarne toute une culture où l'éducation et la réussite sont perçues comme des clefs essentielles pour accéder à un avenir meilleur.`,
@@ -56,17 +56,102 @@ L'examen Seungeung n'est pas seulement une épreuve académique, il incarne tout
 
 Dans un pays où l’histoire a souvent été marquée par des bouleversements, de la guerre à la division, l’éducation a été vue comme un levier pour garantir un avenir plus stable. Aujourd'hui, cette vision est toujours présente, car les étudiants, encore soumis à une pression intense pour réussir, héritent de l’idée que leur avenir dépend largement de leur performance à cet examen.`,
         },
+        // Objet cassette passé
+        {
+          img: "/cinema-1.png",
+          imgCredit: `Our Twisted Hero (우리들의 일그러진 영웅), Park Jong-won, 1992.  Source : YouTube`,
+          title:
+            "La culture réglementaire dans l’éducation à travers le cinéma sud-coréen",
+          text: `La culture réglementaire dans l’éducation est un sujet souvent représenté dans le cinéma sud-coréen, notamment dans de grands films cultes : Yalkae, A joker in high school (고교얄개,1976), Our Twisted Hero (우리들의 일그러진 영웅, 1992) ou encore Friend (친구, 2001),  ces œuvres cinématographiques nous permettent de nous faire une image de la culture réglementaire de cette époque, et parfois à travers des scènes très marquantes. Par exemple, cet extrait est issu du film Our Twisted Hero (1992) et raconte l’histoire d’un jeune écolier entre les années 50 à 60. Dans cette scène, on assiste à un châtiment corporel de la part d’un professeur, à l’encontre d’un élève qui a triché à un contrôle, une punition  commune à l’époque, mais qui nous parait très violente aujourd’hui.`,
+        },
+        {
+          img: "/cinema-2.png",
+          imgCredit: `Affiche du film Friend (친구, 2001) Source : Wikipédia`,
+          title: "Reprise des propos des intervenants dans la séquence",
+          text: `Dans cette interview, on découvre les réactions de personnes issues de différentes générations — 21 ans, 30 ans, 53 ans — face à une séquence culte du film Friend (2001), dans laquelle des lycéens se font gifler par un surveillant. Cette scène, à la fois choquante et évocatrice, ravive chez certains des souvenirs douloureux d’une “époque infernale”, marquée par la banalisation des châtiments corporels dans les établissements scolaires. Pour les plus âgés, elle fait écho à une réalité vécue, tandis que les plus jeunes la perçoivent avec un mélange d’incrédulité et de distance historique. Ce contraste générationnel met en lumière l’évolution des mentalités et de la culture réglementaire dans le domaine de l’éducation, soulignant à quel point les normes disciplinaires ont profondément changé au fil du temps.`,
+        }, // Objet Uniforme passé
         {
           img: "/soldats-uniformes.png",
-          imgCredit: `Williams, Hanson A., Jr. (1952), Three South Korean students posant by a car, Pepperdine University Special Collections and University Archives,URL`,
-          title: "The uniform",
-          text: `En Corée du Sud, les uniformes scolaires sont essentiels à la vie scolaire, symbolisant la discipline, l’égalité et l’unité. De l’école primaire au lycée, tous les élèves portent des uniformes similaires : une chemise blanche, une veste, une jupe pour les filles et un pantalon pour les garçons. L’objectif est d’éliminer les différences sociales et de recentrer l’attention sur l’éducation plutôt que sur l’apparence. Des règles strictes régissent le port de l’uniforme, notamment :
-- Longueur des cheveux : les garçons doivent avoir les cheveux courts, et les filles des cheveux bien coiffés ne dépassant pas les épaules. Les cheveux teints ou de couleur non naturelle sont interdits.
-- Longueur de la jupe : les jupes des filles doivent arriver au niveau du genou et ne peuvent pas être raccourcies.
-- Chaussures et accessoires : seules les chaussures noires sont autorisées, et les accessoires (bijoux, bracelets) sont généralement interdits.
-- Chaussettes et maquillage : les chaussettes doivent être unies (blanches ou noires) sans motifs visibles, et le maquillage est interdit. Le non-respect de ces règles peut entraîner des sanctions.`,
+          imgCredit: `Williams, Hanson A., Jr. (1952), Three South Korean students posing by a car, Pepperdine University Special Collections and University Archives,URL `,
+          title: "L’uniforme : un symbole historique",
+          text: `Dans la Corée du Sud des années 1980, l’uniforme scolaire est bien plus qu’un simple code vestimentaire : il s’inscrit dans un système éducatif profondément influencé par l’autoritarisme d’État, hérité de la période post-guerre et de la dictature militaire (notamment sous Park Chung-hee et Chun Doo-hwan). À cette époque, l’école est envisagée comme un lieu de formation du citoyen modèle, au service de la nation. L’uniforme, imposé dès le collège, matérialise cette volonté de normalisation des comportements et de neutralisation des individualités. Il devient un symbole de conformité, de discipline collective et de respect de l’autorité.
+
+Les vêtements sont standardisés à l’échelle nationale : chemise blanche, blazer foncé, jupe plissée pour les filles, pantalon droit pour les garçons. Le port de l’uniforme est strictement encadré par le ministère de l’Éducation, qui impose également un calendrier précis selon les saisons (hiver/été). Dans les discours officiels, l’uniforme est censé favoriser l’égalité entre les élèves et empêcher la compétition vestimentaire. Mais dans la pratique, il s’agit surtout de canaliser la jeunesse, jugée potentiellement instable dans une société marquée par de fortes tensions politiques, sociales et économiques.`,
         },
-        // ... Ajoute les autres slides ici, même structure ...
+        {
+          img: "/uniforme-2.png",
+          imgCredit: `Williams, Hanson A., Jr. (1952), Three South Korean students posant by a car, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "The uniform",
+          text: `Chaque élément de la tenue scolaire est minutieusement codifié. Il ne s’agit pas simplement d’une obligation de porter un uniforme, mais d’un contrôle exhaustif de l’apparence. Les écoles imposent des modèles validés par les rectorats, et le moindre écart est réprimandé.
+
+Chez les filles, la jupe doit descendre strictement jusqu’au niveau du genou. La moindre tentative de raccourcissement — geste souvent interprété comme une volonté d’autonomie ou de séduction — est immédiatement sanctionnée. Les garçons portent un pantalon droit, sans fioriture, coupé dans un tissu sombre. Les vêtements doivent être bien repassés, sans pli excessif, et les chemises parfaitement boutonnées. Les chaussures doivent être entières noires, sans semelles compensées ni marques visibles. Les lacets doivent être noués de manière réglementaire. Les chaussettes sont également normalisées : blanches ou noires unies, sans motifs, dentelles ou couleurs vives. La tenue comprend parfois des accessoires imposés comme une cravate, un insigne d’école ou un brassard de discipline. Tout ajout personnel — badge, broche, ceinture colorée — est considéré comme une infraction. Le port de sacs à dos est également réglementé : taille standard, couleurs neutres, et pas de décoration individuelle.
+
+Cette attention obsessionnelle à la tenue traduit une vision de l’éducation comme domestication des corps, où toute tentative d’individualisation est perçue comme une menace pour l’ordre collectif.`,
+        },
+        {
+          img: "/uniforme-1.jpg",
+          imgCredit: `Williams, Hanson A., Jr. (1952), Three South Korean students posant by a car, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "The uniform",
+          text: `L’uniforme scolaire dans les années 1980 s’étend à des règles de contrôle physique extrêmement précises, notamment sur les cheveux, les accessoires corporels et l’expression de la féminité.
+
+Les garçons doivent avoir les cheveux courts, souvent coupés au-dessus des oreilles, avec la nuque et le front dégagés. Toute tentative de frange, de coupe stylisée ou d’utilisation de gel est proscrite. Les filles ne peuvent pas porter les cheveux détachés au-delà des épaules. Les cheveux longs doivent être attachés à l’arrière, sans accessoires visibles. Les barrettes colorées ou les élastiques fantaisie sont interdits. Le maquillage est prohibé : aucune trace de fond de teint, rouge à lèvres, eyeliner ou vernis à ongles n’est tolérée. Même un simple baume à lèvres est parfois considéré comme suspect. Les bijoux sont formellement bannis, y compris les boucles d’oreilles discrètes. Les perçages sont réprimandés et, dans certains cas, les enseignants peuvent exiger leur retrait immédiat, sous peine de sanction.
+
+Certaines écoles organisent des contrôles physiques à l’entrée, où des enseignants inspectent la tenue et l’apparence des élèves, parfois à l’aide de règles pour mesurer la longueur des jupes ou des cheveux. Ce contrôle excessif du corps, particulièrement prononcé chez les filles, reflète une vision patriarcale et conservatrice de la jeunesse, où la conformité passe par l’effacement de la sexualité, de la beauté, et du style personnel.`,
+        },
+        {
+          img: "/uniforme-3.png",
+          imgCredit: `Williams, Hanson A., Jr. (1952), Three South Korean students posant by a car, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "The uniform",
+          text: `Le non-respect des règles vestimentaires n’est pas une affaire mineure : il donne lieu à un système de sanctions formalisé, souvent humiliant pour les élèves. Chaque infraction — jupe raccourcie, mèche de cheveux teintée, maquillage visible — peut entraîner une série de punitions codifiées. Les sanctions varient selon les établissements mais suivent une logique commune :
+
+Remarques inscrites dans le carnet scolaire, pouvant impacter la réputation de l’élève.
+Travaux disciplinaires (nettoyage, corvées dans l’école).
+Présentations humiliantes devant la classe ou l’ensemble de l’établissement.
+Appels aux parents ou signalement aux autorités éducatives.
+Dans certains cas extrêmes : exclusion temporaire ou coupe de cheveux imposée.
+
+Pour les élèves, ces contrôles et punitions provoquent des sentiments de honte, de révolte ou de résignation. Si la majorité se conforme, une partie développe des stratégies de contournement : porter des chaussettes à motifs cachés, maquiller très légèrement le visage pour rester "dans la limite", ou modifier discrètement les ourlets. Ce système, bien qu’efficace en termes de discipline, a produit une génération marquée par un rapport ambivalent à l’autorité scolaire : respect mêlé de crainte, obéissance teintée de frustration. Ces expériences continuent aujourd’hui de nourrir les débats sur la liberté individuelle, la pression sociale et le rôle de l’école dans la construction identitaire.`,
+        }, //Objet livre passé
+        {
+          img: "/livre-1.png",
+          imgCredit: `Tableau datant de l’époque Chosŏn qui illustre une scène de classe. 
+“At Seodang”, Kim Hong-do, 1745-1806
+Source : Wikipédia`,
+          title:
+            "Les différentes influences de la culture réglementaire sud-coréenne ",
+          text: `La culture réglementaire dans l’éducation sud-coréenne est fortement influencée par un l’héritage du néoconfucianisme, une philosophie issue des écrits de Confucius (Vème siècle av. J.-C.) et enrichie par des éléments taoïstes et bouddhistes. Introduit par la dynastie Chosŏn (1392-1897), le néoconfucianisme est devenu une idéologie d’État, modélant la société autour de principes comme les relations hiérarchiques harmonieuses et le respect de l’autorité. L’éducation y joue un rôle central : elle est perçue comme un moyen d’atteindre la sagesse et de contribuer au bien-être collectif. Cet héritage persiste dans le système éducatif contemporain, où l’accent est mis sur la méritocratie et la réussite scolaire. Cependant, il est critiqué par les jeunes générations, qui qualifient parfois leur pays de “Hell Chosŏn”, en référence à l’époque féodale considérée comme oppressive. Ce terme reflète leur frustration face à une société perçue comme rigide et inégalitaire.`,
+        },
+        {
+          img: "/livre-2.png",
+          imgCredit: `Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube
+`,
+          // title:
+          //   "Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube",
+          text: `La culture réglementaire sud-coréenne est également influencée par la période dictatoriale du pays et son développement industriel : en effet, les dictatures sud-coréennes (1948-1987) ont instauré des structures autoritaires et hiérarchiques. Les régimes de Syngman Rhee (1948-1960) et Park Chung-hee (1963-1979) ont imposé une discipline stricte, promu le respect de l'autorité et renforcé l'obéissance collective. Sous la dictature de Park Chung-hee, la culture réglementaire a été ancrée dans une industrialisation rapide et un contrôle étatique rigoureux, favorisant l'efficacité et la conformité au détriment des libertés individuelles. L’éducation faisait également partie de son plan de modernisation du pays dans les années 70 qui visait à renforcer l’industrialisation du pays. 
+
+
+`,
+        },
+        {
+          img: "/livre-2.png",
+          imgCredit: `Une classe de lycéens dans les années 70.
+Auteur inconnu`,
+          // title: "Les études supérieures en Corée du sud",
+          text: `L’histoire des études supérieures en Corée du sud est étroitement liée à l’évolution du pays au XXème siècle : en effet, après la fin de la colonisation japonaise en 1945, l’éducation est devenue une arme vitale pour permettre au pays de se redresser et un pilier de l’ascension sociale. La Corée étant un pays sans ressources naturelles abondantes, le savoir-faire humain est devenu la richesse première, et c’est ainsi qu’est née cette fièvre de l’éducation qu’on connaît si bien aujourd’hui. `,
+        },
+        // Objet photo
+        {
+          img: "/photo-1.png",
+          imgCredit: `Inscriptions à l’Université de Yonsei à Séoul en 1981.  Photographie exposée au Musée National de l’Histoire Contemporaine. Source : The Korean Times.`,
+          title: "Les études supérieures en Corée du sud",
+          text: `L’histoire des études supérieures en Corée du sud est étroitement liée à l’évolution du pays au XXème siècle : en effet, après la fin de la colonisation japonaise en 1945, l’éducation est devenue une arme vitale pour permettre au pays de se redresser et un pilier de l’ascension sociale. La Corée étant un pays sans ressources naturelles abondantes, le savoir-faire humain est devenu la richesse première, et c’est ainsi qu’est née cette fièvre de l’éducation qu’on connaît si bien aujourd’hui. 
+`,
+        },
+        {
+          img: "/photo-2.png",
+          imgCredit: `Université Nationale de Séoul, l’un des établissements les plus prestigieux du pays. Source : Wikipédia.`,
+          text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
+        },
       ],
     },
     kr: {
@@ -83,7 +168,7 @@ Dans un pays où l’histoire a souvent été marquée par des bouleversements, 
         {
           img: "/examen-2.png",
           imgCredit: `어린 학생들이 대학 입시를 치르는 고등학생들을 응원하고 있습니다. 경찰은 지각한 수험생들을 위해 호송을 제공했습니다. © Elise Hu/NPR`,
-          title: "인생을 결정짓는 시험: 수능",
+          // title: "인생을 결정짓는 시험: 수능",
           text: `시험 당일, 거리와 상점들은 거의 비어 있습니다. 모두가 이 중요한 행사에 집중할 수 있도록 근무 시간이 조정됩니다. 정부는 수험생들의 이동을 돕기 위해 대중교통을 증편하고, 경찰이 교통을 통제합니다.
 
 수능은 단순한 학업 평가가 아니라, 교육과 성공이 더 나은 미래를 위한 핵심으로 여겨지는 문화를 상징합니다.`,
@@ -97,16 +182,86 @@ Dans un pays où l’histoire a souvent été marquée par des bouleversements, 
 역사적으로 전쟁과 분단 등 많은 격변을 겪은 한국에서 교육은 더 안정적인 미래를 보장하는 수단으로 여겨졌습니다. 오늘날에도 학생들은 여전히 성공에 대한 강한 압박을 받으며, 그들의 미래가 이 시험의 성과에 크게 달려 있다고 믿고 있습니다.`,
         },
         {
-          img: "/soldats-uniformes.png",
-          imgCredit: `윌리엄스, 한슨 A., Jr. (1952), 자동차 옆에 선 세 명의 한국 학생, Pepperdine University Special Collections and University Archives,URL`,
-          title: "교복",
-          text: `한국에서 교복은 학교 생활의 필수 요소로, 규율, 평등, 단결을 상징합니다. 초등학교부터 고등학교까지 모든 학생들은 비슷한 교복을 입습니다: 흰 셔츠, 재킷, 여학생은 치마, 남학생은 바지. 교복의 목적은 사회적 차이를 없애고, 외모보다 교육에 집중하도록 하는 것입니다. 교복 착용에는 엄격한 규칙이 있습니다:
-- 머리 길이: 남학생은 짧은 머리, 여학생은 어깨를 넘지 않는 단정한 머리여야 하며, 염색이나 비자연스러운 색은 금지됩니다.
-- 치마 길이: 여학생의 치마는 무릎까지 내려와야 하며, 짧게 줄일 수 없습니다.
-- 신발과 액세서리: 검은색 신발만 허용되며, 액세서리(귀걸이, 팔찌 등)는 일반적으로 금지됩니다.
-- 양말과 화장: 양말은 무늬 없는 흰색 또는 검은색이어야 하며, 화장은 금지됩니다. 규칙을 어기면 제재를 받을 수 있습니다.`,
+          img: "/cinema-1.png",
+          imgCredit: `Our Twisted Hero (우리들의 일그러진 영웅), Park Jong-won, 1992.  Source : YouTube`,
+          title: "한국 교육에서의 규범 문화: 한국 영화 속에서",
+          text: `한국 교육의 규범 문화는 한국 영화에서 자주 다루어지는 주제입니다. 대표적인 영화로는 Yalkae, A joker in high school (고교얄개,1976), Our Twisted Hero (우리들의 일그러진 영웅, 1992), Friend (친구, 2001) 등이 있습니다. 이 영화들은 당시의 규범 문화를 생생하게 보여주며, 때로는 매우 인상적인 장면을 통해 그 시대를 이해할 수 있게 해줍니다. 예를 들어, Our Twisted Hero(1992)에서는 50~60년대 초등학생의 이야기를 다루며, 한 학생이 시험에서 부정행위를 하다 선생님에게 체벌을 받는 장면이 나옵니다. 당시에는 흔했던 체벌이지만, 오늘날에는 매우 폭력적으로 느껴집니다.`,
         },
-        // ... Ajoute les autres slides ici, même structure ...
+        {
+          img: "/cinema-2.png",
+          imgCredit: `영화 Friend (친구, 2001) 포스터 출처: 위키피디아`,
+          title: "세대별 반응: 영화 속 장면을 통해 본 규범의 변화",
+          text: `이 인터뷰에서는 21세, 30세, 53세 등 다양한 세대의 사람들이 영화 Friend(2001)의 명장면, 즉 고등학생들이 감독교사에게 뺨을 맞는 장면에 대해 어떻게 반응하는지 보여줍니다. 이 장면은 충격적이면서도 과거 학교에서 체벌이 일상적이었던 "지옥 같은 시절"을 떠올리게 합니다. 나이가 많은 세대에게는 실제 경험과 맞닿아 있고, 젊은 세대에게는 역사적 거리감과 함께 믿기 힘든 일로 받아들여집니다. 이러한 세대 간의 차이는 교육 규범과 문화가 얼마나 변화했는지를 보여줍니다.`,
+        },
+        {
+          img: "/soldats-uniformes.png",
+          imgCredit: `Williams, Hanson A., Jr. (1952), 자동차 옆에 선 세 명의 한국 학생, Pepperdine University Special Collections and University Archives,URL `,
+          title: "교복: 역사적 상징",
+          text: `1980년대 한국에서 교복은 단순한 복장이 아니라 국가 주도의 권위주의적 교육 시스템의 상징이었습니다. 당시 학교는 국가에 봉사하는 모범 시민을 양성하는 곳으로 여겨졌고, 교복은 행동의 표준화와 개성 억제의 도구였습니다. 교복은 집단 규율, 복종, 권위 존중의 상징이었습니다.
+
+교복은 전국적으로 표준화되어 있었으며, 여학생은 흰 셔츠와 어두운 블레이저, 주름치마, 남학생은 바지와 셔츠를 입었습니다. 교복 착용은 교육부의 엄격한 규정에 따라 계절별로 달라졌습니다. 공식적으로는 평등과 경쟁 방지의 목적이었지만, 실제로는 불안정한 사회에서 청소년을 통제하기 위한 수단이었습니다.`,
+        },
+        {
+          img: "/uniforme-2.png",
+          imgCredit: `Williams, Hanson A., Jr. (1952), 자동차 옆에 선 세 명의 한국 학생, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "교복",
+          text: `교복의 각 요소는 세밀하게 규정되어 있었습니다. 단순히 교복을 입는 것이 아니라, 외모 전체를 엄격하게 통제했습니다. 학교는 교육청에서 승인한 교복 모델만 허용했고, 작은 일탈도 처벌 대상이었습니다.
+
+여학생의 치마는 반드시 무릎까지 내려와야 했고, 짧게 줄이는 시도는 자율성이나 매력 어필로 간주되어 즉시 제재를 받았습니다. 남학생은 장식 없는 어두운 바지를 입었습니다. 옷은 항상 다림질되어야 했고, 셔츠는 단정하게 잠가야 했습니다. 신발은 검정색만 허용되었고, 끈도 규정대로 묶어야 했습니다. 양말은 흰색 또는 검정색 단색만 허용되었습니다. 때로는 넥타이나 학교 배지, 규율 완장 등 액세서리도 포함되었습니다. 개인적인 장식은 모두 금지되었습니다. 가방도 크기와 색상이 규정되어 있었습니다.
+
+이처럼 복장에 집착하는 것은 교육을 신체의 길들이기로 보는 시각에서 비롯되었습니다. 개성 표현은 집단 질서에 대한 위협으로 간주되었습니다.`,
+        },
+        {
+          img: "/uniforme-1.jpg",
+          imgCredit: `Williams, Hanson A., Jr. (1952), 자동차 옆에 선 세 명의 한국 학생, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "교복",
+          text: `1980년대 교복 규정은 머리, 액세서리, 외모 등 신체적 통제까지 확장되었습니다.
+
+남학생은 귀 위로 짧게 머리를 자르고, 이마와 목덜미가 드러나야 했습니다. 스타일링이나 젤 사용은 금지되었습니다. 여학생은 어깨 아래로 머리를 풀 수 없었고, 긴 머리는 뒤로 단정하게 묶어야 했습니다. 색깔 머리끈이나 장식은 금지되었습니다. 화장은 일절 허용되지 않았고, 립밤조차 의심받기도 했습니다. 귀걸이 등 모든 장신구는 금지되었으며, 피어싱은 즉시 제거해야 했습니다.
+
+일부 학교에서는 등교 시 교사가 자를 이용해 치마 길이나 머리 길이를 검사하기도 했습니다. 특히 여학생에 대한 신체 통제는 가부장적이고 보수적인 청소년관을 반영했습니다. 순응은 성적, 아름다움, 스타일의 억제로 이어졌습니다.`,
+        },
+        {
+          img: "/uniforme-3.png",
+          imgCredit: `Williams, Hanson A., Jr. (1952), 자동차 옆에 선 세 명의 한국 학생, Pepperdine University Special Collections and University Archives,URL`,
+          // title: "교복",
+          text: `복장 규정 위반은 사소한 일이 아니었습니다. 위반 시 공식적인 처벌이 뒤따랐고, 학생에게는 수치심이나 분노, 체념을 불러일으켰습니다. 처벌에는 생활기록부 기재, 학교 청소 등 벌칙, 공개 망신, 학부모 호출, 교육청 신고, 심한 경우 퇴학이나 강제 이발 등이 있었습니다.
+
+대부분의 학생은 순응했지만, 일부는 몰래 무늬 양말을 신거나, 아주 연하게 화장하거나, 치마를 살짝 고치는 등 우회 전략을 썼습니다. 이런 시스템은 권위에 대한 복합적 감정을 남겼고, 오늘날까지도 개인의 자유, 사회적 압력, 학교의 역할에 대한 논쟁을 불러일으키고 있습니다.`,
+        },
+        {
+          img: "/livre-1.png",
+          imgCredit: `조선시대 교실 장면을 그린 그림. 
+“At Seodang”, 김홍도, 1745-1806
+출처: 위키피디아`,
+          title: "한국 규범 문화의 다양한 영향",
+          text: `한국 교육의 규범 문화는 유교(특히 신유학) 전통의 영향을 강하게 받았습니다. 조선시대(1392-1897)에 국시로 채택된 신유학은 위계적 조화와 권위 존중을 중시하며, 교육을 지혜와 공동체 복지의 수단으로 보았습니다. 이 유산은 오늘날까지 이어져, 능력주의와 학업 성취에 중점을 둡니다. 그러나 젊은 세대는 이를 "헬조선"이라 부르며, 경직되고 불평등한 사회에 대한 불만을 표출하기도 합니다.`,
+        },
+        {
+          img: "/livre-2.png",
+          imgCredit: `오랫동안 잃어버린 줄 알았던 영화, Tuition (수업료), 최인규, 방한준, 1940. 출처: YouTube`,
+          // title:
+          //   "오랫동안 잃어버린 줄 알았던 영화, Tuition (수업료), 최인규, 방한준, 1940. 출처: YouTube",
+          text: `한국의 규범 문화는 독재 시기와 산업화의 영향도 받았습니다. 1948~1987년 독재 정권은 권위주의적이고 위계적인 구조를 만들었고, 이승만(1948-1960), 박정희(1963-1979) 정권은 엄격한 규율과 복종을 강조했습니다. 박정희 정권 하에서 규범 문화는 급속한 산업화와 국가 통제 속에 뿌리내렸고, 효율성과 순응이 개인의 자유보다 우선시되었습니다. 교육 역시 70년대 산업화 정책의 일부였습니다.`,
+        },
+        {
+          img: "/livre-2.png",
+          imgCredit: `1970년대 고등학생 교실. 
+저자 미상`,
+          // title: "한국의 고등교육",
+          text: `한국의 고등교육 역사는 20세기 국가 발전과 밀접하게 연결되어 있습니다. 1945년 일제 강점기 종료 후, 교육은 국가 재건의 핵심이자 사회적 상승의 수단이 되었습니다. 자원이 부족한 한국에서 인적 자원이 가장 큰 자산이 되었고, 이로 인해 오늘날의 교육열이 탄생했습니다.`,
+        },
+        {
+          img: "/photo-1.png",
+          imgCredit: `1981년 연세대학교 입학 등록. 대한민국 현대사 박물관 전시 사진. 출처: The Korean Times.`,
+          title: "한국의 고등교육",
+          text: `한국의 고등교육 역사는 20세기 국가 발전과 밀접하게 연결되어 있습니다. 1945년 일제 강점기 종료 후, 교육은 국가 재건의 핵심이자 사회적 상승의 수단이 되었습니다. 자원이 부족한 한국에서 인적 자원이 가장 큰 자산이 되었고, 이로 인해 오늘날의 교육열이 탄생했습니다.`,
+        },
+        {
+          img: "/photo-2.png",
+          imgCredit: `서울대학교, 국내 최고 명문 대학 중 하나. 출처: 위키피디아.`,
+          text: `대학 입시, 특히 수능은 한국 사회에서 매우 중요한 역할을 합니다. 이는 사회적 계층 이동의 수단으로, 합격자는 직업과 사회적 지위를 확보할 수 있습니다. 많은 가정이 자녀를 명문대에 보내기 위해 막대한 비용을 투자하며, 이로 인해 학업 경쟁이 심화됩니다. SKY(서울대, 고려대, 연세대)는 대표적인 명문대학으로, 입학이 곧 성공을 의미합니다.`,
+        },
       ],
     },
   };
