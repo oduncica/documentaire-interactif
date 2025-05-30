@@ -51,28 +51,28 @@ export default function Scene2025({ onObjectClick }) {
     else if (loupeStage === "detail") setLoupeStage("initial");
   };
 
-  const renderLoupeIcon = () => (
-    <motion.div
-      className="loupe-icon"
-      style={{
-        position: "absolute",
-        top: "60%",
-        left: "60%",
-        backgroundColor: "#698958",
-        color: "white",
-        borderRadius: "50%",
-        padding: "12px",
-        cursor: "pointer",
-        zIndex: 10,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      onClick={handleLoupeClick}
-    >
-      <FaSearch size={24} color="#fff" />
-    </motion.div>
-  );
+  // const renderLoupeIcon = () => (
+  //   <motion.div
+  //     className="loupe-icon"
+  //     style={{
+  //       position: "absolute",
+  //       top: "60%",
+  //       left: "60%",
+  //       backgroundColor: "#698958",
+  //       color: "white",
+  //       borderRadius: "50%",
+  //       padding: "12px",
+  //       cursor: "pointer",
+  //       zIndex: 10,
+  //       display: "flex",
+  //       alignItems: "center",
+  //       justifyContent: "center",
+  //     }}
+  //     onClick={handleLoupeClick}
+  //   >
+  //     <FaSearch size={24} color="#fff" />
+  //   </motion.div>
+  // );
 
   return (
     <div
@@ -112,7 +112,7 @@ export default function Scene2025({ onObjectClick }) {
         </motion.div>
       ))}
 
-      {loupeStage === "initial" && renderLoupeIcon()}
+      {/* {loupeStage === "initial" && renderLoupeIcon()} */}
       {loupeStage === "video" && (
         <div
           style={{
