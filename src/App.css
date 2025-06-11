@@ -31,16 +31,6 @@
   background: transparent; /* plus de couleur bleue */
   pointer-events: none; /* pour ne pas bloquer les interactions */
 }
-
-/* Positionnement précis du menu hamburger */
-/* .hamburger-menu {
-  position: absolute;
-  left: 20px;
-  cursor: pointer;
-  z-index: 1001;
-  pointer-events: auto; 
-} */
-
 .hamburger-menu {
   position: absolute;
   top: 20px;
@@ -169,21 +159,6 @@
 
 .sidebar-menu li span {
   margin-left: 10px;
-}
-
-/* Reveal.js styles (si utilisés dans le projet) */
-.reveal .slides section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.reveal .slides section img {
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Calques d’époques superposées avec fondu */

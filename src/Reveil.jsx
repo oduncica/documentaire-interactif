@@ -152,6 +152,32 @@ Auteur inconnu`,
           imgCredit: `Université Nationale de Séoul, l’un des établissements les plus prestigieux du pays. Source : Wikipédia.`,
           text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
         },
+        // Objet Journal Intime présent
+        {
+          img: "/journal-1.png",
+          imgCredit: `Graphique comparant le taux de mortalité par suicide entre 2000 et 2019, au niveau mondial et sud-coréen.  Source : UNICEF.`,
+          title:
+            "Le suicide : la souffrance silencieuse au sein de l’éducation sud-coréenne",
+          text: `Le suicide est une des problématiques de santé publique les plus graves de la société sud-coréenne. En effet, la Corée du sud a le taux de suicide le plus élevé des pays de l’OCDE,  avec 14,439 suicides reportés en 2024, et près de 40 suicides par jour. Il s’agit de la cause principale de mortalité chez les adolescents et les jeunes adultes : en 2023, le nombre de suicide chez les écoliers, collégiens et lycéens atteint le nombre de 214, le plus haut jamais enregistré, ayant doublé en 8 ans. Ce mal-être traduit la nécessité de renforcer le soutien psychologique au sein des écoles.
+
+Pour cela, les différents gouvernements qui ont se sont succédés au cours de ces dernières années ont instauré différentes mesures  : on retrouve plusieurs plans quinquennaux entre 2004 et 2023, avec le dernier en date qui a pour but de réduire le taux de suicide de 30 % d’ici 2027. 
+`,
+        },
+        {
+          img: "/journal-2.png",
+          imgCredit: `Le pont Mapo à Séoul, doté de capteurs et de photos représentant des “petits moments de la vie”, pour empêcher les personnes de suicider. Source : RFI / Frédéric Ojardias
+`,
+          text: `En 2011, le gouvernement de Lee Myung-bak met en place le “Suicide Prevention Act”. Cette mesure a pour objectif de renforcer la prévention au suicide, avec notamment un suivi des personnes ayant fait une tentative de suicide. 
+
+Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider efficacement les jeunes qui souffrent.  Parmi les raisons qui poussent les jeunes à mettre fin à leurs jours, on retrouve des problématiques de santé mentale, des conflits familiaux, mais également la pression académique. Cette dernière pèse sur les épaules des sud-coréens dès leur entrée dans le monde éducatif, mais elle est encore plus lourde à la période du lycée, étape charnière pour leur avenir. En effet, les étudiants sud-coréens dédient une partie de leur enfance et adolescence aux révisions, notamment car les parents investissent beaucoup dans leur réussite académique. Les étudiants sud-coréens passent deux fois plus de temps à réviser que les étudiants américains par exemple, et ce notamment après les cours. Cet investissement académique est une cause de stress profond chez les étudiant, pouvant les pousser à commettre l’irréparable. 
+ `,
+        },
+        {
+          img: "/journal-3.png",
+          imgCredit: `Des enseignants le 4 septembre 2023 suite au suicide de leur collègue. Source : JUNG YEON-JE / AFP
+`,
+          text: `Mais dans le système éducatif sud-coréen, les élèves ne sont pas les seuls touchés par ce fléau du suicide : les enseignants subissent également une forte pression de la part des parents d’élèves, allant même jusqu’à l’harcèlement. Entre 2015 et 2023, 168 enseignants se sont donné la mort. En été 2023, une jeune institutrice est retrouvée morte dans un placard de salle de classe, provoquant l’émoi de la communauté enseignante. Dans son journal, elle parle de cette souffrance silencieuse qui l’a conduit à passer à l’acte : “j'ai la poitrine trop serrée. Je me sens dépassée par la folie du travail’. Une grève nationale a lieu le 4 septembre 2023, pour dénoncer cette intimidation de la part des parents d’élèves, prêts à tout pour la réussite de leurs enfants. `,
+        },
       ],
     },
     kr: {

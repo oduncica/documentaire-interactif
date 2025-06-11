@@ -25,19 +25,22 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 60px;
-  padding: 60px 80px;
+  padding: 60px 60px 80px 80px;
   box-sizing: border-box;
   height: 100vh; /* Conserver une hauteur de 100vh pour la section entière */
 }
 
 .reveal .slides section.img-div .left-image {
   flex: 0 0 45%; /* L'image occupe 45% de l'espace */
-  height: 60%; /* L'image occupe toute la hauteur de la section */
+  height: auto; /* L'image occupe toute la hauteur de la section */
+  padding-right: 60px; /* Espace entre l'image et le texte */
 }
 
 .reveal .slides section.img-div .right-text {
   flex: 0 0 55%; /* Le texte occupe 55% de l'espace */
   height: 100%; /* Le texte occupe toute la hauteur de la section */
+  overflow-y: auto; /* Permet le défilement si le texte dépasse la hauteur */
+  text-align: left;
 }
 
 .reveal .slides {

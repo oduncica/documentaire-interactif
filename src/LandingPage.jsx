@@ -116,7 +116,7 @@ export default function LandingPage() {
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "black",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
             zIndex: 1000,
             display: "flex",
             justifyContent: "center",
@@ -150,16 +150,26 @@ export default function LandingPage() {
               position: "absolute",
               top: "20px",
               right: "20px",
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              backgroundColor: "#698958",
               color: "#fff",
               border: "none",
-              padding: "10px 20px",
-              borderRadius: "5px",
+              borderRadius: "50%",
+              width: "44px",
+              height: "44px",
+              fontSize: "1.5rem",
+              fontWeight: "bold",
               cursor: "pointer",
               zIndex: 1001,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+              transition: "background 0.2s",
             }}
+            aria-label="Fermer"
+            title="Fermer"
           >
-            Fermer
+            <FaTimes size={22} />
           </button>
         </div>
       ) : (
