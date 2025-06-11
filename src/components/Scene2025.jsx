@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaPlay, FaInfoCircle, FaSearch } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 export default function Scene2025({ onObjectClick }) {
   const [showVideo, setShowVideo] = useState(false);
-  const [loupeStage, setLoupeStage] = useState("initial"); // 'initial' | 'video' | 'detail'
+  const [loupeStage, setLoupeStage] = useState("initial"); //
+  // 'initial' | 'video' | 'detail'
+  const navigate = useNavigate();
 
   // Ajout des nouvelles icônes dans le tableau, sans changer leur style ni leur taille
   const interactiveObjects = [
@@ -28,8 +31,8 @@ export default function Scene2025({ onObjectClick }) {
       id: "2025-3",
       x: "87%",
       y: "62%",
-      icon: <FaInfoCircle />,
-      action: () => alert("Info à venir"),
+      icon: <FaInfoCircle />, // <-- parenthèse fermante ici !
+      action: () => navigate("/reveil#/14"),
       bgColor: "#A96860",
     },
     // Nouvelle icône info
@@ -38,7 +41,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "55%",
       y: "20%",
       icon: <FaInfoCircle />,
-      action: () => alert("Info à venir"),
+      action: () => alert("Info uniforme"),
       bgColor: "#A96860",
     },
     // Nouvelle icône play
