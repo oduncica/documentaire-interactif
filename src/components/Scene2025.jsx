@@ -170,15 +170,14 @@ export default function Scene2025({ onObjectClick }) {
 
       {showVideo && (
         <div
-          className="video-overlay"
           style={{
             position: "fixed",
             top: 0,
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "rgba(0, 0, 0, 0.8)",
-            zIndex: 100,
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -187,47 +186,58 @@ export default function Scene2025({ onObjectClick }) {
           <div
             style={{
               position: "relative",
-              paddingBottom: "56.25%",
-              height: 0,
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
               overflow: "hidden",
-              width: "100%",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <iframe
               src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
                 width: "100%",
                 height: "100%",
+                borderRadius: "12px",
               }}
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
               title="S9"
-              allowFullScreen
             ></iframe>
+            <button
+              onClick={() => setShowVideo(false)}
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              ✕
+            </button>
           </div>
-
-          <button
-            onClick={() => setShowVideo(false)}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "30px",
-              background: "white",
-              border: "none",
-              borderRadius: "50%",
-              width: "40px",
-              height: "40px",
-              fontSize: "1.2rem",
-              fontWeight: "bold",
-              cursor: "pointer",
-              lineHeight: "40px",
-              textAlign: "center",
-            }}
-          >
-            ✕
-          </button>
         </div>
       )}
     </div>

@@ -70,26 +70,34 @@ function App() {
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "black",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
             zIndex: 1000,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
           }}
         >
-          <iframe
-            src="https://player.vimeo.com/video/1081789878?h=b390d023c4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          <a
+            href="https://vimeo.com/1082031152"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
+              display: "block",
               width: "100%",
-              height: "100%",
+              maxWidth: "900px",
+              height: "506px",
+              backgroundImage:
+                "url('https://i.vimeocdn.com/video/2012937618-5b85854c86d8d88b6962451c0bc289d084f56f2440391eae7dc94a7f13359756-d?mw=3100&mh=854&q=70')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              position: "relative",
+              borderRadius: "12px",
+              overflow: "hidden",
             }}
-            title="Documentaire complet"
-          ></iframe>
+          >
+            {/* Placeholder pour l'image */}
+          </a>
+
           <button
             onClick={() => setShowVideo(false)}
             style={{

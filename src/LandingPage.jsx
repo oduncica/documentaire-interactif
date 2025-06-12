@@ -123,54 +123,60 @@ export default function LandingPage() {
             alignItems: "center",
           }}
         >
-          <a
-            href="https://vimeo.com/1082031152"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             style={{
-              display: "block",
+              position: "relative",
               width: "100%",
-              maxWidth: "640px",
-              height: "360px",
+              maxWidth: "900px",
+              height: "506px",
+              borderRadius: "12px",
+              overflow: "hidden",
               backgroundImage:
                 "url('https://i.vimeocdn.com/video/2012937618-5b85854c86d8d88b6962451c0bc289d084f56f2440391eae7dc94a7f13359756-d?mw=3100&mh=854&q=70')",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              position: "relative",
-              borderRadius: "12px",
-              overflow: "hidden",
             }}
           >
-            {/* Placeholder pour l'image */}
-          </a>
-
-          <button
-            onClick={() => setShowVideo(false)}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              backgroundColor: "#698958",
-              color: "#fff",
-              border: "none",
-              borderRadius: "50%",
-              width: "44px",
-              height: "44px",
-              fontSize: "1.5rem",
-              fontWeight: "bold",
-              cursor: "pointer",
-              zIndex: 1001,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-              transition: "background 0.2s",
-            }}
-            aria-label="Fermer"
-            title="Fermer"
-          >
-            <FaTimes size={22} />
-          </button>
+            <a
+              href="https://vimeo.com/1082031152"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              {/* Placeholder pour l'image */}
+            </a>
+            <button
+              onClick={() => setShowVideo(false)}
+              style={{
+                position: "absolute",
+                top: "20px",
+                right: "20px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 1001,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
         </div>
       ) : (
         <>

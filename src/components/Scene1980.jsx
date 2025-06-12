@@ -311,48 +311,87 @@ export default function Scene1980({ onObjectClick }) {
 
       {/* Autres scènes déjà présentes dans ton code */}
       {stage === "video-vimeo" && (
-        <div style={{ position: "relative", width: "100%", height: "100%" }}>
-          <iframe
-            src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            title="S9"
-          ></iframe>
-          <motion.div
-            onClick={closeVimeoVideo}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              background: "rgba(0, 0, 0, 0.6)",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 20,
-            }}
-            whileHover={{ scale: 1.2 }}
           >
-            <FaTimes size={24} color="#fff" />
-          </motion.div>
+            <iframe
+              src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="S9"
+            ></iframe>
+            <button
+              onClick={closeVimeoVideo}
+              style={{
+                position: "absolute",
+                top: "8px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
           <motion.div
             onClick={() => navigate("/reveil")}
             style={{
               position: "absolute",
-              bottom: "20px",
-              right: "20px",
+              bottom: "80px",
+              right: "calc(32px + 7cm)", // décale de 5cm vers la gauche
               background: "#698958",
               color: "#fff",
               padding: "10px 16px",
               borderRadius: "8px",
               cursor: "pointer",
-              zIndex: 20,
+              zIndex: 3010,
               fontSize: "14px",
               fontWeight: "bold",
             }}
@@ -364,70 +403,148 @@ export default function Scene1980({ onObjectClick }) {
       )}
 
       {stage === "video-vimeo3" && (
-        <div style={{ position: "relative", width: "100%", height: "100%" }}>
-          <iframe
-            src="https://player.vimeo.com/video/1081720802?h=a29f97c0f4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            title="S3"
-          ></iframe>
-          <motion.div
-            onClick={closeVimeoVideo}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              background: "rgba(0, 0, 0, 0.6)",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 20,
-            }}
-            whileHover={{ scale: 1.2 }}
           >
-            <FaTimes size={24} color="#fff" />
-          </motion.div>
+            <iframe
+              src="https://player.vimeo.com/video/1081720802?h=a29f97c0f4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="S3"
+            ></iframe>
+            <button
+              onClick={closeVimeoVideo}
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
         </div>
       )}
 
       {stage === "video-vimeo-s6" && (
-        <div style={{ position: "relative", width: "100%", height: "100%" }}>
-          <iframe
-            src="https://player.vimeo.com/video/1081719738?h=3a90542dc3&badge=0&autopause=0&player_id=0&app_id=58479"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
             style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-            title="S6"
-          ></iframe>
-          <motion.div
-            onClick={closeVimeoVideo}
-            style={{
-              position: "absolute",
-              top: "20px",
-              right: "20px",
-              background: "rgba(0, 0, 0, 0.6)",
-              borderRadius: "50%",
-              padding: "10px",
-              cursor: "pointer",
-              zIndex: 20,
-            }}
-            whileHover={{ scale: 1.2 }}
           >
-            <FaTimes size={24} color="#fff" />
-          </motion.div>
+            <iframe
+              src="https://player.vimeo.com/video/1081719738?h=3a90542dc3&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              style={{
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="S6"
+            ></iframe>
+            <button
+              onClick={closeVimeoVideo}
+              style={{
+                position: "absolute",
+                top: "16px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
         </div>
       )}
     </div>
