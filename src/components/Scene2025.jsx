@@ -252,20 +252,29 @@ export default function Scene2025({ onObjectClick }) {
               top: "20%",
               cursor: "pointer",
               zIndex: 110,
+              width: 48,
+              height: 48,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
+              border: "none",
+              boxShadow: "none",
             }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleLoupe1Click}
           >
-            <div
-              className="poi-icon"
+            <img
+              src="/fleche-retour.png"
+              alt="Retour"
               style={{
-                backgroundColor: "#698958",
-                color: "white",
+                width: 40,
+                height: 40,
+                objectFit: "contain",
+                display: "block",
               }}
-            >
-              <FaArrowLeft />
-            </div>
+            />
           </motion.div>
         </div>
       )}
@@ -393,20 +402,29 @@ export default function Scene2025({ onObjectClick }) {
               top: "25%",
               cursor: "pointer",
               zIndex: 110,
+              width: 48,
+              height: 48,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "transparent",
+              border: "none",
+              boxShadow: "none",
             }}
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             onClick={handleLoupe2Click}
           >
-            <div
-              className="poi-icon"
+            <img
+              src="/fleche-retour.png"
+              alt="Retour"
               style={{
-                backgroundColor: "#698958",
-                color: "white",
+                width: 40,
+                height: 40,
+                objectFit: "contain",
+                display: "block",
               }}
-            >
-              <FaArrowLeft />
-            </div>
+            />
           </motion.div>
         </div>
       )}
