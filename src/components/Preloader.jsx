@@ -28,6 +28,7 @@ export default function Preloader({ media, children, showLoader }) {
     });
   }, [media]);
 
+  // Affiche le spinner uniquement sur la landing page ET si loading
   if (loading && showLoader) {
     return (
       <div
@@ -66,6 +67,6 @@ export default function Preloader({ media, children, showLoader }) {
     );
   }
 
-  // Si loading mais showLoader === false, on ne bloque pas l'affichage
+  // Sur les autres pages, affiche le contenu même si loading
   return children;
 }
