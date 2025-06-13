@@ -82,8 +82,11 @@ function App() {
 
   const isActive = (path) => location.pathname === path;
 
+  // Affiche le loader uniquement sur la landing page "/"
+  const showLoader = location.pathname === "/";
+
   return (
-    <Preloader media={mediaToPreload}>
+    <Preloader media={mediaToPreload} showLoader={showLoader}>
       <div className="app">
         <RotatePhone />
         {showVideo ? (
