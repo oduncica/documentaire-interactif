@@ -1,19 +1,46 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import LanguesDrapeau from "./components/LanguesDrapeau";
 import HamburgerMenu from "./components/HamburgerMenu";
 import "./App.css";
-import { FaPlay } from "react-icons/fa";
+import {
+  FaPlay,
+  FaTimes,
+  FaHome,
+  FaFilm,
+  FaBook,
+  FaInfoCircle,
+  FaDoorOpen,
+} from "react-icons/fa";
 import { PiDoorOpenDuotone } from "react-icons/pi";
 import RotatePhone from "./components/RotatePhone";
 
-import { FaTimes, FaHome, FaFilm, FaBook, FaInfoCircle } from "react-icons/fa";
 export default function LandingPage() {
   const navigate = useNavigate();
+  const location = useLocation(); // Ajouté pour connaître la page active
   const [langue, setLangue] = useState("fr");
   const [showVideo, setShowVideo] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
+
+  const sidebarTexts = {
+    fr: {
+      home: "Accueil",
+      room: "The Room",
+      doc: "Le documentaire complet",
+      biblio: "Bibliographie",
+      scenes: "Scènes Complémentaires",
+      credit: "Crédit",
+    },
+    kr: {
+      home: "홈",
+      room: "방",
+      doc: "전체 다큐멘터리",
+      biblio: "참고문헌",
+      scenes: "추가 장면",
+      credit: "크레딧",
+    },
+  };
 
   const textes = {
     fr: {
@@ -32,8 +59,12 @@ export default function LandingPage() {
     },
   };
 
+  // Fonction utilitaire pour savoir si le lien est actif
+  const isActive = (path) => location.pathname === path;
+
   return (
     <div
+      className="app"
       style={{
         backgroundImage: "url('/home.png')",
         backgroundSize: "cover",
@@ -51,62 +82,73 @@ export default function LandingPage() {
     >
       <RotatePhone />
       {/* Menu hamburger en haut à gauche */}
-      <div
-        style={{
-          position: "absolute",
-          top: 20,
-          left: 20,
-          zIndex: 1001,
-        }}
-      >
-        <HamburgerMenu onClick={toggleSidebar} langue={langue} />{" "}
-      </div>
+      {!isSidebarOpen && (
+        <div
+          className="header"
+          style={{
+            position: "absolute",
+            top: 20,
+            left: 20,
+            zIndex: 1001,
+          }}
+        >
+          <HamburgerMenu onClick={toggleSidebar} langue={langue} />
+        </div>
+      )}
       {/* Menu latéral */}
-
       <div className={`sidebar${isSidebarOpen ? " open" : ""}`}>
-        {isSidebarOpen && (
-          <>
-            <div className="sidebar-header">
-              <button className="close-btn" onClick={toggleSidebar}>
-                <FaTimes size={30} color="#fff" />
-              </button>
-            </div>
-            <ul className="sidebar-menu">
-              <li
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                  navigate("/chambre");
-                }}
-              >
-                <FaHome size={20} /> <span>The Room</span>
-              </li>
-              <li
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                  setShowVideo(true);
-                }}
-              >
-                <FaFilm size={20} /> <span>Complete Documentary</span>
-              </li>
-              <li
-                onClick={() => {
-                  setIsSidebarOpen(false);
-                  navigate("/reveil");
-                }}
-              >
-                <FaBook size={20} /> <span>Bibliographie</span>
-              </li>
-              <li>
-                <FaInfoCircle size={20} /> <span>Scènes Complémentaires</span>
-              </li>
-              <li>
-                <FaInfoCircle size={20} /> <span>Crédit</span>
-              </li>
-            </ul>
-          </>
-        )}
+        <div className="sidebar-header">
+          <button className="close-btn" onClick={toggleSidebar}>
+            <FaTimes size={30} color="#fff" />
+          </button>
+        </div>
+        <ul className="sidebar-menu">
+          <li
+            className={isActive("/") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/");
+            }}
+          >
+            <FaHome size={20} /> <span>{sidebarTexts[langue].home}</span>
+          </li>
+          <li
+            className={isActive("/chambre") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/chambre");
+            }}
+          >
+            <FaDoorOpen size={20} /> <span>{sidebarTexts[langue].room}</span>
+          </li>
+          <li
+            className={showVideo ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              setShowVideo(true);
+            }}
+          >
+            <FaFilm size={20} /> <span>{sidebarTexts[langue].doc}</span>
+          </li>
+          <li
+            className={isActive("/reveil") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/reveil");
+            }}
+          >
+            <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
+          </li>
+          <li>
+            <FaInfoCircle size={20} />{" "}
+            <span>{sidebarTexts[langue].scenes}</span>
+          </li>
+          <li>
+            <FaInfoCircle size={20} />{" "}
+            <span>{sidebarTexts[langue].credit}</span>
+          </li>
+        </ul>
       </div>
-
       {/* Si la vidéo est affichée */}
       {showVideo ? (
         <div
@@ -284,7 +326,7 @@ export default function LandingPage() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          pointerEvents: "none", // pour ne pas gêner les clics sur le contenu
+          pointerEvents: "none",
           zIndex: 1001,
           padding: "0 32px",
         }}

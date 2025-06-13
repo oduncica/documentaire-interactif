@@ -178,6 +178,127 @@ Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider
 `,
           text: `Mais dans le système éducatif sud-coréen, les élèves ne sont pas les seuls touchés par ce fléau du suicide : les enseignants subissent également une forte pression de la part des parents d’élèves, allant même jusqu’à l’harcèlement. Entre 2015 et 2023, 168 enseignants se sont donné la mort. En été 2023, une jeune institutrice est retrouvée morte dans un placard de salle de classe, provoquant l’émoi de la communauté enseignante. Dans son journal, elle parle de cette souffrance silencieuse qui l’a conduit à passer à l’acte : “j'ai la poitrine trop serrée. Je me sens dépassée par la folie du travail’. Une grève nationale a lieu le 4 septembre 2023, pour dénoncer cette intimidation de la part des parents d’élèves, prêts à tout pour la réussite de leurs enfants. `,
         },
+        // Objet Calendrier 2025
+        // Objet uniforme 2025
+
+        // Objet pelluche 2025
+
+        {
+          img: "/peluche-1.png",
+          imgCredit: `The Teacher and his country school, 1900. 
+Source : lhan New, “When I was a boy in South Korea”, 1928.
+`,
+          title: "La culture réglementaire dès le plus jeune âge",
+          text: `La culture réglementaire dans l’éducation sud-coréenne commence très tôt : dès leurs premiers jours de classe, les écoliers se lancent dans la course à la réussite, la concurrence s’installe et il faut toujours faire mieux que son camarade. 
+
+Cette période est importante car on leur inculque différentes règles et normes sociales à respecter   : par exemple, les repas collectifs sont une manière d’apprendre aux enfants les bonnes manières à table, le tout dans un environnement où le collectif prime sur l’individu, et ceux dès la petite enfance. Ainsi, les enfants sud-coréens ont conscience que le respect des règles est essentiel pour le bon fonctionnement du groupe. 
+ `,
+        },
+        {
+          img: "/peluche-2.png",
+          imgCredit: `Des enfants sud-coréens suivent des cours privés à l'académie Jongno Hagwon, le 10 août 2016 à Séoul. ©AFP - YELIM LEE / AFP
+`,
+          text: `On les habitue également à la mémorisation : l’éducation sud-coréenne accorde beaucoup d’importance au fait d’apprendre par cœur une grande quantité de connaissances, au profit parfois de la créativité individuelle, même si cet aspect est en nette amélioration aujourd’hui comme on peut le voir à travers les entretiens. Les enfants sud-coréens sont envoyés dès l’âge de 4 ans dans les hagwon : ils sont ainsi éduqués à étudier après l’école (gwaweo, “études en dehors de l’école”), pendant de longues heures, à se réveiller tôt et à dormir tard. 
+
+Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, “habitués depuis l'enfance à étudier avec ardeur et sans relâche, les Coréens, sont, à l'âge adulte, capables de s'adapter à des conditions de travail nettement plus contraignantes que les nôtres”. `,
+        },
+        // Objet Ordinateur 2025
+
+        {
+          img: "/peluche-1.png",
+          imgCredit: `Des lycéens jouant dans un PC Bang. Source : committee.co.kr
+`,
+          title: "la Loi Cendrillon : la réglementation à travers les écrans :",
+          text: `Aujourd’hui, la Corée du Sud est l’un des pays les plus connectés du monde, leader mondial dans l’e-sport et l’innovation numérique. Les jeunes sud-coréens baignent alors naturellement dans cette culture numérique. Néanmoins, en 2011, le gouvernement a décidé qu’il était nécessaire de limiter aux plus jeunes le temps passé derrière les écrans : le  20 novembre 2011, l’Etat Sud-Coréen instaure la Shutdow Law, surnommée la “Loi Cendrillon”, qui interdit aux mineurs de moins de 16 ans de jouer à des jeux en ligne, entre minuit et 6 heures du matin. L’objectif derrière cette réglementation est de protéger le sommeil des adolescents et leur santé mentale. 
+
+ `,
+        },
+        {
+          img: "/peluche-2.png",
+          imgCredit: `Une animation qui représente bien l’ambiance des PC Bang. Source : YouTube
+`,
+          text: `Mais cette Loi Cendrillon en dit long sur la manière dont la jeunesse est perçue dans la société sud-coréenne : elle doit être contrôlée, surveillée, afin de les formater à leur future vie d’adulte. Les jeux vidéos sont ainsi perçus comme une possible cause d’échec scolaire, et doivent être strictement encadrés. Finalement, la loi est abrogée en 2021, après dix ans de débats : elle est perçue comme irréaliste au vu de l’omniprésence des écrans dans la vie des plus jeunes et facilement contournable par ces derniers. 
+
+Cette loi soulève alors des questions plus profondes : faut-il contrôler la jeunesse au-delà de la sphère scolaire ? Faut-il les limiter même durant leurs moments de liberté ? 
+ `,
+        },
+
+        // Objet Casque de musique 2025
+
+        {
+          img: "/casque-1.png",
+          imgCredit: `Une salle typique d’un noraebang. Source : mk.co.kr
+`,
+          title: "Les loisirs des lycéens en Corée du Sud :",
+          text: `Dans un système éducatif où la réussite scolaire est un gage de réussite sociale, les moments de liberté prennent une forme bien particulière. Pour les lycéens sud-coréens, les loisirs existent, mais ils sont souvent encadrés et passent en second-plan pour laisser place aux priorités scolaires. Les journées sont longues et rythmées par le bruit des pages qui tournent , mais entre deux révisions, les lycéens s’accordent des précieux moments de liberté dans des lieux de détente qui font partie intégrante de cette culture adolescente sud-coréenne : par exemple, les karaokés (noraebang), l’endroit idéal pour se défouler et exprimer ses émotions avec ses amis. 
+ `,
+        },
+        {
+          img: "/casque-2.png",
+          imgCredit: `Un PC Bang. Source : Seoul Insider Guide
+`,
+          text: `On retrouve également les fameux PC bang, des cybercafés haut de gamme, spécialisés dans le jeu vidéo en réseau : ce lieu est l’espace parfait pour s’évader du contexte scolaire ou familial, on peut y jouer pendant des heures et même consommer de la nourriture. Il sont accessibles jusqu’à tard le soir, mais certains établissements interdisent aux mineurs d’y rester après 22h (voir minuit selon les règles locales). 
+
+Ces lieux constituent des refuges temporaires contre le stress scolaire, et permettent aux lycéens d’oublier les révisions et les règles pendant quelques heures de liberté.
+ `,
+        },
+        //Objet photo 2025
+
+        {
+          img: "",
+          imgCredit: `Légende
+`,
+          title:
+            "Les études supérieures en Corée du Sud : un avenir sous haute tension",
+          text: `L’enseignement supérieur en Corée du Sud en 2025 reflète les paradoxes d’un pays à la pointe de l’innovation, mais toujours marqué par une compétition féroce. L’université reste perçue comme le passage obligé vers la réussite sociale. Les grandes écoles comme Seoul National University, Yonsei ou Korea University incarnent des sommets convoités, souvent inaccessibles sans des années de préparation intense.
+          
+          Malgré la démocratisation de l’accès à l’université depuis les années 1990, les inégalités se creusent. Le recours massif aux instituts privés (hagwons) accentue les écarts entre les familles aisées et les autres. Alors que le nombre d’élèves diminue à cause du vieillissement démographique, les frais de scolarité, eux, restent élevés, et la précarité étudiante devient une réalité de plus en plus visible.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `Légende
+`,
+          text: `Le système éducatif évolue pourtant. Des filières alternatives émergent : écoles d’ingénierie appliquée, formations hybrides mêlant design, IA et soft skills. L’enseignement devient plus flexible, certains cursus sont disponibles entièrement en ligne, et l’anglais s’impose peu à peu comme langue d’enseignement dans de nombreux programmes internationaux.
+
+Mais cette transformation a ses limites. La pression à la performance reste omniprésente. L’obsession du classement universitaire continue de dicter les choix d’orientation. De nombreux étudiants décrivent leur quotidien comme une course d’endurance, où l’échec n’a pas sa place. La santé mentale devient un enjeu majeur : anxiété, burnout, sentiment d’isolement sont en hausse, dans un environnement où l’on parle peu de vulnérabilité.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `Un PC Bang. Source : Seoul Insider Guide
+`,
+          text: `Mais derrière les chiffres d’admission et les façades vitrées des campus modernes, la vie étudiante se heurte à des contradictions. L’agenda est millimétré, rythmé par les crédits à valider, les examens, les stages, les certifications de langues et les concours. Beaucoup d’étudiant·es vivent loin de leurs familles, dans des logements exigus, cumulant parfois des petits boulots pour subvenir à leurs besoins. Les moments de pause sont rares, et les espaces de respiration encore trop peu valorisés dans une culture où l’efficacité prime sur le lâcher-prise.
+
+À l’image d’une photo en haute définition, l’université sud-coréenne de 2025 montre à la fois une façade de modernité éclatante et des zones d’ombre persistantes. Le défi pour les années à venir ? Réconcilier excellence académique, justice sociale et bien-être individuel.
+ `,
+        },
+        //Sac de cours 2025
+
+        {
+          img: "",
+          imgCredit: `Légende
+`,
+          title:
+            "Ce que porte un élève en 2025 : vers une école à plusieurs vitesses",
+          text: `Le sac à dos d’un élève sud-coréen en 2025 ne contient plus seulement des manuels. Il transporte avec lui des tablettes, des stylos électroniques, des carnets de projets, des écouteurs pour les cours en ligne et, parfois, une batterie externe pour survivre à une journée d’apprentissage connecté. Le numérique s’est imposé comme un outil pédagogique central, avec des plateformes d'exercices interactifs, des manuels numériques et des évaluations en ligne qui rythment désormais le quotidien scolaire.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `Légende
+`,
+          text: `Mais au-delà des outils, ce sont les contenus et les attentes qui ont profondément changé. Si les fondamentaux — mathématiques, sciences, langues — restent incontournables, on voit émerger dans certains établissements des modules d’intelligence émotionnelle, de coopération, de développement durable ou de culture numérique. Des matières naguère considérées comme périphériques deviennent stratégiques dans un monde où l’adaptabilité, la communication et la pensée critique sont des compétences clés.
+Cette évolution, cependant, n’est pas homogène. Le contraste est frappant entre les écoles bien dotées, souvent situées dans les quartiers favorisés ou les villes majeures, et celles qui peinent encore à se moderniser. Là où certains élèves apprennent à coder dès le primaire, d’autres doivent partager un seul ordinateur pour toute une classe. Cette fracture technologique renforce des inégalités déjà présentes dans un système où la performance scolaire reste le critère principal de réussite.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `Un PC Bang. Source : Seoul Insider Guide
+`,
+          text: `À cela s’ajoute une pression invisible, mais bien réelle : celle de devoir maîtriser toujours plus de choses, plus tôt, et plus vite. Le sac à dos devient alors le symbole d’une charge mentale croissante, entre attentes académiques, pression sociale et gestion des émotions. Il ne pèse pas qu’en kilos : il pèse en silence, en fatigue, en doutes. Et pourtant, il contient aussi l’espoir d’une école qui commence à s’ouvrir à d’autres formes de savoir, plus humaines, plus inclusives, plus ancrées dans le réel.
+ `,
+        },
       ],
     },
     kr: {

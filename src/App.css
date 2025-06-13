@@ -112,7 +112,11 @@
   cursor: pointer;
   /* z-index: 1000; */
 }
-
+.sidebar-menu li.active {
+  /* text-decoration: underline; */
+  font-weight: bold;
+  color: #698958;
+}
 /* Barre latérale */
 .sidebar {
   position: fixed;

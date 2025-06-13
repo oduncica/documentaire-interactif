@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaSearch, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
+import {
+  FaSearch,
+  FaPlay,
+  FaInfoCircle,
+  FaTimes,
+  FaArrowLeft,
+} from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 
@@ -153,12 +159,11 @@ export default function Scene1980({ onObjectClick }) {
         padding: "12px",
         cursor: "pointer",
         zIndex: 10,
-        transform: "translate(-50%, -50%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
-      // whileHover={{ scale: 1.2 }}
+      whileHover={{ scale: 1.2 }}
       onClick={handleLoupe1Click}
     >
       <FaSearch size={24} color="#fff" />
@@ -179,12 +184,11 @@ export default function Scene1980({ onObjectClick }) {
         padding: "12px",
         cursor: "pointer",
         zIndex: 10,
-        transform: "translate(-50%, -50%)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
       }}
-      // whileHover={{ scale: 1.2 }}
+      whileHover={{ scale: 1.2 }}
       onClick={handleLoupe2Click}
     >
       <FaSearch size={24} color="#fff" />
@@ -221,27 +225,31 @@ export default function Scene1980({ onObjectClick }) {
       {stage === "video1" && (
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             top: 0,
             left: 0,
             width: "100vw",
             height: "100vh",
-            overflow: "hidden",
-            backgroundColor: "black",
+            zIndex: 100,
+            pointerEvents: "auto",
           }}
         >
-          <ReactPlayer
-            url="/chambre-1-a-bureau.mp4" // Remplace par ta vidéo 1
-            playing
-            controls={false}
+          <video
+            src="/chambre-1-a-bureau.mp4"
+            autoPlay
             onEnded={() => setStage("detail1")}
-            width="100%"
-            height="100%"
             style={{
-              position: "absolute",
+              position: "fixed",
               top: 0,
               left: 0,
+              width: "100vw",
+              height: "100vh",
               objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              background: "black",
+              zIndex: 101,
             }}
           />
         </div>
@@ -250,7 +258,7 @@ export default function Scene1980({ onObjectClick }) {
         <div
           className="zoomed-image"
           style={{
-            backgroundImage: "url(/chambre-1980-bureau.png)", // Remplace par ton image de détail 1
+            backgroundImage: "url(/chambre-1980-bureau.png)",
             width: "100%",
             height: "100%",
             backgroundSize: "cover",
@@ -258,8 +266,32 @@ export default function Scene1980({ onObjectClick }) {
             position: "relative",
           }}
         >
-          {renderLoupe1()}
+          {/* Icônes interactives */}
           {renderIcons(detailInteractiveObjects)}
+          {/* Flèche retour à la place de la loupe */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "80%",
+              top: "20%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleLoupe1Click}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#698958",
+                color: "white",
+              }}
+            >
+              <FaArrowLeft />
+            </div>
+          </motion.div>
         </div>
       )}
 
@@ -267,27 +299,31 @@ export default function Scene1980({ onObjectClick }) {
       {stage === "video2" && (
         <div
           style={{
-            position: "absolute",
+            position: "fixed",
             top: 0,
             left: 0,
             width: "100vw",
             height: "100vh",
-            overflow: "hidden",
-            backgroundColor: "black",
+            zIndex: 100,
+            pointerEvents: "auto",
           }}
         >
-          <ReactPlayer
-            url="/chambre-1-a-biblio.mp4" // Remplace par ta vidéo 2
-            playing
-            controls={false}
+          <video
+            src="/chambre-1-a-biblio.mp4"
+            autoPlay
             onEnded={() => setStage("detail2")}
-            width="100%"
-            height="100%"
             style={{
-              position: "absolute",
+              position: "fixed",
               top: 0,
               left: 0,
+              width: "100vw",
+              height: "100vh",
               objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              background: "black",
+              zIndex: 101,
             }}
           />
         </div>
@@ -296,7 +332,7 @@ export default function Scene1980({ onObjectClick }) {
         <div
           className="zoomed-image"
           style={{
-            backgroundImage: "url(/chambre-1980-biblio.png)", // Remplace par ton image de détail 2
+            backgroundImage: "url(/chambre-1980-biblio.png)",
             width: "100%",
             height: "100%",
             backgroundSize: "cover",
@@ -304,8 +340,32 @@ export default function Scene1980({ onObjectClick }) {
             position: "relative",
           }}
         >
-          {renderLoupe2()}
+          {/* Icônes interactives */}
           {renderIcons(detail2InteractiveObjects)}
+          {/* Flèche retour à la place de la loupe */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "75%",
+              top: "25%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleLoupe2Click}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#698958",
+                color: "white",
+              }}
+            >
+              <FaArrowLeft />
+            </div>
+          </motion.div>
         </div>
       )}
 

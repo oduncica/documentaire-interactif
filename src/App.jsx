@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import SceneManager from "./components/SceneManager";
 import LanguesDrapeau from "./components/LanguesDrapeau";
 import HamburgerMenu from "./components/HamburgerMenu";
@@ -12,12 +12,14 @@ import {
   FaFilm,
   FaBook,
   FaInfoCircle,
+  FaDoorOpen, // Ajout de l'icône porte ouverte
 } from "react-icons/fa";
 import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const location = useLocation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedYear, setSelectedYear] = useState("1980");
   const [showVideo, setShowVideo] = useState(false); // État pour afficher la vidéo
@@ -43,20 +45,27 @@ function App() {
 
   const sidebarTexts = {
     fr: {
+      home: "Accueil",
       room: "The Room",
       doc: "Complete Documentary",
       biblio: "Bibliographie",
       scenes: "Scènes Complémentaires",
       credit: "Crédit",
+      close: "Fermer",
     },
     kr: {
+      home: "홈",
       room: "방",
       doc: "전체 다큐멘터리",
       biblio: "참고문헌",
       scenes: "추가 장면",
       credit: "크레딧",
+      close: "닫기",
     },
   };
+
+  // Fonction utilitaire pour savoir si le lien est actif
+  const isActive = (path) => location.pathname === path;
 
   return (
     <div className="app">
@@ -121,7 +130,6 @@ function App() {
               transition: "background 0.2s",
             }}
             aria-label="Fermer"
-            title="Fermer"
           >
             <FaTimes size={22} />
           </button>
@@ -149,19 +157,45 @@ function App() {
             <div className="sidebar-header">
               <button className="close-btn" onClick={toggleSidebar}>
                 <FaTimes size={30} color="#fff" />
-                <span style={{ marginLeft: 8 }}>
-                  {sidebarTexts[langue].close}
-                </span>
+                {/* <span style={{ marginLeft: 8 }}>{sidebarTexts[langue].close}</span> */}
               </button>
             </div>
             <ul className="sidebar-menu">
-              <li onClick={() => navigate("/chambre")}>
-                <FaHome size={20} /> <span>{sidebarTexts[langue].room}</span>
+              <li
+                className={isActive("/") ? "active" : ""}
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  navigate("/");
+                }}
+              >
+                <FaHome size={20} /> <span>{sidebarTexts[langue].home}</span>
               </li>
-              <li onClick={() => setShowVideo(true)}>
+              <li
+                className={isActive("/chambre") ? "active" : ""}
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  navigate("/chambre");
+                }}
+              >
+                <FaDoorOpen size={20} />{" "}
+                <span>{sidebarTexts[langue].room}</span>
+              </li>
+              <li
+                className={showVideo ? "active" : ""}
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  setShowVideo(true);
+                }}
+              >
                 <FaFilm size={20} /> <span>{sidebarTexts[langue].doc}</span>
               </li>
-              <li onClick={() => navigate("/reveil")}>
+              <li
+                className={isActive("/reveil") ? "active" : ""}
+                onClick={() => {
+                  setIsSidebarOpen(false);
+                  navigate("/reveil");
+                }}
+              >
                 <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
               </li>
               <li>

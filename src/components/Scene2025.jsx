@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaPlay, FaInfoCircle, FaSearch } from "react-icons/fa";
+import { FaPlay, FaInfoCircle, FaSearch, FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene2025({ onObjectClick }) {
   const [showVideo, setShowVideo] = useState(false);
-  const [loupeStage, setLoupeStage] = useState("initial"); //
-  // 'initial' | 'video' | 'detail'
+
+  // Gestion des deux loupes
+  const [loupe1Stage, setLoupe1Stage] = useState("initial"); // 'initial' | 'video' | 'detail'
+  const [loupe2Stage, setLoupe2Stage] = useState("initial"); // 'initial' | 'video' | 'detail'
+
   const navigate = useNavigate();
 
-  // Ajout des nouvelles icônes dans le tableau, sans changer leur style ni leur taille
+  // Objets interactifs (inchangé)
   const interactiveObjects = [
     {
       id: "2025-1",
@@ -31,11 +34,10 @@ export default function Scene2025({ onObjectClick }) {
       id: "2025-3",
       x: "87%",
       y: "62%",
-      icon: <FaInfoCircle />, // <-- parenthèse fermante ici !
+      icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/14"),
       bgColor: "#A96860",
     },
-    // Nouvelle icône info
     {
       id: "info-2025",
       x: "55%",
@@ -44,39 +46,69 @@ export default function Scene2025({ onObjectClick }) {
       action: () => alert("Info uniforme"),
       bgColor: "#A96860",
     },
-    // Nouvelle icône play
   ];
 
-  // Icône loupe avec cycle vidéo > détail > retour
-  const handleLoupeClick = () => {
-    if (loupeStage === "initial") setLoupeStage("video");
-    else if (loupeStage === "video") setLoupeStage("detail");
-    else if (loupeStage === "detail") setLoupeStage("initial");
+  // Gestion du cycle pour chaque loupe
+  const handleLoupe1Click = () => {
+    if (loupe1Stage === "initial") setLoupe1Stage("video");
+    else if (loupe1Stage === "video") setLoupe1Stage("detail");
+    else if (loupe1Stage === "detail") setLoupe1Stage("initial");
+  };
+  const handleLoupe2Click = () => {
+    if (loupe2Stage === "initial") setLoupe2Stage("video");
+    else if (loupe2Stage === "video") setLoupe2Stage("detail");
+    else if (loupe2Stage === "detail") setLoupe2Stage("initial");
   };
 
-  // const renderLoupeIcon = () => (
-  //   <motion.div
-  //     className="loupe-icon"
-  //     style={{
-  //       position: "absolute",
-  //       top: "60%",
-  //       left: "60%",
-  //       backgroundColor: "#698958",
-  //       color: "white",
-  //       borderRadius: "50%",
-  //       padding: "12px",
-  //       cursor: "pointer",
-  //       zIndex: 10,
-  //       display: "flex",
-  //       alignItems: "center",
-  //       justifyContent: "center",
-  //     }}
-  //     onClick={handleLoupeClick}
-  //   >
-  //     <FaSearch size={24} color="#fff" />
-  //   </motion.div>
-  // );
+  // Rendu des deux loupes
+  const renderLoupe1 = () => (
+    <motion.div
+      className="loupe-icon"
+      style={{
+        position: "absolute",
+        top: "38%",
+        left: "48%",
+        backgroundColor: "#698958",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      whileHover={{ scale: 1.2 }}
+      onClick={handleLoupe1Click}
+    >
+      <FaSearch size={24} color="#fff" />
+    </motion.div>
+  );
+  const renderLoupe2 = () => (
+    <motion.div
+      className="loupe-icon"
+      style={{
+        position: "absolute",
+        top: "35%",
+        left: "65%",
+        backgroundColor: "#698958",
+        color: "white",
+        borderRadius: "50%",
+        padding: "12px",
+        cursor: "pointer",
+        zIndex: 10,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      whileHover={{ scale: 1.2 }}
+      onClick={handleLoupe2Click}
+    >
+      <FaSearch size={24} color="#fff" />
+    </motion.div>
+  );
 
+  // Affichage principal
   return (
     <div
       className="scene-container"
@@ -89,34 +121,16 @@ export default function Scene2025({ onObjectClick }) {
         position: "relative",
       }}
     >
-      {interactiveObjects.map((obj) => (
-        <motion.div
-          key={obj.id}
-          className="interactive-object"
-          style={{
-            position: "absolute",
-            left: obj.x,
-            top: obj.y,
-            cursor: "pointer",
-            zIndex: 10,
-          }}
-          whileHover={{ scale: 1.2 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={obj.action}
-        >
-          <div
-            className="poi-icon"
-            style={{
-              backgroundColor: obj.bgColor,
-            }}
-          >
-            {obj.icon}
-          </div>
-        </motion.div>
-      ))}
+      {/* Affichage des loupes si elles sont à l'état initial */}
+      {loupe1Stage === "initial" && loupe2Stage === "initial" && (
+        <>
+          {renderLoupe1()}
+          {renderLoupe2()}
+        </>
+      )}
 
-      {/* {loupeStage === "initial" && renderLoupeIcon()} */}
-      {loupeStage === "video" && (
+      {/* Loupe 1 : vidéo puis image détail */}
+      {loupe1Stage === "video" && (
         <div
           style={{
             position: "fixed",
@@ -132,14 +146,25 @@ export default function Scene2025({ onObjectClick }) {
           }}
         >
           <video
-            src="/video-loupe-2025.mp4"
+            src="/chambre-2-a-biblio.mp4"
             autoPlay
-            onEnded={() => setLoupeStage("detail")}
-            style={{ width: "80vw", height: "auto", borderRadius: "12px" }}
+            onEnded={() => setLoupe1Stage("detail")}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              background: "black",
+            }}
           />
         </div>
       )}
-      {loupeStage === "detail" && (
+      {loupe1Stage === "detail" && (
         <div
           style={{
             position: "fixed",
@@ -153,21 +178,269 @@ export default function Scene2025({ onObjectClick }) {
             justifyContent: "center",
             alignItems: "center",
           }}
-          onClick={handleLoupeClick}
         >
           <img
-            src="/detail-loupe-2025.png"
-            alt="Détail loupe"
+            src="/chambre-2025-biblio.png"
+            alt="Détail loupe 1"
             style={{
-              maxWidth: "80vw",
-              maxHeight: "80vh",
-              borderRadius: "12px",
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              cursor: "default",
+              zIndex: 101,
+            }}
+          />
+          {/* Icônes positionnables individuellement */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "30%",
+              top: "40%",
               cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => alert("Information sur le détail")}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#A96860",
+                color: "white",
+              }}
+            >
+              <FaInfoCircle />
+            </div>
+          </motion.div>
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "50%",
+              top: "60%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => alert("Lecture d'une vidéo ou action play")}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#5E9197",
+                color: "white",
+              }}
+            >
+              <FaPlay />
+            </div>
+          </motion.div>
+          {/* Flèche retour à la place de la loupe */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "80%",
+              top: "20%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleLoupe1Click}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#698958",
+                color: "white",
+              }}
+            >
+              <FaArrowLeft />
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Loupe 2 : vidéo puis image détail */}
+      {loupe2Stage === "video" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.9)",
+            zIndex: 100,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <video
+            src="/chambre-2-a-bureau.mp4"
+            autoPlay
+            onEnded={() => setLoupe2Stage("detail")}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              background: "black",
             }}
           />
         </div>
       )}
+      {loupe2Stage === "detail" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            background: "rgba(0,0,0,0.7)",
+            zIndex: 100,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <img
+            src="/chambre-2025-bureau.png"
+            alt="Détail loupe 2"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: "100vh",
+              objectFit: "cover",
+              borderRadius: 0,
+              margin: 0,
+              padding: 0,
+              cursor: "default",
+              zIndex: 101,
+            }}
+          />
+          {/* Icônes positionnables individuellement */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "35%",
+              top: "45%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => alert("Information sur le détail")}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#A96860",
+                color: "white",
+              }}
+            >
+              <FaInfoCircle />
+            </div>
+          </motion.div>
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "55%",
+              top: "65%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => alert("Lecture d'une vidéo ou action play")}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#5E9197",
+                color: "white",
+              }}
+            >
+              <FaPlay />
+            </div>
+          </motion.div>
+          {/* Flèche retour à la place de la loupe */}
+          <motion.div
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: "75%",
+              top: "25%",
+              cursor: "pointer",
+              zIndex: 110,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleLoupe2Click}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: "#698958",
+                color: "white",
+              }}
+            >
+              <FaArrowLeft />
+            </div>
+          </motion.div>
+        </div>
+      )}
 
+      {/* Les autres objets interactifs */}
+      {loupe1Stage === "initial" &&
+        loupe2Stage === "initial" &&
+        interactiveObjects.map((obj) => (
+          <motion.div
+            key={obj.id}
+            className="interactive-object"
+            style={{
+              position: "absolute",
+              left: obj.x,
+              top: obj.y,
+              cursor: "pointer",
+              zIndex: 10,
+            }}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={obj.action}
+          >
+            <div
+              className="poi-icon"
+              style={{
+                backgroundColor: obj.bgColor,
+              }}
+            >
+              {obj.icon}
+            </div>
+          </motion.div>
+        ))}
+
+      {/* ...reste du code inchangé pour showVideo... */}
       {showVideo && (
         <div
           style={{
