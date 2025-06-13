@@ -12,20 +12,19 @@ import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
   const [stage, setStage] = useState("initial");
+  const [pendingDetail, setPendingDetail] = useState(null); // "detail1" ou "detail2" ou null
   const navigate = useNavigate();
   const [showAllIcons, setShowAllIcons] = useState(false);
 
   // Loupe 1
   const handleLoupe1Click = () => {
     if (stage === "initial") setStage("video1");
-    else if (stage === "video1") setStage("detail1");
     else if (stage === "detail1") setStage("initial");
   };
 
   // Loupe 2
   const handleLoupe2Click = () => {
     if (stage === "initial") setStage("video2");
-    else if (stage === "video2") setStage("detail2");
     else if (stage === "detail2") setStage("initial");
   };
 
@@ -202,8 +201,8 @@ export default function Scene1980({ onObjectClick }) {
       className="scene-container"
       style={{ width: "100%", height: "100%", position: "relative" }}
     >
-      {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
-      {stage === "initial" && (
+      {/* IMAGE PRINCIPALE */}
+      {stage === "initial" && !pendingDetail && (
         <div
           className="initial-image"
           style={{
@@ -237,7 +236,13 @@ export default function Scene1980({ onObjectClick }) {
           <video
             src="/chambre-1-a-bureau.mp4"
             autoPlay
-            onEnded={() => setStage("detail1")}
+            onEnded={() => {
+              setPendingDetail("detail1");
+              setTimeout(() => {
+                setStage("detail1");
+                setPendingDetail(null);
+              }, 10); // 10ms pour éviter le flash
+            }}
             style={{
               position: "fixed",
               top: 0,
@@ -254,7 +259,8 @@ export default function Scene1980({ onObjectClick }) {
           />
         </div>
       )}
-      {stage === "detail1" && (
+      {/* Affichage direct de l'image de détail sans repasser par la scène principale */}
+      {(stage === "detail1" || pendingDetail === "detail1") && (
         <div
           className="zoomed-image"
           style={{
@@ -266,9 +272,7 @@ export default function Scene1980({ onObjectClick }) {
             position: "relative",
           }}
         >
-          {/* Icônes interactives */}
           {renderIcons(detailInteractiveObjects)}
-          {/* Flèche retour à la place de la loupe */}
           <motion.div
             className="interactive-object"
             style={{
@@ -320,7 +324,13 @@ export default function Scene1980({ onObjectClick }) {
           <video
             src="/chambre-1-a-biblio.mp4"
             autoPlay
-            onEnded={() => setStage("detail2")}
+            onEnded={() => {
+              setPendingDetail("detail2");
+              setTimeout(() => {
+                setStage("detail2");
+                setPendingDetail(null);
+              }, 10);
+            }}
             style={{
               position: "fixed",
               top: 0,
@@ -337,7 +347,7 @@ export default function Scene1980({ onObjectClick }) {
           />
         </div>
       )}
-      {stage === "detail2" && (
+      {(stage === "detail2" || pendingDetail === "detail2") && (
         <div
           className="zoomed-image"
           style={{
@@ -349,9 +359,7 @@ export default function Scene1980({ onObjectClick }) {
             position: "relative",
           }}
         >
-          {/* Icônes interactives */}
           {renderIcons(detail2InteractiveObjects)}
-          {/* Flèche retour à la place de la loupe */}
           <motion.div
             className="interactive-object"
             style={{
