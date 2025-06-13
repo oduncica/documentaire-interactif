@@ -1,21 +1,31 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { FaPlay, FaInfoCircle, FaSearch, FaArrowLeft } from "react-icons/fa";
+import { FaPlay, FaInfoCircle, FaSearch, FaTimes } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene2025({ onObjectClick }) {
-  const [showVideo, setShowVideo] = useState(false);
-
-  // Gestion des deux loupes
-  const [loupe1Stage, setLoupe1Stage] = useState("initial"); // 'initial' | 'video' | 'detail'
-  const [loupe2Stage, setLoupe2Stage] = useState("initial"); // 'initial' | 'video' | 'detail'
-
+  const [stage, setStage] = useState("initial");
   const navigate = useNavigate();
 
-  // Objets interactifs (inchangé)
-  const interactiveObjects = [
+  // Loupe 1
+  const handleLoupe1Click = () => {
+    if (stage === "initial") setStage("video1");
+    else if (stage === "detail1") setStage("initial");
+  };
+
+  // Loupe 2
+  const handleLoupe2Click = () => {
+    if (stage === "initial") setStage("video2");
+    else if (stage === "detail2") setStage("initial");
+  };
+
+  const closeVimeoVideo = () => {
+    setStage("initial");
+  };
+
+  const initialInteractiveObjects = [
     {
-      id: "2025-1",
+      id: "init-1",
       x: "16%",
       y: "50%",
       icon: <FaPlay />,
@@ -23,15 +33,15 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#5E9197",
     },
     {
-      id: "2025-2",
+      id: "init-2",
       x: "48%",
       y: "35%",
       icon: <FaPlay />,
-      action: () => setShowVideo(true),
+      action: () => setStage("video-vimeo"),
       bgColor: "#5E9197",
     },
     {
-      id: "2025-3",
+      id: "init-3",
       x: "87%",
       y: "62%",
       icon: <FaInfoCircle />,
@@ -48,26 +58,80 @@ export default function Scene2025({ onObjectClick }) {
     },
   ];
 
-  // Gestion du cycle pour chaque loupe
-  const handleLoupe1Click = () => {
-    if (loupe1Stage === "initial") setLoupe1Stage("video");
-    else if (loupe1Stage === "video") setLoupe1Stage("detail");
-    else if (loupe1Stage === "detail") setLoupe1Stage("initial");
-  };
-  const handleLoupe2Click = () => {
-    if (loupe2Stage === "initial") setLoupe2Stage("video");
-    else if (loupe2Stage === "video") setLoupe2Stage("detail");
-    else if (loupe2Stage === "detail") setLoupe2Stage("initial");
-  };
+  const detail1InteractiveObjects = [
+    {
+      id: "detail1-1",
+      x: "30%",
+      y: "40%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Information sur le détail 1"),
+      bgColor: "#A96860",
+    },
+    {
+      id: "detail1-2",
+      x: "50%",
+      y: "60%",
+      icon: <FaPlay />,
+      action: () => alert("Lecture d'une vidéo ou action play"),
+      bgColor: "#5E9197",
+    },
+  ];
 
-  // Rendu des deux loupes
+  const detail2InteractiveObjects = [
+    {
+      id: "detail2-1",
+      x: "35%",
+      y: "45%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Information sur le détail 2"),
+      bgColor: "#A96860",
+    },
+    {
+      id: "detail2-2",
+      x: "55%",
+      y: "65%",
+      icon: <FaPlay />,
+      action: () => alert("Lecture d'une vidéo ou action play"),
+      bgColor: "#5E9197",
+    },
+  ];
+
+  const renderIcons = (objects) =>
+    objects.map((obj) => (
+      <motion.div
+        key={obj.id}
+        className="interactive-object"
+        style={{
+          left: obj.x,
+          top: obj.y,
+          position: "absolute",
+          cursor: "pointer",
+          zIndex: 10,
+        }}
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={obj.action}
+      >
+        <div
+          className="poi-icon"
+          style={{
+            backgroundColor: obj.bgColor,
+            color: obj.color || "white",
+          }}
+        >
+          {obj.icon}
+        </div>
+      </motion.div>
+    ));
+
+  // Loupe 1
   const renderLoupe1 = () => (
     <motion.div
-      className="loupe-icon"
+      className="eye-icon"
       style={{
         position: "absolute",
-        top: "38%",
-        left: "48%",
+        top: "45%",
+        left: "47%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -84,13 +148,15 @@ export default function Scene2025({ onObjectClick }) {
       <FaSearch size={24} color="#fff" />
     </motion.div>
   );
+
+  // Loupe 2
   const renderLoupe2 = () => (
     <motion.div
-      className="loupe-icon"
+      className="eye-icon"
       style={{
         position: "absolute",
-        top: "35%",
-        left: "65%",
+        top: "46%",
+        left: "67%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -108,29 +174,28 @@ export default function Scene2025({ onObjectClick }) {
     </motion.div>
   );
 
-  // Affichage principal
+  // Fond de la chambre toujours visible
+  const backgroundStyle = {
+    background: `url(/chambre-2025.png) center/cover no-repeat`,
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    transition: "background 0.2s",
+  };
+
   return (
-    <div
-      className="scene-container"
-      style={{
-        backgroundImage: "url(/chambre-2025.png)",
-        width: "100%",
-        height: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        position: "relative",
-      }}
-    >
-      {/* Affichage des loupes si elles sont à l'état initial */}
-      {loupe1Stage === "initial" && loupe2Stage === "initial" && (
+    <div className="scene-container" style={backgroundStyle}>
+      {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
+      {stage === "initial" && (
         <>
           {renderLoupe1()}
           {renderLoupe2()}
+          {renderIcons(initialInteractiveObjects)}
         </>
       )}
 
-      {/* Loupe 1 : vidéo puis image détail */}
-      {loupe1Stage === "video" && (
+      {/* LOUPE 1 : vidéo puis détail */}
+      {stage === "video1" && (
         <div
           style={{
             position: "fixed",
@@ -138,112 +203,56 @@ export default function Scene2025({ onObjectClick }) {
             left: 0,
             width: "100vw",
             height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.9)",
             zIndex: 100,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            pointerEvents: "auto",
+            background: "black",
+            margin: 0,
+            padding: 0,
+            border: "none",
+            overflow: "hidden",
           }}
         >
           <video
             src="/chambre-2-a-biblio.mp4"
             autoPlay
-            onEnded={() => setLoupe1Stage("detail")}
+            onEnded={() => setStage("detail1")}
             style={{
               position: "fixed",
-              top: 0,
-              left: 0,
               width: "100vw",
               height: "100vh",
               objectFit: "cover",
-              borderRadius: 0,
+              border: "none",
               margin: 0,
               padding: 0,
               background: "black",
+              display: "block",
+              boxSizing: "border-box",
+              overflow: "hidden",
+
+              position: "fixed",
+              inset: 0,
+              transform: "scale(1.1)",
+              zIndex: 1000,
             }}
           />
         </div>
       )}
-      {loupe1Stage === "detail" && (
+      {stage === "detail1" && (
         <div
+          className="zoomed-image"
           style={{
+            backgroundImage: "url(/chambre-2025-biblio.png)",
+            width: "100vw",
+            height: "100vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             position: "fixed",
             top: 0,
             left: 0,
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(0,0,0,0.7)",
-            zIndex: 100,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            zIndex: 102,
           }}
         >
-          <img
-            src="/chambre-2025-biblio.png"
-            alt="Détail loupe 1"
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              objectFit: "cover",
-              borderRadius: 0,
-              margin: 0,
-              padding: 0,
-              cursor: "default",
-              zIndex: 101,
-            }}
-          />
-          {/* Icônes positionnables individuellement */}
-          <motion.div
-            className="interactive-object"
-            style={{
-              position: "absolute",
-              left: "30%",
-              top: "40%",
-              cursor: "pointer",
-              zIndex: 110,
-            }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => alert("Information sur le détail")}
-          >
-            <div
-              className="poi-icon"
-              style={{
-                backgroundColor: "#A96860",
-                color: "white",
-              }}
-            >
-              <FaInfoCircle />
-            </div>
-          </motion.div>
-          <motion.div
-            className="interactive-object"
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "60%",
-              cursor: "pointer",
-              zIndex: 110,
-            }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => alert("Lecture d'une vidéo ou action play")}
-          >
-            <div
-              className="poi-icon"
-              style={{
-                backgroundColor: "#5E9197",
-                color: "white",
-              }}
-            >
-              <FaPlay />
-            </div>
-          </motion.div>
-          {/* Flèche retour à la place de la loupe */}
+          {renderIcons(detail1InteractiveObjects)}
           <motion.div
             className="interactive-object"
             style={{
@@ -279,121 +288,66 @@ export default function Scene2025({ onObjectClick }) {
         </div>
       )}
 
-      {/* Loupe 2 : vidéo puis image détail */}
-      {loupe2Stage === "video" && (
+      {/* LOUPE 2 : vidéo puis détail */}
+      {stage === "video2" && (
         <div
           style={{
             position: "fixed",
             top: 0,
             left: 0,
-            width: "100vw",
-            height: "100vh",
-            backgroundColor: "rgba(0,0,0,0.9)",
-            zIndex: 100,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            pointerEvents: "auto",
+            background: "black",
+            margin: 0,
+            padding: 0,
+            border: "none",
+            overflow: "hidden",
+
+            inset: 0,
+            objectFit: "cover",
+            transform: "scale(1.1)",
+            zIndex: 1000,
           }}
         >
           <video
             src="/chambre-2-a-bureau.mp4"
             autoPlay
-            onEnded={() => setLoupe2Stage("detail")}
+            onEnded={() => setStage("detail2")}
             style={{
               position: "fixed",
-              top: 0,
-              left: 0,
+              inset: 0,
               width: "100vw",
               height: "100vh",
               objectFit: "cover",
-              borderRadius: 0,
+              border: "none",
               margin: 0,
               padding: 0,
               background: "black",
+              zIndex: 101,
+              display: "block",
+              boxSizing: "border-box",
+              overflow: "hidden",
             }}
           />
         </div>
       )}
-      {loupe2Stage === "detail" && (
+      {stage === "detail2" && (
         <div
+          className="zoomed-image"
           style={{
+            backgroundImage: "url(/chambre-2025-bureau.png)",
+            width: "100vw",
+            height: "100vh",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             position: "fixed",
             top: 0,
             left: 0,
-            width: "100vw",
-            height: "100vh",
-            background: "rgba(0,0,0,0.7)",
-            zIndex: 100,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
+            zIndex: 102,
           }}
         >
-          <img
-            src="/chambre-2025-bureau.png"
-            alt="Détail loupe 2"
-            style={{
-              position: "fixed",
-              top: 0,
-              left: 0,
-              width: "100vw",
-              height: "100vh",
-              objectFit: "cover",
-              borderRadius: 0,
-              margin: 0,
-              padding: 0,
-              cursor: "default",
-              zIndex: 101,
-            }}
-          />
-          {/* Icônes positionnables individuellement */}
-          <motion.div
-            className="interactive-object"
-            style={{
-              position: "absolute",
-              left: "35%",
-              top: "45%",
-              cursor: "pointer",
-              zIndex: 110,
-            }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => alert("Information sur le détail")}
-          >
-            <div
-              className="poi-icon"
-              style={{
-                backgroundColor: "#A96860",
-                color: "white",
-              }}
-            >
-              <FaInfoCircle />
-            </div>
-          </motion.div>
-          <motion.div
-            className="interactive-object"
-            style={{
-              position: "absolute",
-              left: "55%",
-              top: "65%",
-              cursor: "pointer",
-              zIndex: 110,
-            }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => alert("Lecture d'une vidéo ou action play")}
-          >
-            <div
-              className="poi-icon"
-              style={{
-                backgroundColor: "#5E9197",
-                color: "white",
-              }}
-            >
-              <FaPlay />
-            </div>
-          </motion.div>
-          {/* Flèche retour à la place de la loupe */}
+          {renderIcons(detail2InteractiveObjects)}
           <motion.div
             className="interactive-object"
             style={{
@@ -429,37 +383,8 @@ export default function Scene2025({ onObjectClick }) {
         </div>
       )}
 
-      {/* Les autres objets interactifs */}
-      {loupe1Stage === "initial" &&
-        loupe2Stage === "initial" &&
-        interactiveObjects.map((obj) => (
-          <motion.div
-            key={obj.id}
-            className="interactive-object"
-            style={{
-              position: "absolute",
-              left: obj.x,
-              top: obj.y,
-              cursor: "pointer",
-              zIndex: 10,
-            }}
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={obj.action}
-          >
-            <div
-              className="poi-icon"
-              style={{
-                backgroundColor: obj.bgColor,
-              }}
-            >
-              {obj.icon}
-            </div>
-          </motion.div>
-        ))}
-
-      {/* ...reste du code inchangé pour showVideo... */}
-      {showVideo && (
+      {/* Vimeo vidéos : le fond chambre reste visible */}
+      {stage === "video-vimeo" && (
         <div
           style={{
             position: "fixed",
@@ -502,10 +427,10 @@ export default function Scene2025({ onObjectClick }) {
               title="S9"
             ></iframe>
             <button
-              onClick={() => setShowVideo(false)}
+              onClick={closeVimeoVideo}
               style={{
                 position: "absolute",
-                top: "16px",
+                top: "8px",
                 right: "16px",
                 backgroundColor: "#698958",
                 color: "#fff",
@@ -526,11 +451,32 @@ export default function Scene2025({ onObjectClick }) {
               aria-label="Fermer"
               title="Fermer"
             >
-              ✕
+              <FaTimes size={22} />
             </button>
           </div>
+          <motion.div
+            onClick={() => navigate("/reveil")}
+            style={{
+              position: "absolute",
+              bottom: "80px",
+              right: "calc(32px + 7cm)",
+              background: "#698958",
+              color: "#fff",
+              padding: "10px 16px",
+              borderRadius: "8px",
+              cursor: "pointer",
+              zIndex: 3010,
+              fontSize: "14px",
+              fontWeight: "bold",
+            }}
+            whileHover={{ scale: 1.1 }}
+          >
+            Plus de détails
+          </motion.div>
         </div>
       )}
+
+      {/* Ajoute ici d'autres vidéos Vimeo si besoin, sur le même modèle */}
     </div>
   );
 }

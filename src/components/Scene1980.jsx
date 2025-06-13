@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  FaSearch,
-  FaPlay,
-  FaInfoCircle,
-  FaTimes,
-  FaArrowLeft,
-} from "react-icons/fa";
+import { FaSearch, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
   const [stage, setStage] = useState("initial");
-  const [pendingDetail, setPendingDetail] = useState(null); // "detail1" ou "detail2" ou null
   const navigate = useNavigate();
   const [showAllIcons, setShowAllIcons] = useState(false);
 
@@ -40,7 +33,7 @@ export default function Scene1980({ onObjectClick }) {
       icon: <FaPlay />,
       action: () => {
         setStage("video-vimeo");
-        setShowAllIcons(true); // Affichera les autres icônes après
+        setShowAllIcons(true);
       },
       bgColor: "#5E9197",
     },
@@ -50,7 +43,6 @@ export default function Scene1980({ onObjectClick }) {
       y: "19%",
       icon: <FaInfoCircle />,
       action: () => alert("Infos à venir"),
-
       bgColor: "#5E9197",
     },
     {
@@ -135,7 +127,7 @@ export default function Scene1980({ onObjectClick }) {
         <div
           className="poi-icon"
           style={{
-            backgroundColor: obj.bgColor, // Prioritaire sur le CSS
+            backgroundColor: obj.bgColor,
             color: obj.color || "white",
           }}
         >
@@ -151,7 +143,7 @@ export default function Scene1980({ onObjectClick }) {
       style={{
         position: "absolute",
         top: "38%",
-        left: "48%",
+        left: "52%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -193,31 +185,25 @@ export default function Scene1980({ onObjectClick }) {
       <FaSearch size={24} color="#fff" />
     </motion.div>
   );
-  // const visibleInitialObjects = showAllIcons
-  //   ? initialInteractiveObjects
-  //   : initialInteractiveObjects.filter((obj) => obj.id === "init-1");
+
+  // Fond de la chambre toujours visible
+  const backgroundStyle = {
+    background: `url(/chambre-1980.png) center/cover no-repeat`,
+    width: "100%",
+    height: "100%",
+    position: "relative",
+    transition: "background 0.2s",
+  };
+
   return (
-    <div
-      className="scene-container"
-      style={{ width: "100%", height: "100%", position: "relative" }}
-    >
-      {/* IMAGE PRINCIPALE */}
-      {stage === "initial" && !pendingDetail && (
-        <div
-          className="initial-image"
-          style={{
-            backgroundImage: "url(/chambre-1980.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            width: "100%",
-            height: "100%",
-            position: "relative",
-          }}
-        >
+    <div className="scene-container" style={backgroundStyle}>
+      {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
+      {stage === "initial" && (
+        <>
           {renderLoupe1()}
           {renderLoupe2()}
           {renderIcons(initialInteractiveObjects)}
-        </div>
+        </>
       )}
 
       {/* LOUPE 1 : vidéo puis détail */}
@@ -229,20 +215,19 @@ export default function Scene1980({ onObjectClick }) {
             left: 0,
             width: "100vw",
             height: "100vh",
-            zIndex: 100,
             pointerEvents: "auto",
+
+            position: "fixed",
+            inset: 0,
+            objectFit: "cover",
+            transform: "scale(1.1)",
+            zIndex: 1000,
           }}
         >
           <video
             src="/chambre-1-a-bureau.mp4"
             autoPlay
-            onEnded={() => {
-              setPendingDetail("detail1");
-              setTimeout(() => {
-                setStage("detail1");
-                setPendingDetail(null);
-              }, 10); // 10ms pour éviter le flash
-            }}
+            onEnded={() => setStage("detail1")}
             style={{
               position: "fixed",
               top: 0,
@@ -259,17 +244,19 @@ export default function Scene1980({ onObjectClick }) {
           />
         </div>
       )}
-      {/* Affichage direct de l'image de détail sans repasser par la scène principale */}
-      {(stage === "detail1" || pendingDetail === "detail1") && (
+      {stage === "detail1" && (
         <div
           className="zoomed-image"
           style={{
             backgroundImage: "url(/chambre-1980-bureau.png)",
-            width: "100%",
-            height: "100%",
+            width: "100vw",
+            height: "100vh",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            position: "relative",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 102,
           }}
         >
           {renderIcons(detailInteractiveObjects)}
@@ -317,20 +304,19 @@ export default function Scene1980({ onObjectClick }) {
             left: 0,
             width: "100vw",
             height: "100vh",
-            zIndex: 100,
             pointerEvents: "auto",
+
+            position: "fixed",
+            inset: 0,
+            objectFit: "cover",
+            transform: "scale(1.1)",
+            zIndex: 1000,
           }}
         >
           <video
             src="/chambre-1-a-biblio.mp4"
             autoPlay
-            onEnded={() => {
-              setPendingDetail("detail2");
-              setTimeout(() => {
-                setStage("detail2");
-                setPendingDetail(null);
-              }, 10);
-            }}
+            onEnded={() => setStage("detail2")}
             style={{
               position: "fixed",
               top: 0,
@@ -347,16 +333,19 @@ export default function Scene1980({ onObjectClick }) {
           />
         </div>
       )}
-      {(stage === "detail2" || pendingDetail === "detail2") && (
+      {stage === "detail2" && (
         <div
           className="zoomed-image"
           style={{
             backgroundImage: "url(/chambre-1980-biblio.png)",
-            width: "100%",
-            height: "100%",
+            width: "100vw",
+            height: "100vh",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            position: "relative",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 102,
           }}
         >
           {renderIcons(detail2InteractiveObjects)}
@@ -395,7 +384,7 @@ export default function Scene1980({ onObjectClick }) {
         </div>
       )}
 
-      {/* Autres scènes déjà présentes dans ton code */}
+      {/* Vimeo vidéos : le fond chambre reste visible */}
       {stage === "video-vimeo" && (
         <div
           style={{
@@ -471,7 +460,7 @@ export default function Scene1980({ onObjectClick }) {
             style={{
               position: "absolute",
               bottom: "80px",
-              right: "calc(32px + 7cm)", // décale de 5cm vers la gauche
+              right: "calc(32px + 7cm)",
               background: "#698958",
               color: "#fff",
               padding: "10px 16px",
