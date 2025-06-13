@@ -53,7 +53,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "55%",
       y: "20%",
       icon: <FaInfoCircle />,
-      action: () => alert("Info uniforme"),
+      action: () => navigate("/reveil#/17"),
       bgColor: "#A96860",
     },
   ];
@@ -61,29 +61,47 @@ export default function Scene2025({ onObjectClick }) {
   const detail1InteractiveObjects = [
     {
       id: "detail1-1",
-      x: "30%",
+      x: "22%",
       y: "40%",
       icon: <FaInfoCircle />,
-      action: () => alert("Information sur le détail 1"),
+      action: () => navigate("/reveil#/27"),
       bgColor: "#A96860",
     },
     {
-      id: "detail1-2",
+      id: "detail1-1",
       x: "50%",
-      y: "60%",
-      icon: <FaPlay />,
-      action: () => alert("Lecture d'une vidéo ou action play"),
-      bgColor: "#5E9197",
+      y: "10%",
+      icon: <FaInfoCircle />,
+      action: () => alert("Information peluche"),
+      navigate: () => navigate("/reveil#/21"),
+      bgColor: "#A96860",
     },
+    // {
+    //   id: "detail1-2",
+    //   x: "50%",
+    //   y: "60%",
+    //   icon: <FaPlay />,
+    //   action: () => alert("Lecture d'une vidéo ou action play"),
+    //   bgColor: "#5E9197",
+    // },
   ];
 
   const detail2InteractiveObjects = [
     {
       id: "detail2-1",
-      x: "35%",
-      y: "45%",
+      x: "85%",
+      y: "36%",
       icon: <FaInfoCircle />,
-      action: () => alert("Information sur le détail 2"),
+      action: () => alert("Information sur le casque"),
+      navigate: () => navigate("/reveil#/25"),
+      bgColor: "#A96860",
+    },
+    {
+      id: "detail2-1",
+      x: "42%",
+      y: "35%",
+      icon: <FaInfoCircle />,
+      action: () => navigate("/reveil#/23"),
       bgColor: "#A96860",
     },
     {
@@ -130,8 +148,8 @@ export default function Scene2025({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "45%",
-        left: "47%",
+        top: "46%", // <-- ancienne valeur de Loupe 2
+        left: "67%", // <-- ancienne valeur de Loupe 2
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -155,8 +173,8 @@ export default function Scene2025({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "46%",
-        left: "67%",
+        top: "45%", // <-- ancienne valeur de Loupe 1
+        left: "47%", // <-- ancienne valeur de Loupe 1
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",

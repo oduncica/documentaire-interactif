@@ -181,6 +181,67 @@ Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider
         // Objet Calendrier 2025
         // Objet uniforme 2025
 
+        {
+          img: "/uniforme-4.png",
+          imgCredit: `Uniformes de lycéennes dans les années 1970
+Auteur inconnu.`,
+          title: "L’uniforme aujourd’hui : vers un assouplissement ? ",
+          text: `En 2025, l’uniforme scolaire reste un élément incontournable du système éducatif sud-coréen, mais sa signification et ses formes ont évolué. Si l’uniforme continue d’incarner des valeurs d’unité et de neutralité, il est désormais perçu comme un marqueur d’appartenance à une école prestigieuse ou à un quartier réputé.
+
+Depuis les années 2000, la Corée du Sud a connu une transformation sociale marquée par une montée en puissance de la consommation, de l’individualisme modéré et de la reconnaissance des droits des élèves. En conséquence, les règles autrefois rigides sur le port de l’uniforme ont progressivement été assouplies, notamment sous l’effet de la pression des parents, des médias et de la jeunesse elle-même.
+
+Les écoles permettent aujourd’hui plus de flexibilité : les élèves peuvent choisir entre plusieurs modèles homologués (version été/hiver, jupe ou pantalon, manches courtes ou longues). Certaines institutions autorisent même les jours "libres" où le port de l’uniforme n’est pas exigé. Mais malgré ces évolutions, l’uniforme reste encadré par des règlements internes propres à chaque établissement, qui conservent des exigences en matière d’apparence et de tenue, même si elles sont moins strictes qu’en 1980.
+`,
+        },
+        {
+          text: `Depuis les années 1980, les élèves sud-coréens ont conquis un espace d'expression individuelle dans un cadre encore structuré. Le tournant a lieu à partir des années 2010, où les débats sur le bien-être des élèves, le harcèlement scolaire et la liberté d’expression ont contribué à repenser la rigidité du modèle éducatif.
+
+En 2025 :
+
+Les filles peuvent porter des pantalons au lieu des jupes, ce qui n’était pas permis en 1980.
+Les garçons peuvent adopter des coiffures plus longues, tant qu’elles restent "soignées".
+Le port de baskets blanches ou noires est autorisé dans la majorité des établissements, pour plus de confort.
+Le maquillage discret (fond de teint léger, baume teinté, sourcils) est toléré, bien qu’encadré.
+
+Les élèves peuvent également porter des vestes personnalisées à l’effigie de leur école, achetées en ligne ou via des fournisseurs privés, mêlant identité scolaire et style personnel. Ce phénomène traduit l’essor d’un "marché de l’uniforme", où la discipline se conjugue avec le marketing et le goût du design.
+
+Ainsi, le rapport à l’uniforme s’est renversé : d’un outil de neutralisation de l’individu, il devient parfois un espace de distinction et de revendication esthétique, dans les limites du cadre scolaire. 
+ `,
+        },
+        {
+          img: "/uniforme-5.png",
+          imgCredit: `Image libre de droit | Pexels
+Par Nguyễn Nguyên
+`,
+          text: `L’un des changements les plus visibles depuis les années 1980 concerne la régulation de l’apparence corporelle. Alors qu’auparavant, la moindre teinte de cheveux ou trace de maquillage donnait lieu à des sanctions, les établissements adoptent aujourd’hui des approches plus nuancées.
+
+Les cheveux teints dans des tons naturels (brun, châtain clair) sont désormais largement acceptés, bien qu’interdits dans certaines écoles publiques plus conservatrices. Les coupes sont plus variées et souvent inspirées de la culture K-pop, tout en restant dans des limites de "propreté" visuelle.
+
+Le maquillage discret est toléré, notamment chez les élèves du lycée, à condition qu’il reste sobre (interdiction du rouge à lèvres vif ou des faux cils, par exemple).
+Les accessoires minimalistes sont également autorisés : une montre, des boucles d’oreilles simples, un bandeau discret.
+Ces tolérances visent à réduire les conflits enseignants-élèves, favoriser le bien-être et respecter le droit à l’identité, tout en maintenant une forme de cohésion. Toutefois, elles varient fortement selon les établissements : les lycées privés élitistes ou conservateurs continuent d’imposer des normes plus strictes. `,
+        },
+
+        {
+          img: "/uniforme-6.png",
+          imgCredit: `Photo fournie par le lycée de langues étrangères de Gyeonggi au journal Newsis 
+photo@newsis.com
+URL : https://mobile.newsis.com/view/NISX20130708_0012212002#_PA 
+
+`,
+          text: `Malgré un net assouplissement depuis les années 1980, le port de l’uniforme reste un outil de régulation sociale, et les règles associées sont rarement remises en question par les institutions. Les sanctions existent toujours, même si elles sont moins humiliantes qu’autrefois :
+
+Remarques écrites dans le dossier scolaire,
+Avertissements oraux,
+Réunions avec les parents,
+Dans certains cas, obligation de racheter un uniforme conforme.
+
+Ce qui a changé, c’est la nature du rapport entre les élèves et les règles. On observe une montée des espaces de dialogue, où les conseils d’élèves participent parfois aux décisions sur l’uniforme. De plus, les jeunes Coréens utilisent les réseaux sociaux pour exprimer leurs revendications et dénoncer les abus.
+
+Mais derrière cette image plus libérale, les normes implicites restent fortes : les filles continuent de subir des pressions sur leur tenue ou leur maquillage, et les élèves qui sortent trop des cadres attendus peuvent être marginalisés.
+En somme, l’uniforme de 2025 traduit une société en tension entre modernisation et tradition, liberté individuelle et pression collective, contrôle institutionnel et stratégies d’appropriation. `,
+        },
+
         // Objet pelluche 2025
 
         {
