@@ -61,19 +61,18 @@ export default function Scene2025({ onObjectClick }) {
   const detail1InteractiveObjects = [
     {
       id: "detail1-1",
-      x: "22%",
-      y: "40%",
+      x: "50%",
+      y: "8%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/27"),
       bgColor: "#A96860",
     },
     {
       id: "detail1-1",
-      x: "50%",
-      y: "10%",
+      x: "54%",
+      y: "50%",
       icon: <FaInfoCircle />,
-      action: () => alert("Information peluche"),
-      navigate: () => navigate("/reveil#/21"),
+      action: () => navigate("/reveil#/21"),
       bgColor: "#A96860",
     },
     // {
@@ -92,8 +91,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "85%",
       y: "36%",
       icon: <FaInfoCircle />,
-      action: () => alert("Information sur le casque"),
-      navigate: () => navigate("/reveil#/25"),
+      action: () => navigate("/reveil#/25"),
       bgColor: "#A96860",
     },
     {

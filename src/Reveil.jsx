@@ -266,7 +266,7 @@ Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, �
         // Objet Ordinateur 2025
 
         {
-          img: "/peluche-1.png",
+          img: "/ordinateur-1.png",
           imgCredit: `Des lycéens jouant dans un PC Bang. Source : committee.co.kr
 `,
           title: "la Loi Cendrillon : la réglementation à travers les écrans :",
@@ -275,7 +275,7 @@ Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, �
  `,
         },
         {
-          img: "/peluche-2.png",
+          img: "/ordinateur-1.png",
           imgCredit: `Une animation qui représente bien l’ambiance des PC Bang. Source : YouTube
 `,
           text: `Mais cette Loi Cendrillon en dit long sur la manière dont la jeunesse est perçue dans la société sud-coréenne : elle doit être contrôlée, surveillée, afin de les formater à leur future vie d’adulte. Les jeux vidéos sont ainsi perçus comme une possible cause d’échec scolaire, et doivent être strictement encadrés. Finalement, la loi est abrogée en 2021, après dix ans de débats : elle est perçue comme irréaliste au vu de l’omniprésence des écrans dans la vie des plus jeunes et facilement contournable par ces derniers. 
@@ -306,7 +306,7 @@ Ces lieux constituent des refuges temporaires contre le stress scolaire, et perm
         //Objet photo 2025
 
         {
-          img: "",
+          img: "/photo-3.png",
           imgCredit: `Légende
 `,
           title:
@@ -317,7 +317,7 @@ Ces lieux constituent des refuges temporaires contre le stress scolaire, et perm
  `,
         },
         {
-          img: "",
+          img: "/photo-4.png",
           imgCredit: `Légende
 `,
           text: `Le système éducatif évolue pourtant. Des filières alternatives émergent : écoles d’ingénierie appliquée, formations hybrides mêlant design, IA et soft skills. L’enseignement devient plus flexible, certains cursus sont disponibles entièrement en ligne, et l’anglais s’impose peu à peu comme langue d’enseignement dans de nombreux programmes internationaux.
@@ -326,7 +326,7 @@ Mais cette transformation a ses limites. La pression à la performance reste omn
  `,
         },
         {
-          img: "",
+          img: "/photo-5.png",
           imgCredit: `Un PC Bang. Source : Seoul Insider Guide
 `,
           text: `Mais derrière les chiffres d’admission et les façades vitrées des campus modernes, la vie étudiante se heurte à des contradictions. L’agenda est millimétré, rythmé par les crédits à valider, les examens, les stages, les certifications de langues et les concours. Beaucoup d’étudiant·es vivent loin de leurs familles, dans des logements exigus, cumulant parfois des petits boulots pour subvenir à leurs besoins. Les moments de pause sont rares, et les espaces de respiration encore trop peu valorisés dans une culture où l’efficacité prime sur le lâcher-prise.
