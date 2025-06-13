@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaSpinner } from "react-icons/fa";
 
-export default function Preloader({ media, children }) {
+export default function Preloader({ media, children, showLoader }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Preloader({ media, children }) {
     });
   }, [media]);
 
-  if (loading) {
+  if (loading && showLoader) {
     return (
       <div
         style={{
@@ -66,5 +66,6 @@ export default function Preloader({ media, children }) {
     );
   }
 
+  // Si loading mais showLoader === false, on ne bloque pas l'affichage
   return children;
 }
