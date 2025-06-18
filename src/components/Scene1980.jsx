@@ -7,18 +7,24 @@ export default function Scene1980({ onObjectClick }) {
   const [stage, setStage] = useState("initial");
   const [detail1Loaded, setDetail1Loaded] = useState(false);
   const [detail2Loaded, setDetail2Loaded] = useState(false);
+  const [video1Ready, setVideo1Ready] = useState(false);
+  const [video2Ready, setVideo2Ready] = useState(false);
   const navigate = useNavigate();
 
   // Loupe 1
   const handleLoupe1Click = () => {
-    if (stage === "initial") setStage("video1");
-    else if (stage === "detail1") setStage("initial");
+    if (stage === "initial") {
+      setVideo1Ready(false);
+      setStage("video1");
+    } else if (stage === "detail1") setStage("initial");
   };
 
   // Loupe 2
   const handleLoupe2Click = () => {
-    if (stage === "initial") setStage("video2");
-    else if (stage === "detail2") setStage("initial");
+    if (stage === "initial") {
+      setVideo2Ready(false);
+      setStage("video2");
+    } else if (stage === "detail2") setStage("initial");
   };
 
   const closeVimeoVideo = () => setStage("initial");
@@ -223,40 +229,56 @@ export default function Scene1980({ onObjectClick }) {
 
       {/* LOUPE 1 : vidéo puis détail */}
       {stage === "video1" && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            pointerEvents: "auto",
-            inset: 0,
-            objectFit: "cover",
-            transform: "scale(1.1)",
-            zIndex: 1000,
-            background: "black",
-          }}
-        >
-          <video
-            src="/chambre-1-a-bureau.mp4"
-            autoPlay
-            onEnded={handleVideo1End}
+        <>
+          {!video1Ready && (
+            <div
+              style={{
+                background: `url(/chambre-1980.png) center/cover no-repeat`,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                zIndex: 999,
+              }}
+            />
+          )}
+          <div
             style={{
               position: "fixed",
               top: 0,
               left: 0,
               width: "100vw",
               height: "100vh",
+              pointerEvents: "auto",
+              inset: 0,
               objectFit: "cover",
-              borderRadius: 0,
-              margin: 0,
-              padding: 0,
-              background: "black",
-              zIndex: 101,
+              transform: "scale(1.1)",
+              zIndex: 1000,
+              background: "transparent",
             }}
-          />
-        </div>
+          >
+            <video
+              src="/chambre-1-a-bureau.mp4"
+              autoPlay
+              onCanPlay={() => setVideo1Ready(true)}
+              onEnded={handleVideo1End}
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                objectFit: "cover",
+                borderRadius: 0,
+                margin: 0,
+                padding: 0,
+                background: "transparent",
+                zIndex: 101,
+              }}
+            />
+          </div>
+        </>
       )}
       {stage === "detail1" && detail1Loaded && (
         <div
@@ -311,40 +333,56 @@ export default function Scene1980({ onObjectClick }) {
 
       {/* LOUPE 2 : vidéo puis détail */}
       {stage === "video2" && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100vw",
-            height: "100vh",
-            pointerEvents: "auto",
-            inset: 0,
-            objectFit: "cover",
-            transform: "scale(1.1)",
-            zIndex: 1000,
-            background: "black",
-          }}
-        >
-          <video
-            src="/chambre-1-a-biblio.mp4"
-            autoPlay
-            onEnded={handleVideo2End}
+        <>
+          {!video2Ready && (
+            <div
+              style={{
+                background: `url(/chambre-1980.png) center/cover no-repeat`,
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                zIndex: 999,
+              }}
+            />
+          )}
+          <div
             style={{
               position: "fixed",
               top: 0,
               left: 0,
               width: "100vw",
               height: "100vh",
+              pointerEvents: "auto",
+              inset: 0,
               objectFit: "cover",
-              borderRadius: 0,
-              margin: 0,
-              padding: 0,
-              background: "black",
-              zIndex: 101,
+              transform: "scale(1.1)",
+              zIndex: 1000,
+              background: "transparent",
             }}
-          />
-        </div>
+          >
+            <video
+              src="/chambre-1-a-biblio.mp4"
+              autoPlay
+              onCanPlay={() => setVideo2Ready(true)}
+              onEnded={handleVideo2End}
+              style={{
+                position: "fixed",
+                top: 0,
+                left: 0,
+                width: "100vw",
+                height: "100vh",
+                objectFit: "cover",
+                borderRadius: 0,
+                margin: 0,
+                padding: 0,
+                background: "transparent",
+                zIndex: 101,
+              }}
+            />
+          </div>
+        </>
       )}
       {stage === "detail2" && detail2Loaded && (
         <div
