@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Scene2025({ onObjectClick }) {
   const [stage, setStage] = useState("initial");
+  const [detail1Loaded, setDetail1Loaded] = useState(false);
+  const [detail2Loaded, setDetail2Loaded] = useState(false);
   const navigate = useNavigate();
 
   // Loupe 1
@@ -19,8 +21,26 @@ export default function Scene2025({ onObjectClick }) {
     else if (stage === "detail2") setStage("initial");
   };
 
-  const closeVimeoVideo = () => {
-    setStage("initial");
+  const closeVimeoVideo = () => setStage("initial");
+
+  // Préchargement image de détail 1
+  const handleVideo1End = () => {
+    const img = new window.Image();
+    img.src = "/chambre-2025-biblio.png";
+    img.onload = () => {
+      setDetail1Loaded(true);
+      setStage("detail1");
+    };
+  };
+
+  // Préchargement image de détail 2
+  const handleVideo2End = () => {
+    const img = new window.Image();
+    img.src = "/chambre-2025-bureau.png";
+    img.onload = () => {
+      setDetail2Loaded(true);
+      setStage("detail2");
+    };
   };
 
   const initialInteractiveObjects = [
@@ -37,9 +57,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "48%",
       y: "35%",
       icon: <FaPlay />,
-      // action: () => setStage("video-vimeo"),
       action: () => navigate("/reveil#/22"),
-
       bgColor: "#5E9197",
     },
     {
@@ -70,21 +88,13 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
-      id: "detail1-1",
+      id: "detail1-2",
       x: "54%",
       y: "50%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/21"),
       bgColor: "#A96860",
     },
-    // {
-    //   id: "detail1-2",
-    //   x: "50%",
-    //   y: "60%",
-    //   icon: <FaPlay />,
-    //   action: () => alert("Lecture d'une vidéo ou action play"),
-    //   bgColor: "#5E9197",
-    // },
   ];
 
   const detail2InteractiveObjects = [
@@ -97,7 +107,7 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
-      id: "detail2-1",
+      id: "detail2-2",
       x: "42%",
       y: "35%",
       icon: <FaInfoCircle />,
@@ -105,11 +115,10 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
-      id: "detail2-2",
+      id: "detail2-3",
       x: "12%",
       y: "45%",
       icon: <FaPlay />,
-      // action: () => alert("Lecture d'une vidéo ou action play"),
       action: () => navigate("/reveil#/19"),
       bgColor: "#5E9197",
     },
@@ -149,8 +158,8 @@ export default function Scene2025({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "46%", // <-- ancienne valeur de Loupe 2
-        left: "67%", // <-- ancienne valeur de Loupe 2
+        top: "46%",
+        left: "67%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -174,8 +183,8 @@ export default function Scene2025({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "45%", // <-- ancienne valeur de Loupe 1
-        left: "47%", // <-- ancienne valeur de Loupe 1
+        top: "45%",
+        left: "47%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
@@ -193,28 +202,24 @@ export default function Scene2025({ onObjectClick }) {
     </motion.div>
   );
 
-  // Fond de la chambre toujours visible
-  const backgroundStyle = {
-    background:
-      stage === "initial"
-        ? `url(/chambre-2025.png) center/cover no-repeat`
-        : "none",
-
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    transition: "background 0.2s",
-  };
-
   return (
-    <div className="scene-container" style={backgroundStyle}>
+    <>
       {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
       {stage === "initial" && (
-        <>
+        <div
+          className="scene-container"
+          style={{
+            background: `url(/chambre-2025.png) center/cover no-repeat`,
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            transition: "background 0.2s",
+          }}
+        >
           {renderLoupe1()}
           {renderLoupe2()}
           {renderIcons(initialInteractiveObjects)}
-        </>
+        </div>
       )}
 
       {/* LOUPE 1 : vidéo puis détail */}
@@ -226,9 +231,9 @@ export default function Scene2025({ onObjectClick }) {
             left: 0,
             width: "100vw",
             height: "100vh",
-            zIndex: 100,
+            zIndex: 1000,
             pointerEvents: "auto",
-            background: "transparent",
+            background: "black",
             margin: 0,
             padding: 0,
             border: "none",
@@ -238,7 +243,7 @@ export default function Scene2025({ onObjectClick }) {
           <video
             src="/chambre-2-a-biblio.mp4"
             autoPlay
-            onEnded={() => setStage("detail1")}
+            onEnded={handleVideo1End}
             style={{
               position: "fixed",
               width: "100vw",
@@ -247,20 +252,18 @@ export default function Scene2025({ onObjectClick }) {
               border: "none",
               margin: 0,
               padding: 0,
-              background: "transparent",
+              background: "black",
               display: "block",
               boxSizing: "border-box",
               overflow: "hidden",
-
-              position: "fixed",
               inset: 0,
               transform: "scale(1.1)",
-              zIndex: 1000,
+              zIndex: 1001,
             }}
           />
         </div>
       )}
-      {stage === "detail1" && (
+      {stage === "detail1" && detail1Loaded && (
         <div
           className="zoomed-image"
           style={{
@@ -318,15 +321,14 @@ export default function Scene2025({ onObjectClick }) {
             position: "fixed",
             top: 0,
             left: 0,
-            width: "100%",
-            height: "100%",
+            width: "100vw",
+            height: "100vh",
             pointerEvents: "auto",
-            background: "transparent",
+            background: "black",
             margin: 0,
             padding: 0,
             border: "none",
             overflow: "hidden",
-
             inset: 0,
             objectFit: "cover",
             transform: "scale(1.1)",
@@ -336,7 +338,7 @@ export default function Scene2025({ onObjectClick }) {
           <video
             src="/chambre-2-a-bureau.mp4"
             autoPlay
-            onEnded={() => setStage("detail2")}
+            onEnded={handleVideo2End}
             style={{
               position: "fixed",
               inset: 0,
@@ -346,8 +348,8 @@ export default function Scene2025({ onObjectClick }) {
               border: "none",
               margin: 0,
               padding: 0,
-              background: "transparent",
-              zIndex: 101,
+              background: "black",
+              zIndex: 1001,
               display: "block",
               boxSizing: "border-box",
               overflow: "hidden",
@@ -355,7 +357,7 @@ export default function Scene2025({ onObjectClick }) {
           />
         </div>
       )}
-      {stage === "detail2" && (
+      {stage === "detail2" && detail2Loaded && (
         <div
           className="zoomed-image"
           style={{
@@ -406,7 +408,7 @@ export default function Scene2025({ onObjectClick }) {
         </div>
       )}
 
-      {/* Vimeo vidéos : le fond chambre reste visible */}
+      {/* Vimeo vidéos */}
       {stage === "video-vimeo" && (
         <div
           style={{
@@ -498,8 +500,7 @@ export default function Scene2025({ onObjectClick }) {
           </motion.div>
         </div>
       )}
-
-      {/* Ajoute ici d'autres vidéos Vimeo si besoin, sur le même modèle */}
-    </div>
+      {/* ...autres vidéos Vimeo si besoin... */}
+    </>
   );
 }
