@@ -195,7 +195,11 @@ export default function Scene2025({ onObjectClick }) {
 
   // Fond de la chambre toujours visible
   const backgroundStyle = {
-    background: `url(/chambre-2025.png) center/cover no-repeat`,
+    background:
+      stage === "initial"
+        ? `url(/chambre-2025.png) center/cover no-repeat`
+        : "none",
+
     width: "100%",
     height: "100%",
     position: "relative",

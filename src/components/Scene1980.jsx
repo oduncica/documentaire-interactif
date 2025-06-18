@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaSearch, FaPlay, FaInfoCircle, FaTimes } from "react-icons/fa";
-import ReactPlayer from "react-player";
 import { useNavigate } from "react-router-dom";
 
 export default function Scene1980({ onObjectClick }) {
   const [stage, setStage] = useState("initial");
+  const [detail1Loaded, setDetail1Loaded] = useState(false);
+  const [detail2Loaded, setDetail2Loaded] = useState(false);
   const navigate = useNavigate();
-  const [showAllIcons, setShowAllIcons] = useState(false);
 
   // Loupe 1
   const handleLoupe1Click = () => {
@@ -21,8 +21,26 @@ export default function Scene1980({ onObjectClick }) {
     else if (stage === "detail2") setStage("initial");
   };
 
-  const closeVimeoVideo = () => {
-    setStage("initial");
+  const closeVimeoVideo = () => setStage("initial");
+
+  // Préchargement image de détail 1
+  const handleVideo1End = () => {
+    const img = new window.Image();
+    img.src = "/chambre-1980-bureau.png";
+    img.onload = () => {
+      setDetail1Loaded(true);
+      setStage("detail1");
+    };
+  };
+
+  // Préchargement image de détail 2
+  const handleVideo2End = () => {
+    const img = new window.Image();
+    img.src = "/chambre-1980-biblio.png";
+    img.onload = () => {
+      setDetail2Loaded(true);
+      setStage("detail2");
+    };
   };
 
   const initialInteractiveObjects = [
@@ -31,10 +49,7 @@ export default function Scene1980({ onObjectClick }) {
       x: "14%",
       y: "60%",
       icon: <FaPlay />,
-      action: () => {
-        setStage("video-vimeo");
-        setShowAllIcons(true);
-      },
+      action: () => setStage("video-vimeo"),
       bgColor: "#5E9197",
     },
     {
@@ -186,24 +201,24 @@ export default function Scene1980({ onObjectClick }) {
     </motion.div>
   );
 
-  // Fond de la chambre toujours visible
-  const backgroundStyle = {
-    background: `url(/chambre-1980.png) center/cover no-repeat`,
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    transition: "background 0.2s",
-  };
-
   return (
-    <div className="scene-container" style={backgroundStyle}>
+    <>
       {/* IMAGE PRINCIPALE AVEC LES DEUX LOUPES */}
       {stage === "initial" && (
-        <>
+        <div
+          className="scene-container"
+          style={{
+            background: `url(/chambre-1980.png) center/cover no-repeat`,
+            width: "100%",
+            height: "100%",
+            position: "relative",
+            transition: "background 0.2s",
+          }}
+        >
           {renderLoupe1()}
           {renderLoupe2()}
           {renderIcons(initialInteractiveObjects)}
-        </>
+        </div>
       )}
 
       {/* LOUPE 1 : vidéo puis détail */}
@@ -216,18 +231,17 @@ export default function Scene1980({ onObjectClick }) {
             width: "100vw",
             height: "100vh",
             pointerEvents: "auto",
-
-            position: "fixed",
             inset: 0,
             objectFit: "cover",
             transform: "scale(1.1)",
             zIndex: 1000,
+            background: "black",
           }}
         >
           <video
             src="/chambre-1-a-bureau.mp4"
             autoPlay
-            onEnded={() => setStage("detail1")}
+            onEnded={handleVideo1End}
             style={{
               position: "fixed",
               top: 0,
@@ -238,13 +252,13 @@ export default function Scene1980({ onObjectClick }) {
               borderRadius: 0,
               margin: 0,
               padding: 0,
-              background: "transparent",
+              background: "black",
               zIndex: 101,
             }}
           />
         </div>
       )}
-      {stage === "detail1" && (
+      {stage === "detail1" && detail1Loaded && (
         <div
           className="zoomed-image"
           style={{
@@ -305,18 +319,17 @@ export default function Scene1980({ onObjectClick }) {
             width: "100vw",
             height: "100vh",
             pointerEvents: "auto",
-
-            position: "fixed",
             inset: 0,
             objectFit: "cover",
             transform: "scale(1.1)",
             zIndex: 1000,
+            background: "black",
           }}
         >
           <video
             src="/chambre-1-a-biblio.mp4"
             autoPlay
-            onEnded={() => setStage("detail2")}
+            onEnded={handleVideo2End}
             style={{
               position: "fixed",
               top: 0,
@@ -327,13 +340,13 @@ export default function Scene1980({ onObjectClick }) {
               borderRadius: 0,
               margin: 0,
               padding: 0,
-              background: "transparent",
+              background: "black",
               zIndex: 101,
             }}
           />
         </div>
       )}
-      {stage === "detail2" && (
+      {stage === "detail2" && detail2Loaded && (
         <div
           className="zoomed-image"
           style={{
@@ -384,7 +397,7 @@ export default function Scene1980({ onObjectClick }) {
         </div>
       )}
 
-      {/* Vimeo vidéos : le fond chambre reste visible */}
+      {/* Vimeo vidéos */}
       {stage === "video-vimeo" && (
         <div
           style={{
@@ -476,7 +489,6 @@ export default function Scene1980({ onObjectClick }) {
           </motion.div>
         </div>
       )}
-
       {stage === "video-vimeo3" && (
         <div
           style={{
@@ -549,7 +561,6 @@ export default function Scene1980({ onObjectClick }) {
           </div>
         </div>
       )}
-
       {stage === "video-vimeo-s6" && (
         <div
           style={{
@@ -622,6 +633,6 @@ export default function Scene1980({ onObjectClick }) {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

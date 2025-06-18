@@ -6,7 +6,12 @@ import Scene2025 from "./Scene2025";
 import LanguesDrapeau from "./LanguesDrapeau";
 import ToastMessages from "./ToastMessages";
 
-export default function SceneManager({ year, onObjectClick, langue = "fr", setLangue }) {
+export default function SceneManager({
+  year,
+  onObjectClick,
+  langue = "fr",
+  setLangue,
+}) {
   const [isLoading, setIsLoading] = useState(true);
   const [showToast, setShowToast] = useState(true); // État pour afficher les toasts
 
