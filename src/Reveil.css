@@ -85,6 +85,30 @@
   }
 }
 
+.text-only-slide {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100% !important;
+  min-height: 100vh;
+  max-height: 100vh;
+  padding: 60px 10vw 40px 10vw;
+  background: #e3d8e2 !important;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.text-only-slide p {
+  text-align: justify !important;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #4a5b41;
+  margin: 0 auto 16px auto;
+  white-space: pre-line;
+}
+
 /* ==== RESPONSIVE SMARTPHONES ==== */
 @media (max-width: 480px) {
   .reveal .slides section.img-div {

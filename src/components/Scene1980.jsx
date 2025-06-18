@@ -42,7 +42,7 @@ export default function Scene1980({ onObjectClick }) {
       x: "44%",
       y: "19%",
       icon: <FaInfoCircle />,
-      action: () => alert("Infos à venir"),
+      action: () => navigate("/reveil#/14"),
       bgColor: "#5E9197",
     },
     {
@@ -92,16 +92,16 @@ export default function Scene1980({ onObjectClick }) {
   const detail2InteractiveObjects = [
     {
       id: "detail2-1",
-      x: "50%",
-      y: "46%",
-      icon: <FaPlay />,
-      action: () => alert("Vidéo à venir"),
-      bgColor: "#5E9197",
+      x: "55%",
+      y: "48%",
+      icon: <FaInfoCircle />,
+      action: () => navigate("/reveil#/3"),
+      bgColor: "#A96860",
     },
     {
       id: "detail2-2",
-      x: "56%",
-      y: "10%",
+      x: "65%",
+      y: "5%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/12"),
       bgColor: "#A96860",
@@ -238,7 +238,7 @@ export default function Scene1980({ onObjectClick }) {
               borderRadius: 0,
               margin: 0,
               padding: 0,
-              background: "black",
+              background: "transparent",
               zIndex: 101,
             }}
           />
@@ -327,7 +327,7 @@ export default function Scene1980({ onObjectClick }) {
               borderRadius: 0,
               margin: 0,
               padding: 0,
-              background: "black",
+              background: "transparent",
               zIndex: 101,
             }}
           />

@@ -6,6 +6,7 @@ import "reveal.js/dist/theme/white.css";
 import "./Reveil.css";
 import { FaArrowLeft } from "react-icons/fa";
 import LanguesDrapeau from "../src/components/LanguesDrapeau";
+import { video } from "framer-motion/client";
 
 function Reveil() {
   const revealRef = useRef(null);
@@ -36,9 +37,9 @@ function Reveil() {
           img: "/examen-1.png",
           imgCredit: `Classe de terminale, 2020 “L’éducation en Corée du Sud” © Korea's Owls`,
           title: "L’examen qui détermine une vie : Le Seungeung",
-          text: `Connu sous le nom de "examen de la fin du secondaire" en Corée du Sud, est un événement majeur dans la vie des étudiants. Il représente non seulement un test de compétences académiques, mais aussi un rite de passage social qui détermine souvent l'avenir universitaire et professionnel des jeunes.
+          text: `Connu sous le nom de "examen de la fin du secondaire" en Corée du Sud, est un événement majeur dans la vie des étudiants. Il représente non seulement un test de compétences académiques, mais aussi un <b> rite de passage social </b> qui détermine souvent l'avenir universitaire et professionnel des jeunes.
 
-L'examen intense de huit heures, qui teste diverses matières, est le résultat de plusieurs années de préparation rigoureuse. C'est un moment décisif pour les étudiants, qui se retrouvent sous une pression immense pour réussir.`,
+L'examen intense de <b> huit heures </b>, qui teste diverses matières, est le résultat de plusieurs années de préparation rigoureuse. C'est un moment décisif pour les étudiants, qui se retrouvent sous une pression immense pour réussir.`,
         },
         {
           img: "/examen-2.png",
@@ -46,12 +47,11 @@ L'examen intense de huit heures, qui teste diverses matières, est le résultat 
           // title: "L’examen qui détermine une vie : Le Seungeung",
           text: `Le jour de l'examen, les rues sont presque désertes, car même les bureaux et magasins ajustent leurs horaires pour permettre à tout le monde de se concentrer sur cet événement. L'État déploie également des mesures de soutien, comme des augmentations du nombre de transports publics pour faciliter les déplacements des candidats et des policiers qui régulent la circulation pour éviter tout retard.
 
-L'examen Seungeung n'est pas seulement une épreuve académique, il incarne toute une culture où l'éducation et la réussite sont perçues comme des clefs essentielles pour accéder à un avenir meilleur.`,
+L'examen Seungeung n'est pas seulement une épreuve académique, il incarne toute <b> une culture où l'éducation et la réussite sont perçues comme des clefs essentielles pour accéder à un avenir meilleur. </b>`,
         },
         {
           img: "/examen-3.png",
           imgCredit: `Des parents prient pour la réussite de leurs enfants dans un temple à Séoul. © Ed Jones/AFP/Getty Images`,
-          title: "L’examen qui détermine une vie : Le Seungeung",
           text: `L’intensité de l'examen Seungeung en Corée du Sud porte l’empreinte d’un passé où l'éducation a toujours été perçue comme le moyen ultime de réussite sociale. Depuis des siècles, la culture coréenne valorise le travail acharné et la discipline, des valeurs transmises de génération en génération.
 
 Dans un pays où l’histoire a souvent été marquée par des bouleversements, de la guerre à la division, l’éducation a été vue comme un levier pour garantir un avenir plus stable. Aujourd'hui, cette vision est toujours présente, car les étudiants, encore soumis à une pression intense pour réussir, héritent de l’idée que leur avenir dépend largement de leur performance à cet examen.`,
@@ -59,6 +59,8 @@ Dans un pays où l’histoire a souvent été marquée par des bouleversements, 
         // Objet cassette passé
         {
           img: "/cinema-1.png",
+          video:
+            "https://www.youtube.com/clip/UgkxmdPG5b_BnE4_9W6_adK2qyVsunmOvPVN",
           imgCredit: `Our Twisted Hero (우리들의 일그러진 영웅), Park Jong-won, 1992.  Source : YouTube`,
           title:
             "La culture réglementaire dans l’éducation à travers le cinéma sud-coréen",
@@ -123,6 +125,7 @@ Source : Wikipédia`,
         },
         {
           img: "/livre-2.png",
+          video: "https://www.youtube.com/watch?v=XRMI02EXmN4",
           imgCredit: `Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube
 `,
           // title:
@@ -152,6 +155,56 @@ Auteur inconnu`,
           imgCredit: `Université Nationale de Séoul, l’un des établissements les plus prestigieux du pays. Source : Wikipédia.`,
           text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
         },
+        //Objet Calendrier 1980
+        {
+          img: "/calendrier-1980-1.png",
+          imgCredit: `Affiche des années 70 pour un hagwon qui prépare les élèves à l’entrée au lycée. Source : 추억의 편린들
+`,
+          title:
+            "L’histoire des hagwon : l’éducation de l’ombre en Corée du sud : ",
+          text: `Les hagwon sont des instituts privés de soutien scolaire. La plupart des élèves sud-coréens s’y rendent après les cours officiels, parfois jusqu’à très tard le soir. On parle alors d’“éducation de l’ombre” : un monde discret, mais tout aussi structuré, qui façonne le paysage éducatif du pays depuis des décennies.
+
+Au XVIIe siècle, les premières formes de hagwon apparaissent en Corée. On y apprend à lire, à écrire, et à faire de simples calculs. Mais c’est au XXe siècle que le phénomène prend véritablement de l’ampleur. Juste avant l’annexion japonaise (1910–1945), on en compte environ 3 000. La colonisation interrompt leur développement, mais les établissements privés retrouvent leur place dans les années 1960–1970. Ils se multiplient rapidement, et malgré leur coût élevé, restent très prisés par les familles sud-coréennes.
+ 
+`,
+        },
+        {
+          img: "/Calendrier-1980-2.png",
+          imgCredit: `Bâtiment abritant de nombreux hagwon à 
+Dunsan-dong, Daejeon. Source : Wikipédia.`,
+          text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
+        },
+
+        // Objet Sac de cours
+        {
+          img: "/sac-cours-1980-1.png",
+          imgCredit: `Un cours d’écriture de caractères chinois à l’époque Joseon. Source : Base de données Dong-A Ilbo.
+`,
+          title: "L’évolution des matières enseignées au fil des époques : ",
+          text: `Les matières enseignées dans les écoles sud-coréennes ont considérablement évolué au fil du temps. Entre la période Joseon (1392–1897) et aujourd’hui, le système éducatif du pays a été profondément influencé par les bouleversements politiques et historiques qu’a connus la Corée.
+
+Sous la dynastie Joseon, l’enseignement était destiné à former les élites à travers les principes du néo-confucianisme, dans le but d’assurer l’ordre et la stabilité du royaume. La mémorisation des classiques chinois et la maîtrise des rites étaient au cœur de la formation intellectuelle.
+
+ 
+`,
+        },
+        {
+          img: "/sac-cours-1980-2.png",
+          imgCredit: `Entraînement militaire dans les années 70. Source : site officiel du lycée Hwanil..`,
+          text: `Durant l’occupation japonaise (1910–1945), l’éducation devient un outil d’assimilation impériale. Le japonais s’impose comme langue unique d’enseignement, et les programmes scolaires sont orientés vers des matières modernes telles que l’arithmétique, l’histoire et la géographie, mais vues sous un prisme colonial. La culture coréenne est systématiquement effacée, tandis que l’école devient un espace de préparation à la guerre et de soumission à l’Empire.
+
+Après la Seconde Guerre mondiale, le rejet de cette domination se traduit immédiatement dans les réformes éducatives. La langue coréenne est réintroduite dans les salles de classe, et l’enseignement se recentre sur l’histoire nationale et l’idéologie patriotique. Les cours de défense (교련, gyoyun) militaire deviennent obligatoires au lycée, dans un contexte politique marqué par l’autoritarisme et la guerre froide.
+  `,
+        },
+        {
+          img: "/sac-cours-1980-3.png",
+          imgCredit: `"Pendant l’Exposition sur l'Éducation du Futur Global 2024, des élèves suivent un cours dans une salle de classe du futur en utilisant la réalité virtuelle.”
+Source : Journal de l’éducation Honam. 
+`,
+          text: `
+À partir des années 1990, avec la démocratisation du pays et l’ouverture à la mondialisation, une transition s’opère : on passe d’un modèle basé sur la discipline à une approche plus participative. Les matières se diversifient largement, intégrant les sciences sociales, les technologies de l’information, la pensée critique et des enseignements plus créatifs. L’école tente désormais de former des individus capables de s’adapter à une société en mutation rapide, même si la logique de performance reste toujours très présente.
+  `,
+        },
         // Objet Journal Intime présent
         {
           img: "/journal-1.png",
@@ -179,6 +232,109 @@ Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider
           text: `Mais dans le système éducatif sud-coréen, les élèves ne sont pas les seuls touchés par ce fléau du suicide : les enseignants subissent également une forte pression de la part des parents d’élèves, allant même jusqu’à l’harcèlement. Entre 2015 et 2023, 168 enseignants se sont donné la mort. En été 2023, une jeune institutrice est retrouvée morte dans un placard de salle de classe, provoquant l’émoi de la communauté enseignante. Dans son journal, elle parle de cette souffrance silencieuse qui l’a conduit à passer à l’acte : “j'ai la poitrine trop serrée. Je me sens dépassée par la folie du travail’. Une grève nationale a lieu le 4 septembre 2023, pour dénoncer cette intimidation de la part des parents d’élèves, prêts à tout pour la réussite de leurs enfants. `,
         },
         // Objet Calendrier 2025
+
+        {
+          img: "",
+          imgCredit: ``,
+          title: "Règlementations",
+          text: ` <br> 2001 – Début de l’autonomisation des lycées privés </br>
+
+Introduction du concept de lycées privés autonomes (자율형 사립고) dans le but de diversifier l'offre éducative et d'accroître l'autonomie des établissements scolaires. Ces lycées bénéficiaient d'une plus grande liberté en matière de gestion administrative, de programmes scolaires et de sélection des élèves, tout en restant soumis aux directives générales du ministère de l'Éducation. 
+
+<br> Objectifs de la réforme </br>
+
+Offrir aux élèves des parcours éducatifs variés adaptés à leurs talents et intérêts.
+Encourager l'innovation pédagogique et l'excellence académique au sein des établissements.
+Donner plus de responsabilités aux établissements pour répondre aux besoins spécifiques de leur communauté.
+
+<br> Évolution et impact </br>
+
+Initialement, le nombre de lycées privés autonomes était limité, mais leur succès a conduit à une expansion progressive. Cependant, ces établissements ont également été critiqués pour avoir accentué les inégalités sociales, en raison de frais de scolarité plus élevés et de processus de sélection compétitifs. En 2019, le gouvernement sud-coréen a annoncé un plan visant à transformer ces lycées en écoles générales d'ici 2025, afin de promouvoir l'équité dans l'éducation.
+
+
+`,
+        },
+        {
+          img: "",
+          imgCredit: `Le pont Mapo à Séoul, doté de capteurs et de photos représentant des “petits moments de la vie”, pour empêcher les personnes de suicider. Source : RFI / Frédéric Ojardias
+`,
+          text: ` <br> 2006 – Imposition d'un couvre-feu pour les instituts privés (hagwon) </br>
+
+En septembre 2006, les autorités éducatives sud-coréennes ont révisé la « Loi sur l'établissement et l'exploitation des instituts d'enseignement privé et des leçons parascolaires » (학원의 설립·운영 및 과외교습에 관한 법률) pour permettre aux bureaux régionaux de l'éducation d'imposer des restrictions sur les horaires d'ouverture des hagwon. Cette révision visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. La loi a renforcé les pouvoirs des bureaux municipaux et provinciaux de l'éducation en matière de réglementation des hagwon. 
+
+À partir de cette révision, plusieurs provinces ont commencé à imposer un couvre-feu à 22h pour les hagwon. Cependant, l'application de cette mesure variait selon les régions, certaines autorités locales ayant modifié le couvre-feu au fil du temps.
+
+<br> Objectifs de la réforme </br>
+
+Limiter les heures d'étude pour permettre aux élèves de se reposer davantage.
+Réduire la dépendance à l'enseignement privé coûteux.
+Favoriser le bien-être des élèves en limitant les heures d'étude nocturnes.
+
+<br> Évolution et impact </br>
+
+Des études ont montré que l'imposition du couvre-feu n'a pas entraîné une réduction significative des dépenses ou du temps consacré au tutorat privé, avec des résultats hétérogènes selon le niveau scolaire et le statut socio-économique.
+
+En réponse à ces restrictions, certains hagwon ont ajusté leurs horaires, en ajoutant des cours le week-end. D'autres parents ont cherché des tuteurs privés pour remplacer les cours annulés. Malgré les restrictions, certaines institutions ont continué à fonctionner au-delà des heures autorisées, contournant ainsi les réglementations.
+ `,
+        },
+        {
+          img: "/journal-3.png",
+          imgCredit: `Des enseignants le 4 septembre 2023 suite au suicide de leur collègue. Source : JUNG YEON-JE / AFP
+`,
+          text: ` <b> 2008 – Lancement des lycées Meister (마이스터고) </b>
+
+En 2008, le gouvernement sud-coréen, sous l'administration du président Lee Myung-bak, a annoncé la création des lycées Meister (마이스터고), inspirés du modèle allemand des écoles professionnelles. Cette initiative visait à revitaliser l'enseignement professionnel secondaire en réponse à la désaffection croissante pour les lycées professionnels traditionnels et à la pénurie de main-d'œuvre qualifiée dans certains secteurs industriels.
+
+Le plan prévoyait la transformation de 50 lycées professionnels existants en lycées Meister, avec une mise en œuvre progressive à partir de 2010. Ces établissements devaient offrir une formation spécialisée en étroite collaboration avec les industries, afin de répondre aux besoins spécifiques du marché du travail.
+
+<b> Objectifs de la réforme </b>
+
+Adapter les programmes scolaires aux compétences recherchées par les entreprises.
+Assurer une transition réussie des élèves vers le marché du travail.
+Changer la perception sociale négative associée aux filières professionnelles.
+
+<br> Évolution et impact </br>
+
+Les lycées Meister ont connu une expansion rapide, avec 21 établissements opérationnels dès 2010 et 54 en 2022. Entre 2013 et 2017, ces écoles ont affiché des taux d'emploi supérieurs à 90 % pour leurs diplômés, démontrant leur efficacité en matière d'insertion professionnelle.
+
+Cependant, des études ont soulevé des questions sur la rentabilité de ces établissements par rapport aux lycées professionnels traditionnels, en raison de coûts de fonctionnement plus élevés
+
+ `,
+        },
+
+        {
+          img: "",
+          imgCredit: `
+`,
+          text: ` <br> 2009 – Généralisation des lycées privés autonomes </br>
+
+En 2009, le gouvernement sud-coréen a lancé un plan ambitieux visant à établir 100 lycées privés autonomes (자율형 사립고) d'ici 2010. Ces établissements bénéficiaient d'une plus grande liberté en matière de sélection des élèves et de programmes, tout en restant soumis à certaines directives du ministère de l'Éducation. L'objectif était de diversifier l'offre éducative et de promouvoir l'excellence académique.
+
+<br> Évolution et impact </br>
+
+Malgré les intentions initiales, les lycées privés autonomes ont rencontré des difficultés pour attirer suffisamment d'élèves. Par exemple, à Séoul, 11 des 26 lycées de ce type avaient moins de candidats que de places disponibles en 2011. Cette situation a suscité des critiques quant à l'efficacité de cette politique éducative. Des mesures d'urgence ont été introduites, telles que l'élargissement des critères de sélection, mais avec peu d'effet. Des appels ont été lancés pour revoir ou annuler cette politique
+
+ `,
+        },
+
+        {
+          img: "/calendrier-2025.png",
+          imgCredit: `Séoul
+Image libre de droit | Pexels
+Par Paul Bill`,
+          title: "",
+          text: `
+
+<br> 2009 – Renforcement du couvre-feu pour les hagwon </br>
+
+En 2009, les autorités éducatives sud-coréennes ont renforcé les restrictions sur les horaires d'ouverture des hagwon, interdisant les cours après 22h. Cette mesure visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. Des sanctions strictes ont été mises en place pour les contrevenants, et des récompenses financières ont été offertes aux citoyens signalant des violations.
+
+<br> Évolution et impact </br>
+
+Malgré les restrictions, de nombreux hagwon ont contourné les règles en ajoutant des cours le week-end ou en proposant des sessions privées. Certains parents ont également cherché des tuteurs privés pour compenser les heures perdues. En octobre 2009, la Cour constitutionnelle a statué que le couvre-feu ne violait pas les droits fondamentaux, soulignant l'importance du sommeil pour la santé des élèves.
+`,
+        },
+
         // Objet uniforme 2025
 
         {
@@ -280,8 +436,7 @@ Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, �
 `,
           text: `Mais cette Loi Cendrillon en dit long sur la manière dont la jeunesse est perçue dans la société sud-coréenne : elle doit être contrôlée, surveillée, afin de les formater à leur future vie d’adulte. Les jeux vidéos sont ainsi perçus comme une possible cause d’échec scolaire, et doivent être strictement encadrés. Finalement, la loi est abrogée en 2021, après dix ans de débats : elle est perçue comme irréaliste au vu de l’omniprésence des écrans dans la vie des plus jeunes et facilement contournable par ces derniers. 
 
-Cette loi soulève alors des questions plus profondes : faut-il contrôler la jeunesse au-delà de la sphère scolaire ? Faut-il les limiter même durant leurs moments de liberté ? 
- `,
+Cette loi soulève alors des questions plus profondes : faut-il contrôler la jeunesse au-delà de la sphère scolaire ? Faut-il les limiter même durant leurs moments de liberté ? `,
         },
 
         // Objet Casque de musique 2025
@@ -296,6 +451,7 @@ Cette loi soulève alors des questions plus profondes : faut-il contrôler la je
         },
         {
           img: "/casque-2.png",
+          video: "https://www.youtube.com/watch?v=xKudyIWrv-E",
           imgCredit: `Un PC Bang. Source : Seoul Insider Guide
 `,
           text: `On retrouve également les fameux PC bang, des cybercafés haut de gamme, spécialisés dans le jeu vidéo en réseau : ce lieu est l’espace parfait pour s’évader du contexte scolaire ou familial, on peut y jouer pendant des heures et même consommer de la nourriture. Il sont accessibles jusqu’à tard le soir, mais certains établissements interdisent aux mineurs d’y rester après 22h (voir minuit selon les règles locales). 
@@ -337,7 +493,7 @@ Mais cette transformation a ses limites. La pression à la performance reste omn
         //Sac de cours 2025
 
         {
-          img: "",
+          img: "/sac-2025-1.png",
           imgCredit: `Légende
 `,
           title:
@@ -354,7 +510,7 @@ Cette évolution, cependant, n’est pas homogène. Le contraste est frappant en
  `,
         },
         {
-          img: "",
+          img: "/sac-2025-2.png",
           imgCredit: `Un PC Bang. Source : Seoul Insider Guide
 `,
           text: `À cela s’ajoute une pression invisible, mais bien réelle : celle de devoir maîtriser toujours plus de choses, plus tôt, et plus vite. Le sac à dos devient alors le symbole d’une charge mentale croissante, entre attentes académiques, pression sociale et gestion des émotions. Il ne pèse pas qu’en kilos : il pèse en silence, en fatigue, en doutes. Et pourtant, il contient aussi l’espoir d’une école qui commence à s’ouvrir à d’autres formes de savoir, plus humaines, plus inclusives, plus ancrées dans le réel.
@@ -447,6 +603,7 @@ Cette évolution, cependant, n’est pas homogène. Le contraste est frappant en
         },
         {
           img: "/livre-2.png",
+          video: "https://www.youtube.com/watch?v=XRMI02EXmN4",
           imgCredit: `오랫동안 잃어버린 줄 알았던 영화, Tuition (수업료), 최인규, 방한준, 1940. 출처: YouTube`,
           // title:
           //   "오랫동안 잃어버린 줄 알았던 영화, Tuition (수업료), 최인규, 방한준, 1940. 출처: YouTube",
@@ -522,41 +679,101 @@ Cette évolution, cependant, n’est pas homogène. Le contraste est frappant en
       </div>
 
       <div className="slides">
-        {lang.slides.map((slide, idx) => (
-          <section className="img-div" key={idx}>
-            <div className="left-image">
-              <img
-                src={slide.img}
-                alt={slide.title}
-                style={{
-                  width: "100%",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
-                }}
-              />
-              <p
-                style={{ fontSize: "12px", marginTop: "8px", color: "#698958" }}
-              >
-                {slide.imgCredit}
-              </p>
-            </div>
-            <div className="right-text">
-              <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>
-                {slide.title}
-              </h2>
+        {lang.slides.map((slide, idx) =>
+          slide.img ? (
+            <section className="img-div" key={idx}>
+              <div className="left-image">
+                {slide.video ? (
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src={slide.video.replace("watch?v=", "embed/")}
+                    title={slide.title || "Vidéo"}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+                      width: "100%",
+                      minHeight: "250px",
+                      background: "#000",
+                    }}
+                  />
+                ) : (
+                  <img
+                    src={slide.img}
+                    alt={slide.title}
+                    style={{
+                      width: "100%",
+                      objectFit: "cover",
+                      borderRadius: "10px",
+                      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+                    }}
+                  />
+                )}
+                <p
+                  style={{
+                    fontSize: "12px",
+                    marginTop: "8px",
+                    color: "#698958",
+                  }}
+                >
+                  {slide.imgCredit}
+                </p>
+              </div>
+              <div className="right-text">
+                <h2 style={{ fontSize: "24px", marginBottom: "16px" }}>
+                  {slide.title}
+                </h2>
+                <p
+                  style={{
+                    fontSize: "14px",
+                    lineHeight: "1.8",
+                    whiteSpace: "pre-line",
+                  }}
+                  dangerouslySetInnerHTML={{ __html: slide.text }}
+                />
+              </div>
+            </section>
+          ) : (
+            <section className="text-only-slide" key={idx}>
+              {slide.title && (
+                <h2
+                  style={{
+                    fontSize: "24px",
+                    marginBottom: "16px",
+                    color: "#4A5B41",
+                    width: "100%",
+                    textAlign: "center",
+                  }}
+                >
+                  {slide.title}
+                </h2>
+              )}
               <p
                 style={{
                   fontSize: "14px",
                   lineHeight: "1.8",
                   whiteSpace: "pre-line",
                 }}
-              >
-                {slide.text}
-              </p>
-            </div>
-          </section>
-        ))}
+                dangerouslySetInnerHTML={{ __html: slide.text }}
+              />
+              {slide.imgCredit && (
+                <p
+                  style={{
+                    fontSize: "12px",
+                    marginTop: "8px",
+                    color: "#698958",
+                    textAlign: "center",
+                  }}
+                >
+                  {slide.imgCredit}
+                </p>
+              )}
+            </section>
+          )
+        )}
       </div>
     </div>
   );
