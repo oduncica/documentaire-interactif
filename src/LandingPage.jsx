@@ -44,13 +44,13 @@ export default function LandingPage() {
 
   const textes = {
     fr: {
-      titre: "Education sous pression",
+      // titre: "Education sous pression",
       paragraphe: `Derrière l’image d’excellence que projette le système éducatif sud-coréen se cache une mécanique strictement codifiée, héritée d’une culture réglementaire longtemps valorisée.`,
       bouton1: "Le documentaire complet",
       bouton2: "L'expérience interactive",
     },
     kr: {
-      titre: "한국 교육 속 규제문화",
+      // titre: "한국 교육 속 규제문화",
       paragraphe: `한국 교육 시스템이 보여주는 탁월한 모습 뒤에는 오랫동안 중시되어 온 규범 중심의 문화에서 비롯된 규제문화들이 숨어 있다.
 오랫동안 형성되고 지속되어온 이 문화는 오늘날까지도 학생들의 일상에 깊이 뿌리내리고 있다. 그렇다면 이러한 규제문화는 오늘날 어떻게 나타나고 있으며, 한국의 젊은 세대는 이를 어떻게 받아들이고 있을까?
 `,
@@ -234,6 +234,7 @@ export default function LandingPage() {
               textAlign: "center",
               padding: "20px",
               borderRadius: "10px",
+              marginTop: "85px", // <-- Ajouté pour descendre le bloc
             }}
           >
             <h1
@@ -334,7 +335,7 @@ export default function LandingPage() {
         <img
           src="/logo.png"
           alt="Logo gauche"
-          style={{ height: "48px", pointerEvents: "auto" }}
+          style={{ height: "32px", pointerEvents: "auto" }}
         />
         <img
           src="/logo2.png"
