@@ -52,39 +52,39 @@ export default function Scene1980({ onObjectClick }) {
   const initialInteractiveObjects = [
     {
       id: "init-1",
-      x: "14%",
-      y: "60%",
+      x: "11%",
+      y: "58%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo"),
       bgColor: "#5E9197",
     },
     {
       id: "init-2",
-      x: "44%",
-      y: "19%",
+      x: "38%",
+      y: "14%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/14"),
-      bgColor: "#5E9197",
+      bgColor: "#A96860",
     },
     {
       id: "init-3",
       x: "53%",
-      y: "15%",
+      y: "17%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo3"),
       bgColor: "#5E9197",
     },
     {
       id: "init-4",
-      x: "92%",
-      y: "54%",
+      x: "89%",
+      y: "52%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/9"),
       bgColor: "#A96860",
     },
     {
       id: "init-5",
-      x: "80%",
+      x: "78%",
       y: "66%",
       icon: <FaPlay />,
       action: () => setStage("video-vimeo-s6"),
@@ -93,14 +93,14 @@ export default function Scene1980({ onObjectClick }) {
   ];
 
   const detailInteractiveObjects = [
-    {
-      id: "detail-1",
-      x: "25%",
-      y: "63%",
-      icon: <FaInfoCircle />,
-      action: () => alert("Information sur l'objet final"),
-      bgColor: "#A96860",
-    },
+    // {
+    //   id: "detail-1",
+    //   x: "25%",
+    //   y: "63%",
+    //   icon: <FaInfoCircle />,
+    //   action: () => alert("Information sur l'objet final"),
+    //   bgColor: "#A96860",
+    // },
     {
       id: "detail-2",
       x: "49%",

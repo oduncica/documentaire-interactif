@@ -52,16 +52,16 @@ export default function Scene2025({ onObjectClick }) {
   const initialInteractiveObjects = [
     {
       id: "init-1",
-      x: "16%",
-      y: "50%",
+      x: "12%",
+      y: "51%",
       icon: <FaPlay />,
-      action: () => alert("Information à venir"),
+      action: () => alert("Vidéo à venir"),
       bgColor: "#5E9197",
     },
     {
       id: "init-2",
-      x: "48%",
-      y: "35%",
+      x: "46%",
+      y: "38%",
       icon: <FaPlay />,
       action: () => navigate("/reveil#/22"),
       bgColor: "#5E9197",
@@ -76,8 +76,8 @@ export default function Scene2025({ onObjectClick }) {
     },
     {
       id: "info-2025",
-      x: "55%",
-      y: "20%",
+      x: "53%",
+      y: "25%",
       icon: <FaInfoCircle />,
       action: () => navigate("/reveil#/27"),
       bgColor: "#A96860",
@@ -189,8 +189,8 @@ export default function Scene2025({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "45%",
-        left: "47%",
+        top: "48%",
+        left: "48%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",

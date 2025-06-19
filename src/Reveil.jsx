@@ -30,7 +30,7 @@ function Reveil() {
   // Traductions (exemple, à compléter)
   const t = {
     fr: {
-      retour: "Retour",
+      retour: "Chambre",
       slides: [
         // Objet Reveil Passé
         {
@@ -125,7 +125,8 @@ Source : Wikipédia`,
         },
         {
           img: "/livre-2.png",
-          video: "https://www.youtube.com/watch?v=XRMI02EXmN4",
+          video:
+            "https://www.youtube.com/clip/UgkxEtL-olFDSGpTLiWz8vksLzyEuclBfKAV",
           imgCredit: `Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube
 `,
           // title:
@@ -237,17 +238,17 @@ Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider
           img: "",
           imgCredit: ``,
           title: "Règlementations",
-          text: ` <br> 2001 – Début de l’autonomisation des lycées privés </br>
+          text: ` <strong>  2001 – Début de l’autonomisation des lycées privés </strong>
 
 Introduction du concept de lycées privés autonomes (자율형 사립고) dans le but de diversifier l'offre éducative et d'accroître l'autonomie des établissements scolaires. Ces lycées bénéficiaient d'une plus grande liberté en matière de gestion administrative, de programmes scolaires et de sélection des élèves, tout en restant soumis aux directives générales du ministère de l'Éducation. 
 
-<br> Objectifs de la réforme </br>
+<strong> Objectifs de la réforme </strong>
 
 Offrir aux élèves des parcours éducatifs variés adaptés à leurs talents et intérêts.
 Encourager l'innovation pédagogique et l'excellence académique au sein des établissements.
 Donner plus de responsabilités aux établissements pour répondre aux besoins spécifiques de leur communauté.
 
-<br> Évolution et impact </br>
+<strong> Évolution et impact </strong>
 
 Initialement, le nombre de lycées privés autonomes était limité, mais leur succès a conduit à une expansion progressive. Cependant, ces établissements ont également été critiqués pour avoir accentué les inégalités sociales, en raison de frais de scolarité plus élevés et de processus de sélection compétitifs. En 2019, le gouvernement sud-coréen a annoncé un plan visant à transformer ces lycées en écoles générales d'ici 2025, afin de promouvoir l'équité dans l'éducation.
 
@@ -256,21 +257,21 @@ Initialement, le nombre de lycées privés autonomes était limité, mais leur s
         },
         {
           img: "",
-          imgCredit: `Le pont Mapo à Séoul, doté de capteurs et de photos représentant des “petits moments de la vie”, pour empêcher les personnes de suicider. Source : RFI / Frédéric Ojardias
+          imgCredit: `
 `,
-          text: ` <br> 2006 – Imposition d'un couvre-feu pour les instituts privés (hagwon) </br>
+          text: ` <strong> 2006 – Imposition d'un couvre-feu pour les instituts privés (hagwon) </strong>
 
 En septembre 2006, les autorités éducatives sud-coréennes ont révisé la « Loi sur l'établissement et l'exploitation des instituts d'enseignement privé et des leçons parascolaires » (학원의 설립·운영 및 과외교습에 관한 법률) pour permettre aux bureaux régionaux de l'éducation d'imposer des restrictions sur les horaires d'ouverture des hagwon. Cette révision visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. La loi a renforcé les pouvoirs des bureaux municipaux et provinciaux de l'éducation en matière de réglementation des hagwon. 
 
 À partir de cette révision, plusieurs provinces ont commencé à imposer un couvre-feu à 22h pour les hagwon. Cependant, l'application de cette mesure variait selon les régions, certaines autorités locales ayant modifié le couvre-feu au fil du temps.
 
-<br> Objectifs de la réforme </br>
+<strong> Objectifs de la réforme </strong>
 
 Limiter les heures d'étude pour permettre aux élèves de se reposer davantage.
 Réduire la dépendance à l'enseignement privé coûteux.
 Favoriser le bien-être des élèves en limitant les heures d'étude nocturnes.
 
-<br> Évolution et impact </br>
+<strong> Évolution et impact </strong>
 
 Des études ont montré que l'imposition du couvre-feu n'a pas entraîné une réduction significative des dépenses ou du temps consacré au tutorat privé, avec des résultats hétérogènes selon le niveau scolaire et le statut socio-économique.
 
@@ -278,8 +279,8 @@ En réponse à ces restrictions, certains hagwon ont ajusté leurs horaires, en 
  `,
         },
         {
-          img: "/journal-3.png",
-          imgCredit: `Des enseignants le 4 septembre 2023 suite au suicide de leur collègue. Source : JUNG YEON-JE / AFP
+          img: "",
+          imgCredit: `
 `,
           text: ` <b> 2008 – Lancement des lycées Meister (마이스터고) </b>
 
@@ -293,7 +294,7 @@ Adapter les programmes scolaires aux compétences recherchées par les entrepris
 Assurer une transition réussie des élèves vers le marché du travail.
 Changer la perception sociale négative associée aux filières professionnelles.
 
-<br> Évolution et impact </br>
+<b> Évolution et impact </b>
 
 Les lycées Meister ont connu une expansion rapide, avec 21 établissements opérationnels dès 2010 et 54 en 2022. Entre 2013 et 2017, ces écoles ont affiché des taux d'emploi supérieurs à 90 % pour leurs diplômés, démontrant leur efficacité en matière d'insertion professionnelle.
 
@@ -306,11 +307,11 @@ Cependant, des études ont soulevé des questions sur la rentabilité de ces ét
           img: "",
           imgCredit: `
 `,
-          text: ` <br> 2009 – Généralisation des lycées privés autonomes </br>
+          text: ` <b> 2009 – Généralisation des lycées privés autonomes </b>
 
 En 2009, le gouvernement sud-coréen a lancé un plan ambitieux visant à établir 100 lycées privés autonomes (자율형 사립고) d'ici 2010. Ces établissements bénéficiaient d'une plus grande liberté en matière de sélection des élèves et de programmes, tout en restant soumis à certaines directives du ministère de l'Éducation. L'objectif était de diversifier l'offre éducative et de promouvoir l'excellence académique.
 
-<br> Évolution et impact </br>
+<b> Évolution et impact </b>
 
 Malgré les intentions initiales, les lycées privés autonomes ont rencontré des difficultés pour attirer suffisamment d'élèves. Par exemple, à Séoul, 11 des 26 lycées de ce type avaient moins de candidats que de places disponibles en 2011. Cette situation a suscité des critiques quant à l'efficacité de cette politique éducative. Des mesures d'urgence ont été introduites, telles que l'élargissement des critères de sélection, mais avec peu d'effet. Des appels ont été lancés pour revoir ou annuler cette politique
 
@@ -325,11 +326,11 @@ Par Paul Bill`,
           title: "",
           text: `
 
-<br> 2009 – Renforcement du couvre-feu pour les hagwon </br>
+<b> 2009 – Renforcement du couvre-feu pour les hagwon </b>
 
 En 2009, les autorités éducatives sud-coréennes ont renforcé les restrictions sur les horaires d'ouverture des hagwon, interdisant les cours après 22h. Cette mesure visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. Des sanctions strictes ont été mises en place pour les contrevenants, et des récompenses financières ont été offertes aux citoyens signalant des violations.
 
-<br> Évolution et impact </br>
+<b> Évolution et impact </b>
 
 Malgré les restrictions, de nombreux hagwon ont contourné les règles en ajoutant des cours le week-end ou en proposant des sessions privées. Certains parents ont également cherché des tuteurs privés pour compenser les heures perdues. En octobre 2009, la Cour constitutionnelle a statué que le couvre-feu ne violait pas les droits fondamentaux, soulignant l'importance du sommeil pour la santé des élèves.
 `,
@@ -626,6 +627,367 @@ Cette évolution, cependant, n’est pas homogène. Le contraste est frappant en
           img: "/photo-2.png",
           imgCredit: `서울대학교, 국내 최고 명문 대학 중 하나. 출처: 위키피디아.`,
           text: `대학 입시, 특히 수능은 한국 사회에서 매우 중요한 역할을 합니다. 이는 사회적 계층 이동의 수단으로, 합격자는 직업과 사회적 지위를 확보할 수 있습니다. 많은 가정이 자녀를 명문대에 보내기 위해 막대한 비용을 투자하며, 이로 인해 학업 경쟁이 심화됩니다. SKY(서울대, 고려대, 연세대)는 대표적인 명문대학으로, 입학이 곧 성공을 의미합니다.`,
+        },
+        //Objet Calendrier 1980
+        {
+          img: "/calendrier-1980-1.png",
+          imgCredit: `Affiche des années 70 pour un hagwon qui prépare les élèves à l’entrée au lycée. Source : 추억의 편린들
+`,
+          title:
+            "L’histoire des hagwon : l’éducation de l’ombre en Corée du sud : ",
+          text: `Les hagwon sont des instituts privés de soutien scolaire. La plupart des élèves sud-coréens s’y rendent après les cours officiels, parfois jusqu’à très tard le soir. On parle alors d’“éducation de l’ombre” : un monde discret, mais tout aussi structuré, qui façonne le paysage éducatif du pays depuis des décennies.
+
+Au XVIIe siècle, les premières formes de hagwon apparaissent en Corée. On y apprend à lire, à écrire, et à faire de simples calculs. Mais c’est au XXe siècle que le phénomène prend véritablement de l’ampleur. Juste avant l’annexion japonaise (1910–1945), on en compte environ 3 000. La colonisation interrompt leur développement, mais les établissements privés retrouvent leur place dans les années 1960–1970. Ils se multiplient rapidement, et malgré leur coût élevé, restent très prisés par les familles sud-coréennes.
+ 
+`,
+        },
+        {
+          img: "/Calendrier-1980-2.png",
+          imgCredit: `Bâtiment abritant de nombreux hagwon à 
+Dunsan-dong, Daejeon. Source : Wikipédia.`,
+          text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
+        },
+
+        // Objet Sac de cours
+        {
+          img: "/sac-cours-1980-1.png",
+          imgCredit: `Un cours d’écriture de caractères chinois à l’époque Joseon. Source : Base de données Dong-A Ilbo.
+`,
+          title: "L’évolution des matières enseignées au fil des époques : ",
+          text: `Les matières enseignées dans les écoles sud-coréennes ont considérablement évolué au fil du temps. Entre la période Joseon (1392–1897) et aujourd’hui, le système éducatif du pays a été profondément influencé par les bouleversements politiques et historiques qu’a connus la Corée.
+
+Sous la dynastie Joseon, l’enseignement était destiné à former les élites à travers les principes du néo-confucianisme, dans le but d’assurer l’ordre et la stabilité du royaume. La mémorisation des classiques chinois et la maîtrise des rites étaient au cœur de la formation intellectuelle.
+
+ 
+`,
+        },
+        {
+          img: "/sac-cours-1980-2.png",
+          imgCredit: `Entraînement militaire dans les années 70. Source : site officiel du lycée Hwanil..`,
+          text: `Durant l’occupation japonaise (1910–1945), l’éducation devient un outil d’assimilation impériale. Le japonais s’impose comme langue unique d’enseignement, et les programmes scolaires sont orientés vers des matières modernes telles que l’arithmétique, l’histoire et la géographie, mais vues sous un prisme colonial. La culture coréenne est systématiquement effacée, tandis que l’école devient un espace de préparation à la guerre et de soumission à l’Empire.
+
+Après la Seconde Guerre mondiale, le rejet de cette domination se traduit immédiatement dans les réformes éducatives. La langue coréenne est réintroduite dans les salles de classe, et l’enseignement se recentre sur l’histoire nationale et l’idéologie patriotique. Les cours de défense (교련, gyoyun) militaire deviennent obligatoires au lycée, dans un contexte politique marqué par l’autoritarisme et la guerre froide.
+  `,
+        },
+        {
+          img: "/sac-cours-1980-3.png",
+          imgCredit: `"Pendant l’Exposition sur l'Éducation du Futur Global 2024, des élèves suivent un cours dans une salle de classe du futur en utilisant la réalité virtuelle.”
+Source : Journal de l’éducation Honam. 
+`,
+          text: `
+À partir des années 1990, avec la démocratisation du pays et l’ouverture à la mondialisation, une transition s’opère : on passe d’un modèle basé sur la discipline à une approche plus participative. Les matières se diversifient largement, intégrant les sciences sociales, les technologies de l’information, la pensée critique et des enseignements plus créatifs. L’école tente désormais de former des individus capables de s’adapter à une société en mutation rapide, même si la logique de performance reste toujours très présente.
+  `,
+        },
+        // Objet Journal Intime présent
+        {
+          img: "/journal-1.png",
+          imgCredit: `Graphique comparant le taux de mortalité par suicide entre 2000 et 2019, au niveau mondial et sud-coréen.  Source : UNICEF.`,
+          title:
+            "Le suicide : la souffrance silencieuse au sein de l’éducation sud-coréenne",
+          text: `Le suicide est une des problématiques de santé publique les plus graves de la société sud-coréenne. En effet, la Corée du sud a le taux de suicide le plus élevé des pays de l’OCDE,  avec 14,439 suicides reportés en 2024, et près de 40 suicides par jour. Il s’agit de la cause principale de mortalité chez les adolescents et les jeunes adultes : en 2023, le nombre de suicide chez les écoliers, collégiens et lycéens atteint le nombre de 214, le plus haut jamais enregistré, ayant doublé en 8 ans. Ce mal-être traduit la nécessité de renforcer le soutien psychologique au sein des écoles.
+
+Pour cela, les différents gouvernements qui ont se sont succédés au cours de ces dernières années ont instauré différentes mesures  : on retrouve plusieurs plans quinquennaux entre 2004 et 2023, avec le dernier en date qui a pour but de réduire le taux de suicide de 30 % d’ici 2027. 
+`,
+        },
+        {
+          img: "/journal-2.png",
+          imgCredit: `Le pont Mapo à Séoul, doté de capteurs et de photos représentant des “petits moments de la vie”, pour empêcher les personnes de suicider. Source : RFI / Frédéric Ojardias
+`,
+          text: `En 2011, le gouvernement de Lee Myung-bak met en place le “Suicide Prevention Act”. Cette mesure a pour objectif de renforcer la prévention au suicide, avec notamment un suivi des personnes ayant fait une tentative de suicide. 
+
+Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider efficacement les jeunes qui souffrent.  Parmi les raisons qui poussent les jeunes à mettre fin à leurs jours, on retrouve des problématiques de santé mentale, des conflits familiaux, mais également la pression académique. Cette dernière pèse sur les épaules des sud-coréens dès leur entrée dans le monde éducatif, mais elle est encore plus lourde à la période du lycée, étape charnière pour leur avenir. En effet, les étudiants sud-coréens dédient une partie de leur enfance et adolescence aux révisions, notamment car les parents investissent beaucoup dans leur réussite académique. Les étudiants sud-coréens passent deux fois plus de temps à réviser que les étudiants américains par exemple, et ce notamment après les cours. Cet investissement académique est une cause de stress profond chez les étudiant, pouvant les pousser à commettre l’irréparable. 
+ `,
+        },
+        {
+          img: "/journal-3.png",
+          imgCredit: `Des enseignants le 4 septembre 2023 suite au suicide de leur collègue. Source : JUNG YEON-JE / AFP
+`,
+          text: `Mais dans le système éducatif sud-coréen, les élèves ne sont pas les seuls touchés par ce fléau du suicide : les enseignants subissent également une forte pression de la part des parents d’élèves, allant même jusqu’à l’harcèlement. Entre 2015 et 2023, 168 enseignants se sont donné la mort. En été 2023, une jeune institutrice est retrouvée morte dans un placard de salle de classe, provoquant l’émoi de la communauté enseignante. Dans son journal, elle parle de cette souffrance silencieuse qui l’a conduit à passer à l’acte : “j'ai la poitrine trop serrée. Je me sens dépassée par la folie du travail’. Une grève nationale a lieu le 4 septembre 2023, pour dénoncer cette intimidation de la part des parents d’élèves, prêts à tout pour la réussite de leurs enfants. `,
+        },
+        // Objet Calendrier 2025
+
+        {
+          img: "",
+          imgCredit: ``,
+          title: "Règlementations",
+          text: ` <strong>  2001 – Début de l’autonomisation des lycées privés </strong>
+
+Introduction du concept de lycées privés autonomes (자율형 사립고) dans le but de diversifier l'offre éducative et d'accroître l'autonomie des établissements scolaires. Ces lycées bénéficiaient d'une plus grande liberté en matière de gestion administrative, de programmes scolaires et de sélection des élèves, tout en restant soumis aux directives générales du ministère de l'Éducation. 
+
+<strong> Objectifs de la réforme </strong>
+
+Offrir aux élèves des parcours éducatifs variés adaptés à leurs talents et intérêts.
+Encourager l'innovation pédagogique et l'excellence académique au sein des établissements.
+Donner plus de responsabilités aux établissements pour répondre aux besoins spécifiques de leur communauté.
+
+<strong> Évolution et impact </strong>
+
+Initialement, le nombre de lycées privés autonomes était limité, mais leur succès a conduit à une expansion progressive. Cependant, ces établissements ont également été critiqués pour avoir accentué les inégalités sociales, en raison de frais de scolarité plus élevés et de processus de sélection compétitifs. En 2019, le gouvernement sud-coréen a annoncé un plan visant à transformer ces lycées en écoles générales d'ici 2025, afin de promouvoir l'équité dans l'éducation.
+
+
+`,
+        },
+        {
+          img: "",
+          imgCredit: `
+`,
+          text: ` <strong> 2006 – Imposition d'un couvre-feu pour les instituts privés (hagwon) </strong>
+
+En septembre 2006, les autorités éducatives sud-coréennes ont révisé la « Loi sur l'établissement et l'exploitation des instituts d'enseignement privé et des leçons parascolaires » (학원의 설립·운영 및 과외교습에 관한 법률) pour permettre aux bureaux régionaux de l'éducation d'imposer des restrictions sur les horaires d'ouverture des hagwon. Cette révision visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. La loi a renforcé les pouvoirs des bureaux municipaux et provinciaux de l'éducation en matière de réglementation des hagwon. 
+
+À partir de cette révision, plusieurs provinces ont commencé à imposer un couvre-feu à 22h pour les hagwon. Cependant, l'application de cette mesure variait selon les régions, certaines autorités locales ayant modifié le couvre-feu au fil du temps.
+
+<strong> Objectifs de la réforme </strong>
+
+Limiter les heures d'étude pour permettre aux élèves de se reposer davantage.
+Réduire la dépendance à l'enseignement privé coûteux.
+Favoriser le bien-être des élèves en limitant les heures d'étude nocturnes.
+
+<strong> Évolution et impact </strong>
+
+Des études ont montré que l'imposition du couvre-feu n'a pas entraîné une réduction significative des dépenses ou du temps consacré au tutorat privé, avec des résultats hétérogènes selon le niveau scolaire et le statut socio-économique.
+
+En réponse à ces restrictions, certains hagwon ont ajusté leurs horaires, en ajoutant des cours le week-end. D'autres parents ont cherché des tuteurs privés pour remplacer les cours annulés. Malgré les restrictions, certaines institutions ont continué à fonctionner au-delà des heures autorisées, contournant ainsi les réglementations.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `
+`,
+          text: ` <b> 2008 – Lancement des lycées Meister (마이스터고) </b>
+
+En 2008, le gouvernement sud-coréen, sous l'administration du président Lee Myung-bak, a annoncé la création des lycées Meister (마이스터고), inspirés du modèle allemand des écoles professionnelles. Cette initiative visait à revitaliser l'enseignement professionnel secondaire en réponse à la désaffection croissante pour les lycées professionnels traditionnels et à la pénurie de main-d'œuvre qualifiée dans certains secteurs industriels.
+
+Le plan prévoyait la transformation de 50 lycées professionnels existants en lycées Meister, avec une mise en œuvre progressive à partir de 2010. Ces établissements devaient offrir une formation spécialisée en étroite collaboration avec les industries, afin de répondre aux besoins spécifiques du marché du travail.
+
+<b> Objectifs de la réforme </b>
+
+Adapter les programmes scolaires aux compétences recherchées par les entreprises.
+Assurer une transition réussie des élèves vers le marché du travail.
+Changer la perception sociale négative associée aux filières professionnelles.
+
+<b> Évolution et impact </b>
+
+Les lycées Meister ont connu une expansion rapide, avec 21 établissements opérationnels dès 2010 et 54 en 2022. Entre 2013 et 2017, ces écoles ont affiché des taux d'emploi supérieurs à 90 % pour leurs diplômés, démontrant leur efficacité en matière d'insertion professionnelle.
+
+Cependant, des études ont soulevé des questions sur la rentabilité de ces établissements par rapport aux lycées professionnels traditionnels, en raison de coûts de fonctionnement plus élevés
+
+ `,
+        },
+
+        {
+          img: "",
+          imgCredit: `
+`,
+          text: ` <b> 2009 – Généralisation des lycées privés autonomes </b>
+
+En 2009, le gouvernement sud-coréen a lancé un plan ambitieux visant à établir 100 lycées privés autonomes (자율형 사립고) d'ici 2010. Ces établissements bénéficiaient d'une plus grande liberté en matière de sélection des élèves et de programmes, tout en restant soumis à certaines directives du ministère de l'Éducation. L'objectif était de diversifier l'offre éducative et de promouvoir l'excellence académique.
+
+<b> Évolution et impact </b>
+
+Malgré les intentions initiales, les lycées privés autonomes ont rencontré des difficultés pour attirer suffisamment d'élèves. Par exemple, à Séoul, 11 des 26 lycées de ce type avaient moins de candidats que de places disponibles en 2011. Cette situation a suscité des critiques quant à l'efficacité de cette politique éducative. Des mesures d'urgence ont été introduites, telles que l'élargissement des critères de sélection, mais avec peu d'effet. Des appels ont été lancés pour revoir ou annuler cette politique
+
+ `,
+        },
+
+        {
+          img: "/calendrier-2025.png",
+          imgCredit: `Séoul
+Image libre de droit | Pexels
+Par Paul Bill`,
+          title: "",
+          text: `
+
+<b> 2009 – Renforcement du couvre-feu pour les hagwon </b>
+
+En 2009, les autorités éducatives sud-coréennes ont renforcé les restrictions sur les horaires d'ouverture des hagwon, interdisant les cours après 22h. Cette mesure visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. Des sanctions strictes ont été mises en place pour les contrevenants, et des récompenses financières ont été offertes aux citoyens signalant des violations.
+
+<b> Évolution et impact </b>
+
+Malgré les restrictions, de nombreux hagwon ont contourné les règles en ajoutant des cours le week-end ou en proposant des sessions privées. Certains parents ont également cherché des tuteurs privés pour compenser les heures perdues. En octobre 2009, la Cour constitutionnelle a statué que le couvre-feu ne violait pas les droits fondamentaux, soulignant l'importance du sommeil pour la santé des élèves.
+`,
+        },
+
+        // Objet uniforme 2025
+
+        {
+          img: "/uniforme-4.png",
+          imgCredit: `Uniformes de lycéennes dans les années 1970
+Auteur inconnu.`,
+          title: "L’uniforme aujourd’hui : vers un assouplissement ? ",
+          text: `En 2025, l’uniforme scolaire reste un élément incontournable du système éducatif sud-coréen, mais sa signification et ses formes ont évolué. Si l’uniforme continue d’incarner des valeurs d’unité et de neutralité, il est désormais perçu comme un marqueur d’appartenance à une école prestigieuse ou à un quartier réputé.
+
+Depuis les années 2000, la Corée du Sud a connu une transformation sociale marquée par une montée en puissance de la consommation, de l’individualisme modéré et de la reconnaissance des droits des élèves. En conséquence, les règles autrefois rigides sur le port de l’uniforme ont progressivement été assouplies, notamment sous l’effet de la pression des parents, des médias et de la jeunesse elle-même.
+
+Les écoles permettent aujourd’hui plus de flexibilité : les élèves peuvent choisir entre plusieurs modèles homologués (version été/hiver, jupe ou pantalon, manches courtes ou longues). Certaines institutions autorisent même les jours "libres" où le port de l’uniforme n’est pas exigé. Mais malgré ces évolutions, l’uniforme reste encadré par des règlements internes propres à chaque établissement, qui conservent des exigences en matière d’apparence et de tenue, même si elles sont moins strictes qu’en 1980.
+`,
+        },
+        {
+          text: `Depuis les années 1980, les élèves sud-coréens ont conquis un espace d'expression individuelle dans un cadre encore structuré. Le tournant a lieu à partir des années 2010, où les débats sur le bien-être des élèves, le harcèlement scolaire et la liberté d’expression ont contribué à repenser la rigidité du modèle éducatif.
+
+En 2025 :
+
+Les filles peuvent porter des pantalons au lieu des jupes, ce qui n’était pas permis en 1980.
+Les garçons peuvent adopter des coiffures plus longues, tant qu’elles restent "soignées".
+Le port de baskets blanches ou noires est autorisé dans la majorité des établissements, pour plus de confort.
+Le maquillage discret (fond de teint léger, baume teinté, sourcils) est toléré, bien qu’encadré.
+
+Les élèves peuvent également porter des vestes personnalisées à l’effigie de leur école, achetées en ligne ou via des fournisseurs privés, mêlant identité scolaire et style personnel. Ce phénomène traduit l’essor d’un "marché de l’uniforme", où la discipline se conjugue avec le marketing et le goût du design.
+
+Ainsi, le rapport à l’uniforme s’est renversé : d’un outil de neutralisation de l’individu, il devient parfois un espace de distinction et de revendication esthétique, dans les limites du cadre scolaire. 
+ `,
+        },
+        {
+          img: "/uniforme-5.png",
+          imgCredit: `Image libre de droit | Pexels
+Par Nguyễn Nguyên
+`,
+          text: `L’un des changements les plus visibles depuis les années 1980 concerne la régulation de l’apparence corporelle. Alors qu’auparavant, la moindre teinte de cheveux ou trace de maquillage donnait lieu à des sanctions, les établissements adoptent aujourd’hui des approches plus nuancées.
+
+Les cheveux teints dans des tons naturels (brun, châtain clair) sont désormais largement acceptés, bien qu’interdits dans certaines écoles publiques plus conservatrices. Les coupes sont plus variées et souvent inspirées de la culture K-pop, tout en restant dans des limites de "propreté" visuelle.
+
+Le maquillage discret est toléré, notamment chez les élèves du lycée, à condition qu’il reste sobre (interdiction du rouge à lèvres vif ou des faux cils, par exemple).
+Les accessoires minimalistes sont également autorisés : une montre, des boucles d’oreilles simples, un bandeau discret.
+Ces tolérances visent à réduire les conflits enseignants-élèves, favoriser le bien-être et respecter le droit à l’identité, tout en maintenant une forme de cohésion. Toutefois, elles varient fortement selon les établissements : les lycées privés élitistes ou conservateurs continuent d’imposer des normes plus strictes. `,
+        },
+
+        {
+          img: "/uniforme-6.png",
+          imgCredit: `Photo fournie par le lycée de langues étrangères de Gyeonggi au journal Newsis 
+photo@newsis.com
+URL : https://mobile.newsis.com/view/NISX20130708_0012212002#_PA 
+
+`,
+          text: `Malgré un net assouplissement depuis les années 1980, le port de l’uniforme reste un outil de régulation sociale, et les règles associées sont rarement remises en question par les institutions. Les sanctions existent toujours, même si elles sont moins humiliantes qu’autrefois :
+
+Remarques écrites dans le dossier scolaire,
+Avertissements oraux,
+Réunions avec les parents,
+Dans certains cas, obligation de racheter un uniforme conforme.
+
+Ce qui a changé, c’est la nature du rapport entre les élèves et les règles. On observe une montée des espaces de dialogue, où les conseils d’élèves participent parfois aux décisions sur l’uniforme. De plus, les jeunes Coréens utilisent les réseaux sociaux pour exprimer leurs revendications et dénoncer les abus.
+
+Mais derrière cette image plus libérale, les normes implicites restent fortes : les filles continuent de subir des pressions sur leur tenue ou leur maquillage, et les élèves qui sortent trop des cadres attendus peuvent être marginalisés.
+En somme, l’uniforme de 2025 traduit une société en tension entre modernisation et tradition, liberté individuelle et pression collective, contrôle institutionnel et stratégies d’appropriation. `,
+        },
+
+        // Objet pelluche 2025
+
+        {
+          img: "/peluche-1.png",
+          imgCredit: `The Teacher and his country school, 1900. 
+Source : lhan New, “When I was a boy in South Korea”, 1928.
+`,
+          title: "La culture réglementaire dès le plus jeune âge",
+          text: `La culture réglementaire dans l’éducation sud-coréenne commence très tôt : dès leurs premiers jours de classe, les écoliers se lancent dans la course à la réussite, la concurrence s’installe et il faut toujours faire mieux que son camarade. 
+
+Cette période est importante car on leur inculque différentes règles et normes sociales à respecter   : par exemple, les repas collectifs sont une manière d’apprendre aux enfants les bonnes manières à table, le tout dans un environnement où le collectif prime sur l’individu, et ceux dès la petite enfance. Ainsi, les enfants sud-coréens ont conscience que le respect des règles est essentiel pour le bon fonctionnement du groupe. 
+ `,
+        },
+        {
+          img: "/peluche-2.png",
+          imgCredit: `Des enfants sud-coréens suivent des cours privés à l'académie Jongno Hagwon, le 10 août 2016 à Séoul. ©AFP - YELIM LEE / AFP
+`,
+          text: `On les habitue également à la mémorisation : l’éducation sud-coréenne accorde beaucoup d’importance au fait d’apprendre par cœur une grande quantité de connaissances, au profit parfois de la créativité individuelle, même si cet aspect est en nette amélioration aujourd’hui comme on peut le voir à travers les entretiens. Les enfants sud-coréens sont envoyés dès l’âge de 4 ans dans les hagwon : ils sont ainsi éduqués à étudier après l’école (gwaweo, “études en dehors de l’école”), pendant de longues heures, à se réveiller tôt et à dormir tard. 
+
+Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, “habitués depuis l'enfance à étudier avec ardeur et sans relâche, les Coréens, sont, à l'âge adulte, capables de s'adapter à des conditions de travail nettement plus contraignantes que les nôtres”. `,
+        },
+        // Objet Ordinateur 2025
+
+        {
+          img: "/ordinateur-1.png",
+          imgCredit: `Des lycéens jouant dans un PC Bang. Source : committee.co.kr
+`,
+          title: "la Loi Cendrillon : la réglementation à travers les écrans :",
+          text: `Aujourd’hui, la Corée du Sud est l’un des pays les plus connectés du monde, leader mondial dans l’e-sport et l’innovation numérique. Les jeunes sud-coréens baignent alors naturellement dans cette culture numérique. Néanmoins, en 2011, le gouvernement a décidé qu’il était nécessaire de limiter aux plus jeunes le temps passé derrière les écrans : le  20 novembre 2011, l’Etat Sud-Coréen instaure la Shutdow Law, surnommée la “Loi Cendrillon”, qui interdit aux mineurs de moins de 16 ans de jouer à des jeux en ligne, entre minuit et 6 heures du matin. L’objectif derrière cette réglementation est de protéger le sommeil des adolescents et leur santé mentale. 
+
+ `,
+        },
+        {
+          img: "/ordinateur-1.png",
+          imgCredit: `Une animation qui représente bien l’ambiance des PC Bang. Source : YouTube
+`,
+          text: `Mais cette Loi Cendrillon en dit long sur la manière dont la jeunesse est perçue dans la société sud-coréenne : elle doit être contrôlée, surveillée, afin de les formater à leur future vie d’adulte. Les jeux vidéos sont ainsi perçus comme une possible cause d’échec scolaire, et doivent être strictement encadrés. Finalement, la loi est abrogée en 2021, après dix ans de débats : elle est perçue comme irréaliste au vu de l’omniprésence des écrans dans la vie des plus jeunes et facilement contournable par ces derniers. 
+
+Cette loi soulève alors des questions plus profondes : faut-il contrôler la jeunesse au-delà de la sphère scolaire ? Faut-il les limiter même durant leurs moments de liberté ? `,
+        },
+
+        // Objet Casque de musique 2025
+
+        {
+          img: "/casque-1.png",
+          imgCredit: `Une salle typique d’un noraebang. Source : mk.co.kr
+`,
+          title: "Les loisirs des lycéens en Corée du Sud :",
+          text: `Dans un système éducatif où la réussite scolaire est un gage de réussite sociale, les moments de liberté prennent une forme bien particulière. Pour les lycéens sud-coréens, les loisirs existent, mais ils sont souvent encadrés et passent en second-plan pour laisser place aux priorités scolaires. Les journées sont longues et rythmées par le bruit des pages qui tournent , mais entre deux révisions, les lycéens s’accordent des précieux moments de liberté dans des lieux de détente qui font partie intégrante de cette culture adolescente sud-coréenne : par exemple, les karaokés (noraebang), l’endroit idéal pour se défouler et exprimer ses émotions avec ses amis. 
+ `,
+        },
+        {
+          img: "/casque-2.png",
+          video: "https://www.youtube.com/watch?v=xKudyIWrv-E",
+          imgCredit: `Un PC Bang. Source : Seoul Insider Guide
+`,
+          text: `On retrouve également les fameux PC bang, des cybercafés haut de gamme, spécialisés dans le jeu vidéo en réseau : ce lieu est l’espace parfait pour s’évader du contexte scolaire ou familial, on peut y jouer pendant des heures et même consommer de la nourriture. Il sont accessibles jusqu’à tard le soir, mais certains établissements interdisent aux mineurs d’y rester après 22h (voir minuit selon les règles locales). 
+
+Ces lieux constituent des refuges temporaires contre le stress scolaire, et permettent aux lycéens d’oublier les révisions et les règles pendant quelques heures de liberté.
+ `,
+        },
+        //Objet photo 2025
+
+        {
+          img: "/photo-3.png",
+          imgCredit: `Légende
+`,
+          title:
+            "Les études supérieures en Corée du Sud : un avenir sous haute tension",
+          text: `L’enseignement supérieur en Corée du Sud en 2025 reflète les paradoxes d’un pays à la pointe de l’innovation, mais toujours marqué par une compétition féroce. L’université reste perçue comme le passage obligé vers la réussite sociale. Les grandes écoles comme Seoul National University, Yonsei ou Korea University incarnent des sommets convoités, souvent inaccessibles sans des années de préparation intense.
+          
+          Malgré la démocratisation de l’accès à l’université depuis les années 1990, les inégalités se creusent. Le recours massif aux instituts privés (hagwons) accentue les écarts entre les familles aisées et les autres. Alors que le nombre d’élèves diminue à cause du vieillissement démographique, les frais de scolarité, eux, restent élevés, et la précarité étudiante devient une réalité de plus en plus visible.
+ `,
+        },
+        {
+          img: "/photo-4.png",
+          imgCredit: `Légende
+`,
+          text: `교육 시스템은 변화를 시도 중이다. 공학 실무 학교, 디자인·인공지능·소프트 스킬을 융합한 하이브리드 교육 과정 등이 등장하며, 일부 과정은 온라인으로도 제공된다. 영어가 국제 프로그램에서 점차 교육 언어로 자리 잡고 있다.
+
+하지만 한계도 명확하다. 성과 압박은 여전하며, 대학 순위에 대한 집착이 진로 선택을 지배한다. 많은 학생이 실패가 허용되지 않는 마라톤 같은 일상을 견디고 있다. 정신 건강 문제, 불안, 번아웃, 고립감이 늘고 있지만, 여전히 취약성에 대한 대화는 부족하다.
+ `,
+        },
+        {
+          img: "/photo-5.png",
+          imgCredit: `서울 출처: Pexels 작성자: Paul Bill
+`,
+          text: `입학 통계와 현대식 캠퍼스의 외관 뒤에는 모순이 존재한다. 일정은 빡빡하게 계획되어 있으며, 학점 취득, 시험, 인턴십, 어학 자격증, 공모전 등으로 가득 차 있다. 많은 학생이 가족과 떨어져 좁은 원룸에서 생활하며, 생계를 위해 아르바이트를 병행한다. 휴식 시간은 극히 적고, ‘효율’이 ‘휴식’을 압도하는 문화에서 숨 쉴 공간은 부족하다.
+
+2025년 한국 대학은 빛나는 현대적 외관과 깊은 그늘을 동시에 품고 있다. 앞으로의 과제는 학문적 우수성, 사회적 공정성, 개인의 행복을 어떻게 조화시키느냐이다.
+ `,
+        },
+        //Sac de cours 2025
+
+        {
+          img: "/sac-2025-1.png",
+          imgCredit: `서울 이미지 출처: Pexels 글: Paul Bill
+`,
+          title: "2025년 학생이 들고 다니는 가방: 다중 속도의 학교로 향하다",
+          text: `2025년 한국 학생의 책가방에는 더 이상 단순한 교과서만 들어 있지 않다. 태블릿, 전자 펜, 프로젝트 노트, 온라인 수업용 이어폰, 때로는 하루 종일 연결된 학습을 견디기 위한 보조 배터리까지 담고 다닌다. 디지털은 이제 필수 교육 도구가 되었고, 인터랙티브 연습 플랫폼, 디지털 교재, 온라인 평가가 학교 생활을 지배한다.
+ `,
+        },
+        {
+          img: "",
+          imgCredit: `
+`,
+          text: `하지만 도구뿐 아니라 교육 내용과 기대치도 크게 달라졌다. 수학, 과학, 외국어 같은 기본 과목은 여전하지만, 감성 지능, 협력, 지속 가능성, 디지털 문화 같은 과목들이 일부 학교에서 새롭게 부상했다. 과거 주변부로 여겨졌던 이런 과목들이 적응력, 소통, 비판적 사고가 중요한 현대 사회에서 핵심 역량으로 자리 잡고 있다.
+
+하지만 이 변화는 균일하지 않다. 부유한 지역이나 대도시에 있는 학교들은 첨단 환경을 갖추었지만, 아직도 낙후된 시설에서 한 대의 컴퓨터를 여러 명이 나눠 쓰는 학교도 많다. 이런 디지털 격차는 이미 존재하는 교육 불평등을 심화시키고 있다. 성적 위주의 평가 시스템에서는 이 격차가 더욱 크게 작용한다.
+ `,
+        },
+        {
+          img: "/sac-2025-2.png",
+          imgCredit: `도서관에서 공부하는 학생들 이미지 출처: Pexels 글: jason hu
+`,
+          text: `거기에 보이지 않지만 확실한 압박도 더해진다. 더 많은 것을, 더 빨리, 더 일찍 마스터해야 한다는 무언의 중압감이다. 책가방은 무게로만 잴 수 없는 정신적 부담의 상징이 된다. 학업 성취에 대한 기대, 사회적 압력, 감정 관리 사이에서 조용히 무게를 더한다. 그럼에도 그 안에는 더 인간적이고 포용적이며 현실에 뿌리 내린 새로운 교육을 향한 희망도 담겨 있다.
+ `,
         },
       ],
     },
