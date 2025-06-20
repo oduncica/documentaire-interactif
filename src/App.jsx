@@ -7,6 +7,8 @@ import RotatePhone from "./components/RotatePhone";
 import Preloader from "./components/Preloader";
 import LandingPage from "./LandingPage";
 import Reveil from "./Reveil";
+import Remerciements from "./components/Remerciements";
+
 import {
   FaTimes,
   FaHome,
@@ -63,10 +65,9 @@ export default function App() {
     fr: {
       home: "Accueil",
       room: "The Room",
-      doc: "Complete Documentary",
+      doc: "Le documentaire complet",
       biblio: "Bibliographie",
-      scenes: "Scènes Complémentaires",
-      credit: "Crédit",
+      remerciements: "Remerciements",
       close: "Fermer",
     },
     kr: {
@@ -74,8 +75,7 @@ export default function App() {
       room: "방",
       doc: "전체 다큐멘터리",
       biblio: "참고문헌",
-      scenes: "추가 장면",
-      credit: "크레딧",
+      remerciements: "후원자 명단",
       close: "닫기",
     },
   };
@@ -223,13 +223,15 @@ export default function App() {
                         <FaBook size={20} />{" "}
                         <span>{sidebarTexts[langue].biblio}</span>
                       </li>
-                      <li>
+                      <li
+                        className={isActive("/remerciements") ? "active" : ""}
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          navigate("/remerciements");
+                        }}
+                      >
                         <FaInfoCircle size={20} />{" "}
-                        <span>{sidebarTexts[langue].scenes}</span>
-                      </li>
-                      <li>
-                        <FaInfoCircle size={20} />{" "}
-                        <span>{sidebarTexts[langue].credit}</span>
+                        <span>{sidebarTexts[langue].remerciements}</span>
                       </li>
                     </ul>
                   </div>
@@ -248,6 +250,7 @@ export default function App() {
           }
         />
         <Route path="/reveil" element={<Reveil />} />
+        <Route path="/remerciements" element={<Remerciements />} />
 
         {/* Autres routes */}
       </Routes>

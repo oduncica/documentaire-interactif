@@ -17,7 +17,7 @@ import RotatePhone from "./components/RotatePhone";
 
 export default function LandingPage() {
   const navigate = useNavigate();
-  const location = useLocation(); // Ajouté pour connaître la page active
+  const location = useLocation();
   const [langue, setLangue] = useState("fr");
   const [showVideo, setShowVideo] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -29,16 +29,14 @@ export default function LandingPage() {
       room: "The Room",
       doc: "Le documentaire complet",
       biblio: "Bibliographie",
-      scenes: "Scènes Complémentaires",
-      credit: "Crédit",
+      remerciements: "Remerciements",
     },
     kr: {
       home: "홈",
       room: "방",
       doc: "전체 다큐멘터리",
       biblio: "참고문헌",
-      scenes: "추가 장면",
-      credit: "크레딧",
+      remerciements: "후원자 명단",
     },
   };
 
@@ -59,7 +57,6 @@ export default function LandingPage() {
     },
   };
 
-  // Fonction utilitaire pour savoir si le lien est actif
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -67,9 +64,7 @@ export default function LandingPage() {
       className="app"
       style={{
         backgroundImage:
-          langue === "kr"
-            ? "url('/home-2.png')" // image pour le drapeau coréen
-            : "url('/home.png')", // image par défaut (français)
+          langue === "kr" ? "url('/home-2.png')" : "url('/home.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100vw",
@@ -142,13 +137,15 @@ export default function LandingPage() {
           >
             <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
           </li>
-          <li>
+          <li
+            className={isActive("/remerciements") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/remerciements");
+            }}
+          >
             <FaInfoCircle size={20} />{" "}
-            <span>{sidebarTexts[langue].scenes}</span>
-          </li>
-          <li>
-            <FaInfoCircle size={20} />{" "}
-            <span>{sidebarTexts[langue].credit}</span>
+            <span>{sidebarTexts[langue].remerciements}</span>
           </li>
         </ul>
       </div>
@@ -237,7 +234,7 @@ export default function LandingPage() {
               textAlign: "center",
               padding: "20px",
               borderRadius: "10px",
-              marginTop: "85px", // <-- Ajouté pour descendre le bloc
+              marginTop: "85px",
             }}
           >
             <h1
