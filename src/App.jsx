@@ -31,6 +31,7 @@ const mediaToPreload = [
   "/chambre-1-a-bureau.mp4",
   "/fleche-retour.png",
   "/home.png",
+  "/home-2.png",
 ];
 
 export default function App() {

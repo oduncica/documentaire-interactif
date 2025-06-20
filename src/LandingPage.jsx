@@ -66,7 +66,10 @@ export default function LandingPage() {
     <div
       className="app"
       style={{
-        backgroundImage: "url('/home.png')",
+        backgroundImage:
+          langue === "kr"
+            ? "url('/home-2.png')" // image pour le drapeau coréen
+            : "url('/home.png')", // image par défaut (français)
         backgroundSize: "cover",
         backgroundPosition: "center",
         width: "100vw",
