@@ -51,6 +51,7 @@ export default function Scene1980({ onObjectClick }) {
 
   const initialInteractiveObjects = [
     {
+      // Objet Réveil
       id: "init-1",
       x: "11%",
       y: "58%",
@@ -67,6 +68,7 @@ export default function Scene1980({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
+      // Objet Uniforme
       id: "init-3",
       x: "53%",
       y: "17%",
@@ -468,16 +470,38 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1095206164?h=186b21d686&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="S9"
+              title="vid1"
             ></iframe>
+            <motion.div
+              onClick={() => navigate("/reveil")}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
             <button
               onClick={closeVimeoVideo}
               style={{
@@ -506,25 +530,6 @@ export default function Scene1980({ onObjectClick }) {
               <FaTimes size={22} />
             </button>
           </div>
-          <motion.div
-            onClick={() => navigate("/reveil")}
-            style={{
-              position: "absolute",
-              bottom: "80px",
-              right: "calc(32px + 7cm)",
-              background: "#698958",
-              color: "#fff",
-              padding: "10px 16px",
-              borderRadius: "8px",
-              cursor: "pointer",
-              zIndex: 3010,
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
-            whileHover={{ scale: 1.1 }}
-          >
-            Plus de détails
-          </motion.div>
         </div>
       )}
       {stage === "video-vimeo3" && (
@@ -559,21 +564,45 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1081720802?h=a29f97c0f4&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1095207454?h=7f96e3f495&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="S3"
+              title="vid2"
             ></iframe>
+            {/* Bouton Plus de détails */}
             <button
-              onClick={closeVimeoVideo}
+              onClick={() => window.location.assign("/reveil#/5")}
               style={{
                 position: "absolute",
-                top: "16px",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+                border: "none",
+              }}
+            >
+              Plus de détails
+            </button>
+            {/* Bouton fermer */}
+            <button
+              onClick={() => setStage("initial")}
+              style={{
+                position: "absolute",
+                top: "8px",
                 right: "16px",
                 backgroundColor: "#698958",
                 color: "#fff",
@@ -594,7 +623,7 @@ export default function Scene1980({ onObjectClick }) {
               aria-label="Fermer"
               title="Fermer"
             >
-              <FaTimes size={22} />
+              ×
             </button>
           </div>
         </div>
@@ -631,21 +660,24 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1081719738?h=3a90542dc3&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="S6"
+              title="vid3"
             ></iframe>
             <button
-              onClick={closeVimeoVideo}
+              onClick={() => setStage("initial")}
               style={{
                 position: "absolute",
-                top: "16px",
+                top: "8px",
                 right: "16px",
                 backgroundColor: "#698958",
                 color: "#fff",
@@ -666,7 +698,7 @@ export default function Scene1980({ onObjectClick }) {
               aria-label="Fermer"
               title="Fermer"
             >
-              <FaTimes size={22} />
+              ×
             </button>
           </div>
         </div>

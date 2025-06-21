@@ -9,6 +9,10 @@ export default function Scene2025({ onObjectClick }) {
   const [detail2Loaded, setDetail2Loaded] = useState(false);
   const [video1Ready, setVideo1Ready] = useState(false);
   const [video2Ready, setVideo2Ready] = useState(false);
+  const [showVimeo, setShowVimeo] = useState(false);
+  const [showUniformeVimeo, setShowUniformeVimeo] = useState(false);
+  const [showDetail2Vimeo, setShowDetail2Vimeo] = useState(false);
+  const [showInit2Vimeo, setShowInit2Vimeo] = useState(false);
   const navigate = useNavigate();
 
   // Loupe 1
@@ -51,11 +55,13 @@ export default function Scene2025({ onObjectClick }) {
 
   const initialInteractiveObjects = [
     {
+      // Objet Réveil
+
       id: "init-1",
       x: "12%",
       y: "51%",
       icon: <FaPlay />,
-      action: () => alert("Vidéo à venir"),
+      action: () => setShowVimeo(true), // Ouvre la vidéo
       bgColor: "#5E9197",
     },
     {
@@ -63,7 +69,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "46%",
       y: "38%",
       icon: <FaPlay />,
-      action: () => navigate("/reveil#/22"),
+      action: () => setShowInit2Vimeo(true),
       bgColor: "#5E9197",
     },
     {
@@ -75,12 +81,13 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
+      // Objet Uniforme
       id: "info-2025",
       x: "53%",
       y: "25%",
-      icon: <FaInfoCircle />,
-      action: () => navigate("/reveil#/27"),
-      bgColor: "#A96860",
+      icon: <FaPlay />,
+      action: () => setShowUniformeVimeo(true), // Ouvre la modale vidéo uniforme
+      bgColor: "#5E9197",
     },
   ];
 
@@ -125,7 +132,7 @@ export default function Scene2025({ onObjectClick }) {
       x: "12%",
       y: "45%",
       icon: <FaPlay />,
-      action: () => navigate("/reveil#/19"),
+      action: () => setShowDetail2Vimeo(true),
       bgColor: "#5E9197",
     },
   ];
@@ -447,8 +454,8 @@ export default function Scene2025({ onObjectClick }) {
         </div>
       )}
 
-      {/* Vimeo vidéos */}
-      {stage === "video-vimeo" && (
+      {/* Modale vidéo Vimeo */}
+      {showVimeo && (
         <div
           style={{
             position: "fixed",
@@ -480,18 +487,43 @@ export default function Scene2025({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1081650090?h=6557ae9d22&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1095206164?h=186b21d686&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
               style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="S9"
+              title="vid1"
             ></iframe>
+            <motion.div
+              onClick={() => {
+                setShowVimeo(false);
+                navigate("/reveil");
+              }}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
             <button
-              onClick={closeVimeoVideo}
+              onClick={() => setShowVimeo(false)}
               style={{
                 position: "absolute",
                 top: "8px",
@@ -518,28 +550,305 @@ export default function Scene2025({ onObjectClick }) {
               <FaTimes size={22} />
             </button>
           </div>
-          <motion.div
-            onClick={() => navigate("/reveil")}
-            style={{
-              position: "absolute",
-              bottom: "80px",
-              right: "calc(32px + 7cm)",
-              background: "#698958",
-              color: "#fff",
-              padding: "10px 16px",
-              borderRadius: "8px",
-              cursor: "pointer",
-              zIndex: 3010,
-              fontSize: "14px",
-              fontWeight: "bold",
-            }}
-            whileHover={{ scale: 1.1 }}
-          >
-            Plus de détails
-          </motion.div>
         </div>
       )}
-      {/* ...autres vidéos Vimeo si besoin... */}
+
+      {/* Modale vidéo Uniforme Vimeo */}
+      {showUniformeVimeo && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/1095207454?h=7f96e3f495&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="vid2"
+            ></iframe>
+            <motion.div
+              onClick={() => {
+                setShowUniformeVimeo(false);
+                navigate("/reveil#/27");
+              }}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
+            <button
+              onClick={() => setShowUniformeVimeo(false)}
+              style={{
+                position: "absolute",
+                top: "8px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modale vidéo Detail 2 Vimeo */}
+      {showDetail2Vimeo && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="vid3"
+            ></iframe>
+            <motion.div
+              onClick={() => {
+                setShowDetail2Vimeo(false);
+                navigate("/reveil#/19");
+              }}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
+            <button
+              onClick={() => setShowDetail2Vimeo(false)}
+              style={{
+                position: "absolute",
+                top: "8px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Modale vidéo Init 2 Vimeo */}
+      {showInit2Vimeo && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="vid3"
+            ></iframe>
+            <motion.div
+              onClick={() => {
+                setShowInit2Vimeo(false);
+                navigate("/reveil#/22");
+              }}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
+            <button
+              onClick={() => setShowInit2Vimeo(false)}
+              style={{
+                position: "absolute",
+                top: "8px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
