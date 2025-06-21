@@ -174,13 +174,13 @@ export default function LandingPage() {
               borderRadius: "12px",
               overflow: "hidden",
               backgroundImage:
-                "url('https://i.vimeocdn.com/video/2012937618-5b85854c86d8d88b6962451c0bc289d084f56f2440391eae7dc94a7f13359756-d?mw=3100&mh=854&q=70')",
+                "url('https://i.vimeocdn.com/video/2028825223-48b25f71e68bcd971a467b83c8957974f5119ea04655705d213496264520281f-d?f=webp&region=us')",
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
             <a
-              href="https://vimeo.com/1082031152"
+              href="https://vimeo.com/1095103053"
               target="_blank"
               rel="noopener noreferrer"
               style={{
