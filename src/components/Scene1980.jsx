@@ -9,6 +9,7 @@ export default function Scene1980({ onObjectClick }) {
   const [detail2Loaded, setDetail2Loaded] = useState(false);
   const [video1Ready, setVideo1Ready] = useState(false);
   const [video2Ready, setVideo2Ready] = useState(false);
+  const [previousStage, setPreviousStage] = useState(null);
   const navigate = useNavigate();
 
   // Loupe 1
@@ -27,7 +28,15 @@ export default function Scene1980({ onObjectClick }) {
     } else if (stage === "detail2") setStage("initial");
   };
 
-  const closeVimeoVideo = () => setStage("initial");
+  // Fermer la vidéo Vimeo
+  const closeVimeoVideo = () => {
+    if (previousStage) {
+      setStage(previousStage);
+      setPreviousStage(null);
+    } else {
+      setStage("initial");
+    }
+  };
 
   // Préchargement image de détail 1
   const handleVideo1End = () => {
@@ -95,23 +104,19 @@ export default function Scene1980({ onObjectClick }) {
   ];
 
   const detailInteractiveObjects = [
-    // {
-    //   id: "detail-1",
-    //   x: "25%",
-    //   y: "63%",
-    //   icon: <FaInfoCircle />,
-    //   action: () => alert("Information sur l'objet final"),
-    //   bgColor: "#A96860",
-    // },
     {
       id: "detail-2",
       x: "49%",
       y: "54%",
       icon: <FaPlay />,
-      action: () => setStage("video-vimeo-s6"),
+      action: () => {
+        setPreviousStage("detail1");
+        setStage("video-vimeo-s6");
+      },
       bgColor: "#5E9197",
     },
   ];
+
   const detail2InteractiveObjects = [
     {
       id: "detail2-1",
@@ -599,7 +604,7 @@ export default function Scene1980({ onObjectClick }) {
             </button>
             {/* Bouton fermer */}
             <button
-              onClick={() => setStage("initial")}
+              onClick={closeVimeoVideo}
               style={{
                 position: "absolute",
                 top: "8px",
@@ -674,7 +679,7 @@ export default function Scene1980({ onObjectClick }) {
               title="vid3"
             ></iframe>
             <button
-              onClick={() => setStage("initial")}
+              onClick={closeVimeoVideo}
               style={{
                 position: "absolute",
                 top: "8px",
