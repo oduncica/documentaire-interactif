@@ -318,31 +318,33 @@ export default function LandingPage() {
         </>
       )}
       {/* Logos en bas à gauche et à droite */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 20,
-          left: 0,
-          width: "95vw",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          pointerEvents: "none",
-          zIndex: 1001,
-          padding: "0 32px",
-        }}
-      >
-        <img
-          src="/logo.png"
-          alt="Logo gauche"
-          style={{ height: "32px", pointerEvents: "auto" }}
-        />
-        <img
-          src="/logo2.png"
-          alt="Logo droite"
-          style={{ height: "48px", pointerEvents: "auto" }}
-        />
-      </div>
+      {!isSidebarOpen && (
+        <div
+          style={{
+            position: "absolute",
+            bottom: 20,
+            left: 0,
+            width: "95vw",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            pointerEvents: "none",
+            zIndex: 1001,
+            padding: "0 32px",
+          }}
+        >
+          <img
+            src="/logo.png"
+            alt="Logo gauche"
+            style={{ height: "32px", pointerEvents: "auto" }}
+          />
+          <img
+            src="/logo2.png"
+            alt="Logo droite"
+            style={{ height: "48px", pointerEvents: "auto" }}
+          />
+        </div>
+      )}
     </div>
   );
 }
