@@ -13,7 +13,19 @@ export default function SceneManager({
   setLangue,
 }) {
   const [isLoading, setIsLoading] = useState(true);
-  const [showToast, setShowToast] = useState(true); // État pour afficher les toasts
+  const [showToast, setShowToast] = useState(false); // Par défaut false
+
+  // Afficher le toast uniquement à la première visite
+  useEffect(() => {
+    if (!localStorage.getItem("toastSeen")) {
+      setShowToast(true);
+    }
+  }, []);
+
+  const handleToastFinish = () => {
+    setShowToast(false);
+    localStorage.setItem("toastSeen", "1");
+  };
 
   const getSceneComponent = () => {
     switch (year) {
@@ -127,7 +139,7 @@ export default function SceneManager({
       )}
       {/* ✅ Toasts */}
       {showToast && (
-        <ToastMessages onFinish={() => setShowToast(false)} langue={langue} />
+        <ToastMessages onFinish={handleToastFinish} langue={langue} />
       )}
       {!showToast && (
         <button
