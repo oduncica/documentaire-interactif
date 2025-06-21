@@ -165,8 +165,8 @@ export default function Scene1980({ onObjectClick }) {
       className="eye-icon"
       style={{
         position: "absolute",
-        top: "38%",
-        left: "52%",
+        top: "48%",
+        left: "45%",
         backgroundColor: "#698958",
         color: "white",
         borderRadius: "50%",
