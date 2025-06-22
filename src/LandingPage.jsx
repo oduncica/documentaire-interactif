@@ -27,7 +27,7 @@ export default function LandingPage() {
     fr: {
       home: "Accueil",
       room: "The Room",
-      doc: "Le documentaire complet",
+      doc: "Visionner le documentaire",
       biblio: "Bibliographie",
       remerciements: "Remerciements",
     },
@@ -44,7 +44,7 @@ export default function LandingPage() {
     fr: {
       // titre: "Education sous pression",
       paragraphe: `Derrière l’image d’excellence que projette le système éducatif sud-coréen se cache une mécanique strictement codifiée, héritée d’une culture réglementaire longtemps valorisée.`,
-      bouton1: "Le documentaire complet",
+      bouton1: "Visionner le documentaire",
       bouton2: "L'expérience interactive",
     },
     kr: {

@@ -65,7 +65,7 @@ export default function App() {
     fr: {
       home: "Accueil",
       room: "The Room",
-      doc: "Le documentaire complet",
+      doc: "Visionner le documentaire",
       biblio: "Bibliographie",
       remerciements: "Remerciements",
       close: "Fermer",
