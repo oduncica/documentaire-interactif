@@ -107,52 +107,72 @@ export default function App() {
                     alignItems: "center",
                   }}
                 >
-                  <a
-                    href="https://vimeo.com/1095103053"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <div
                     style={{
-                      display: "block",
-                      width: "100%",
-                      maxWidth: "900px",
-                      height: "506px",
-                      backgroundImage:
-                        "url('https://i.vimeocdn.com/video/2028825223-48b25f71e68bcd971a467b83c8957974f5119ea04655705d213496264520281f-d?f=webp&region=us')",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
                       position: "relative",
+                      maxWidth: "900px",
+                      width: "90vw",
+                      height: "50vw",
+                      maxHeight: "506px",
+                      background: "#000",
                       borderRadius: "12px",
                       overflow: "hidden",
-                    }}
-                  >
-                    {/* Placeholder pour l'image */}
-                  </a>
-                  <button
-                    onClick={() => setShowVideo(false)}
-                    style={{
-                      position: "absolute",
-                      top: "20px",
-                      right: "20px",
-                      backgroundColor: "#698958",
-                      color: "#fff",
-                      border: "none",
-                      borderRadius: "50%",
-                      width: "44px",
-                      height: "44px",
-                      fontSize: "1.5rem",
-                      fontWeight: "bold",
-                      cursor: "pointer",
-                      zIndex: 1001,
+                      boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
-                      transition: "background 0.2s",
                     }}
-                    aria-label="Fermer"
                   >
-                    <FaTimes size={22} />
-                  </button>
+                    <div
+                      style={{
+                        padding: "56.25% 0 0 0",
+                        position: "relative",
+                        width: "100%",
+                        height: "100%",
+                      }}
+                    >
+                      <iframe
+                        src="https://player.vimeo.com/video/1095103053?badge=0&autopause=0&player_id=0&app_id=58479"
+                        frameBorder="0"
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "12px",
+                        }}
+                        title="Éducation sous pression"
+                      ></iframe>
+                    </div>
+                    <button
+                      onClick={() => setShowVideo(false)}
+                      style={{
+                        position: "absolute",
+                        top: "20px",
+                        right: "20px",
+                        backgroundColor: "#698958",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "50%",
+                        width: "44px",
+                        height: "44px",
+                        fontSize: "1.5rem",
+                        fontWeight: "bold",
+                        cursor: "pointer",
+                        zIndex: 1001,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                        transition: "background 0.2s",
+                      }}
+                      aria-label="Fermer"
+                    >
+                      <FaTimes size={22} />
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <>

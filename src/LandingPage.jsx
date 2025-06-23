@@ -168,29 +168,42 @@ export default function LandingPage() {
           <div
             style={{
               position: "relative",
-              width: "100%",
               maxWidth: "900px",
-              height: "506px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
               borderRadius: "12px",
               overflow: "hidden",
-              backgroundImage:
-                "url('https://i.vimeocdn.com/video/2028825223-48b25f71e68bcd971a467b83c8957974f5119ea04655705d213496264520281f-d?f=webp&region=us')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <a
-              href="https://vimeo.com/1095103053"
-              target="_blank"
-              rel="noopener noreferrer"
+            <div
               style={{
-                display: "block",
+                padding: "56.25% 0 0 0",
+                position: "relative",
                 width: "100%",
                 height: "100%",
               }}
             >
-              {/* Placeholder pour l'image */}
-            </a>
+              <iframe
+                src="https://player.vimeo.com/video/1095103053?badge=0&autopause=0&player_id=0&app_id=58479"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "12px",
+                }}
+                title="Éducation sous pression"
+              ></iframe>
+            </div>
             <button
               onClick={() => setShowVideo(false)}
               style={{
@@ -269,13 +282,7 @@ export default function LandingPage() {
               }}
             >
               <button
-                onClick={() =>
-                  window.open(
-                    "https://vimeo.com/1082031152",
-                    "_blank",
-                    "noopener,noreferrer"
-                  )
-                }
+                onClick={() => setShowVideo(true)}
                 style={{
                   backgroundColor: "#32465A",
                   color: "#ffffff",
