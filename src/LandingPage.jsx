@@ -11,6 +11,8 @@ import {
   FaBook,
   FaInfoCircle,
   FaDoorOpen,
+  FaListAlt,
+  FaGavel,
 } from "react-icons/fa";
 import { PiDoorOpenDuotone } from "react-icons/pi";
 import RotatePhone from "./components/RotatePhone";
@@ -28,27 +30,29 @@ export default function LandingPage() {
       home: "Accueil",
       room: "The Room",
       doc: "Visionner le documentaire",
-      biblio: "Bibliographie",
+      biblio: "Infographie",
+      bibliography: "Bibliographie",
+      legal: "Mentions légales",
       remerciements: "Remerciements",
     },
     kr: {
       home: "홈",
       room: "방",
       doc: "전체 다큐멘터리",
-      biblio: "참고문헌",
+      biblio: "인포그래픽",
+      bibliography: "참고문헌",
+      legal: "법적 고지",
       remerciements: "후원자 명단",
     },
   };
 
   const textes = {
     fr: {
-      // titre: "Education sous pression",
       paragraphe: `Derrière l’image d’excellence que projette le système éducatif sud-coréen se cache une mécanique strictement codifiée, héritée d’une culture réglementaire longtemps valorisée.`,
       bouton1: "Visionner le documentaire",
       bouton2: "L'expérience interactive",
     },
     kr: {
-      // titre: "한국 교육 속 규제문화",
       paragraphe: `한국 교육 시스템이 보여주는 탁월한 모습 뒤에는 오랫동안 중시되어 온 규범 중심의 문화에서 비롯된 규제문화들이 숨어 있다.
 오랫동안 형성되고 지속되어온 이 문화는 오늘날까지도 학생들의 일상에 깊이 뿌리내리고 있다. 그렇다면 이러한 규제문화는 오늘날 어떻게 나타나고 있으며, 한국의 젊은 세대는 이를 어떻게 받아들이고 있을까?
 `,
@@ -136,6 +140,25 @@ export default function LandingPage() {
             }}
           >
             <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
+          </li>
+          <li
+            className={isActive("/bibliographie") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/bibliographie");
+            }}
+          >
+            <FaListAlt size={20} />{" "}
+            <span>{sidebarTexts[langue].bibliography}</span>
+          </li>
+          <li
+            className={isActive("/mentions-legales") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/mentions-legales");
+            }}
+          >
+            <FaGavel size={20} /> <span>{sidebarTexts[langue].legal}</span>
           </li>
           <li
             className={isActive("/remerciements") ? "active" : ""}

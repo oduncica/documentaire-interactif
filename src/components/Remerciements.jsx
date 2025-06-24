@@ -9,70 +9,257 @@ import {
   FaBook,
   FaInfoCircle,
   FaDoorOpen,
+  FaListAlt,
+  FaGavel,
 } from "react-icons/fa";
-
-const contributeurs = [
-  "Adélaïde PETRIER",
-  "Afi HOMAWOO",
-  "Alexis PAVARD",
-  "Alexis ZERBIB",
-  "Alfred MAJURAN",
-  "Alice PONCET",
-  "Anne-Laure LIBON",
-  "Antoine DOS SANTOS",
-  "Armelle MICHAU",
-  "Audrey HAROUX",
-  "Avotina ANDRIANAVELOMANANA",
-  "Bérangère BOISSEAU",
-  "Cécile MORVAN",
-  "Céline HENRARD",
-  "Chantal NGUYEN",
-  "Dylan BLANDEL",
-  "Edson GALINA FORTES",
-  "Emeline VINCENOT",
-  "Eric BLANDEL",
-  "Erwann GAUTHIER",
-  "Fatima GHALLAB",
-  "Gaëtan GERARD",
-  "Geoffrey MSIKA",
-  "Hafsa ALKAA",
-  "Jacqueline HENRARD",
-  "Jacques-François MARCHANDISE",
-  "Jean TUPIN",
-  "Joana DA SILVA",
-  "Laëtitia G.",
-  "Lara BOUGHANMI",
-  "Laura FARAUT",
-  "Lidia OUROUPOVA",
-  "Marie-Valentine GALLON",
-  "Martin LAPLAIZE",
-  "Mohamed SAÏDANI",
-  "Noémie CERNOCH",
-  "Peter",
-  "Philippe GAMBETTE",
-  "Pierre BOUREAU",
-  "Pierre-Adrien CARTON",
-  "Richard LEGRAND",
-  "Sakalaoudine MOUBINE",
-  "Salomé DOS SANTOS",
-  "Sandrine SOGADZI",
-  "Sarah TESSIER",
-  "Victor CABAL",
-  "Virginie PRIMAS",
-];
 
 const textes = {
   fr: {
-    titre: "Remerciements",
-    intro: `Ce documentaire interactif a été réalisé dans le cadre du séjour d’étude du Master 2 CMW en Corée du Sud.
-Un immense merci à toutes celles et ceux qui ont contribué à la cagnotte et permis la concrétisation de ce projet !`,
-    merci: "Merci du fond du cœur 💜",
+    titre: "Crédits & Donateurs",
+    intro: `Ce documentaire interactif a été réalisé dans le cadre du séjour d’étude du Master 2 CMW en Corée du Sud.`,
+    credits: [
+      { fr: "Education sous pression", kr: "압박받는 교육" },
+      {
+        fr: "Un documentaire réalisé dans le cadre du Master CMW",
+        kr: "CMW 석사과정의 일환으로 제작된 다큐멘터리",
+      },
+      { fr: "Direction", kr: "감독", name: "Beomsu Kim 김범수" },
+      {
+        fr: "Image",
+        kr: "촬영",
+        name: "Yongju Lee 이용주, Eunsu Kim 김은수, Aline Rezende 알린 헤젠지",
+      },
+      { fr: "Scénario", kr: "각본", name: "Cihan Abut 지한 아부트" },
+      {
+        fr: "Montage",
+        kr: "편집",
+        name: "Anne-Laure Libon 안-로르 리봉, Chae-eun Lee 이채은",
+      },
+      {
+        fr: "Prise de son & Perchwoman",
+        kr: "음향 및 붐 오퍼레이터",
+        name: "Kety Romain 케티 로맹",
+      },
+      {
+        fr: "Design UX/UI",
+        kr: "UX/UI 디자인",
+        name: "Rim Ben Jaber 림 벤 자베르",
+      },
+      {
+        fr: "Développement web",
+        kr: "웹 개발",
+        name: "Charlène Odunlami 샤를렌 오둔라미",
+      },
+      {
+        fr: "Adaptation multilingue",
+        kr: "다국어 번역 및 각색",
+        name: "Fatemeh Sadeghmoghaddam 파테메 사데그모가담",
+      },
+      {
+        fr: "Chef de projet",
+        kr: "프로젝트 매니저",
+        name: "Lou Hernandez 루 에르난데스",
+      },
+      {
+        fr: "Recherches",
+        kr: "연구",
+        name: "Myriam Rharsalla 미리암 라르살라",
+      },
+      { fr: "Remerciements", kr: "감사의 말" },
+      {
+        fr: "Nous remercions chaleureusement Yeonji Kang et sa famille pour avoir accepté d’apparaître dans notre documentaire.",
+        kr: "다큐멘터리에 출연해 주신 강연지 님과 그 가족께 진심으로 감사드립니다",
+      },
+      {
+        fr: "Un grand merci également au lycée et au hagwon qui nous ont ouvert leurs portes et accepté nos demandes d’interviews.",
+        kr: "인터뷰 요청을 받아들이고 저희를 환영해 주신 고등학교와 학원에도 깊이 감사드립니다",
+      },
+      {
+        fr: "Merci à l’équipe enseignante du Master CMW - Université Gustave Eiffel",
+        kr: "귀스타브 에펠 대학교 CMW 석사과정 교수진께 감사드립니다",
+      },
+      {
+        fr: "Merci à l’équipe enseignante coréenne du département d’étude du cinéma - Dong Eui University",
+        kr: "동의대학교 영화학과 한국인 교수진께 감사드립니다",
+      },
+      {
+        fr: "Merci à tous les donateurs de la cagnotte",
+        kr: "후원자(기부자) 명단",
+        donateurs: [
+          "Adélaïde PETRIER",
+          "Afi HOMAWOO",
+          "Alexis PAVARD",
+          "Alexis ZERBIB",
+          "Alfred MAJURAN",
+          "Alice PONCET",
+          "Anne-Laure LIBON",
+          "Antoine DOS SANTOS",
+          "Armelle MICHAU",
+          "Audrey HAROUX",
+          "Avotina ANDRIANAVELOMANANA",
+          "Bérangère BOISSEAU",
+          "Cécile MORVAN",
+          "Céline HENRARD",
+          "Chantal NGUYEN",
+          "Dylan BLANDEL",
+          "Edson GALINA FORTES",
+          "Emeline VINCENOT",
+          "Eric BLANDEL",
+          "Erwann GAUTHIER",
+          "Fatima GHALLAB",
+          "Gaëtan GERARD",
+          "Geoffrey MSIKA",
+          "Hafsa ALKAA",
+          "Jacqueline HENRARD",
+          "Jacques-François MARCHANDISE",
+          "Jean TUPIN",
+          "Joana DA SILVA",
+          "Laëtitia G.",
+          "Lara BOUGHANMI",
+          "Laura FARAUT",
+          "Lidia OUROUPOVA",
+          "Marie-Valentine GALLON",
+          "Martin LAPLAIZE",
+          "Mohamed SAÏDANI",
+          "Noémie CERNOCH",
+          "Peter",
+          "Philippe GAMBETTE",
+          "Pierre BOUREAU",
+          "Pierre-Adrien CARTON",
+          "Richard LEGRAND",
+          "Sakalaoudine MOUBINE",
+          "Salomé DOS SANTOS",
+          "Sandrine SOGADZI",
+          "Sarah TESSIER",
+          "Victor CABAL",
+          "Virginie PRIMAS",
+        ],
+      },
+    ],
   },
   kr: {
     titre: "후원자 명단",
     intro: `이 인터랙티브 다큐멘터리는 프랑스 파리 8대학 CMW 석사 2기 학생들의 한국 현지 학술연수의 일환으로 제작되었습니다.
 이 프로젝트의 실현을 위해 소중한 후원을 보내주신 모든 분들께 진심으로 감사드립니다!`,
-    merci: "진심으로 감사드립니다 💜",
+    credits: [
+      { fr: "Education sous pression", kr: "압박받는 교육" },
+      {
+        fr: "Un documentaire réalisé dans le cadre du Master CMW",
+        kr: "CMW 석사과정의 일환으로 제작된 다큐멘터리",
+      },
+      { fr: "Direction", kr: "감독", name: "Beomsu Kim 김범수" },
+      {
+        fr: "Image",
+        kr: "촬영",
+        name: "Yongju Lee 이용주, Eunsu Kim 김은수, Aline Rezende 알린 헤젠지",
+      },
+      { fr: "Scénario", kr: "각본", name: "Cihan Abut 지한 아부트" },
+      {
+        fr: "Montage",
+        kr: "편집",
+        name: "Anne-Laure Libon 안-로르 리봉, Chae-eun Lee 이채은",
+      },
+      {
+        fr: "Prise de son & Perchwoman",
+        kr: "음향 및 붐 오퍼레이터",
+        name: "Kety Romain 케티 로맹",
+      },
+      {
+        fr: "Design UX/UI",
+        kr: "UX/UI 디자인",
+        name: "Rim Ben Jaber 림 벤 자베르",
+      },
+      {
+        fr: "Développement web",
+        kr: "웹 개발",
+        name: "Charlène Odunlami 샤를렌 오둔라미",
+      },
+      {
+        fr: "Adaptation multilingue",
+        kr: "다국어 번역 및 각색",
+        name: "Fatemeh Sadeghmoghaddam 파테메 사데그모가담",
+      },
+      {
+        fr: "Chef de projet",
+        kr: "프로젝트 매니저",
+        name: "Lou Hernandez 루 에르난데스",
+      },
+      {
+        fr: "Recherches",
+        kr: "연구",
+        name: "Myriam Rharsalla 미리암 라르살라",
+      },
+      { fr: "Remerciements", kr: "감사의 말" },
+      {
+        fr: "Nous remercions chaleureusement Yeonji Kang et sa famille pour avoir accepté d’apparaître dans notre documentaire.",
+        kr: "다큐멘터리에 출연해 주신 강연지 님과 그 가족께 진심으로 감사드립니다",
+      },
+      {
+        fr: "Un grand merci également au lycée et au hagwon qui nous ont ouvert leurs portes et accepté nos demandes d’interviews.",
+        kr: "인터뷰 요청을 받아들이고 저희를 환영해 주신 고등학교와 학원에도 깊이 감사드립니다",
+      },
+      {
+        fr: "Merci à l’équipe enseignante du Master CMW - Université Gustave Eiffel",
+        kr: "귀스타브 에펠 대학교 CMW 석사과정 교수진께 감사드립니다",
+      },
+      {
+        fr: "Merci à l’équipe enseignante coréenne du département d’étude du cinéma - Dong Eui University",
+        kr: "동의대학교 영화학과 한국인 교수진께 감사드립니다",
+      },
+      {
+        fr: "Meric à tous les donateurs de la cagnotte :",
+        kr: "후원자(기부자) 명단",
+        donateurs: [
+          "Adélaïde PETRIER",
+          "Afi HOMAWOO",
+          "Alexis PAVARD",
+          "Alexis ZERBIB",
+          "Alfred MAJURAN",
+          "Alice PONCET",
+          "Anne-Laure LIBON",
+          "Antoine DOS SANTOS",
+          "Armelle MICHAU",
+          "Audrey HAROUX",
+          "Avotina ANDRIANAVELOMANANA",
+          "Bérangère BOISSEAU",
+          "Cécile MORVAN",
+          "Céline HENRARD",
+          "Chantal NGUYEN",
+          "Dylan BLANDEL",
+          "Edson GALINA FORTES",
+          "Emeline VINCENOT",
+          "Eric BLANDEL",
+          "Erwann GAUTHIER",
+          "Fatima GHALLAB",
+          "Gaëtan GERARD",
+          "Geoffrey MSIKA",
+          "Hafsa ALKAA",
+          "Jacqueline HENRARD",
+          "Jacques-François MARCHANDISE",
+          "Jean TUPIN",
+          "Joana DA SILVA",
+          "Laëtitia G.",
+          "Lara BOUGHANMI",
+          "Laura FARAUT",
+          "Lidia OUROUPOVA",
+          "Marie-Valentine GALLON",
+          "Martin LAPLAIZE",
+          "Mohamed SAÏDANI",
+          "Noémie CERNOCH",
+          "Peter",
+          "Philippe GAMBETTE",
+          "Pierre BOUREAU",
+          "Pierre-Adrien CARTON",
+          "Richard LEGRAND",
+          "Sakalaoudine MOUBINE",
+          "Salomé DOS SANTOS",
+          "Sandrine SOGADZI",
+          "Sarah TESSIER",
+          "Victor CABAL",
+          "Virginie PRIMAS",
+        ],
+      },
+    ],
   },
 };
 
@@ -80,22 +267,25 @@ const sidebarTexts = {
   fr: {
     home: "Accueil",
     room: "The Room",
-    doc: "Le documentaire complet",
-    biblio: "Bibliographie",
+    doc: "Visionner le documentaire",
+    biblio: "Infographie",
+    bibliography: "Bibliographie",
+    legal: "Mentions légales",
     remerciements: "Remerciements",
   },
   kr: {
     home: "홈",
     room: "방",
     doc: "전체 다큐멘터리",
-    biblio: "참고문헌",
+    biblio: "인포그래픽",
+    bibliography: "참고문헌",
+    legal: "법적 고지",
     remerciements: "후원자 명단",
   },
 };
 
 export default function Remerciements() {
   const [langue, setLangue] = useState("fr");
-  const [showVideo] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -137,10 +327,13 @@ export default function Remerciements() {
             zIndex: 1001,
           }}
         >
-          <HamburgerMenu onClick={() => setIsSidebarOpen(true)} langue={langue} />
+          <HamburgerMenu
+            onClick={() => setIsSidebarOpen(true)}
+            langue={langue}
+          />
         </div>
       )}
-      {/* Menu latéral */}
+      {/* Menu latéral complet */}
       <div className={`sidebar${isSidebarOpen ? " open" : ""}`}>
         <div className="sidebar-header">
           <button className="close-btn" onClick={() => setIsSidebarOpen(false)}>
@@ -167,10 +360,9 @@ export default function Remerciements() {
             <FaDoorOpen size={20} /> <span>{sidebarTexts[langue].room}</span>
           </li>
           <li
-            className={showVideo ? "active" : ""}
             onClick={() => {
               setIsSidebarOpen(false);
-              window.open("https://vimeo.com/1082031152", "_blank", "noopener,noreferrer");
+              navigate("/doc");
             }}
           >
             <FaFilm size={20} /> <span>{sidebarTexts[langue].doc}</span>
@@ -185,13 +377,33 @@ export default function Remerciements() {
             <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
           </li>
           <li
+            className={isActive("/bibliographie") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/bibliographie");
+            }}
+          >
+            <FaListAlt size={20} />{" "}
+            <span>{sidebarTexts[langue].bibliography}</span>
+          </li>
+          <li
+            className={isActive("/mentions-legales") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/mentions-legales");
+            }}
+          >
+            <FaGavel size={20} /> <span>{sidebarTexts[langue].legal}</span>
+          </li>
+          <li
             className={isActive("/remerciements") ? "active" : ""}
             onClick={() => {
               setIsSidebarOpen(false);
               navigate("/remerciements");
             }}
           >
-            <FaInfoCircle size={20} /> <span>{sidebarTexts[langue].remerciements}</span>
+            <FaInfoCircle size={20} />{" "}
+            <span>{sidebarTexts[langue].remerciements}</span>
           </li>
         </ul>
       </div>
@@ -221,22 +433,80 @@ export default function Remerciements() {
         >
           {textes[langue].intro}
         </p>
-        <ul
+        {/* Crédits + Donateurs intégrés */}
+        <div
           style={{
-            listStyle: "none",
-            padding: 0,
-            margin: 0,
-            fontSize: "1.1rem",
-            columns: 2,
+            background: "#f6f3f8",
+            borderRadius: "10px",
+            padding: "18px 18px 8px 18px",
+            margin: "0 auto 28px auto",
             maxWidth: 600,
+            fontSize: "1.05rem",
+            color: "#4A5B41",
+            textAlign: "left",
+            boxShadow: "0 2px 8px #0001",
           }}
         >
-          {contributeurs.map((nom, idx) => (
-            <li key={idx} style={{ marginBottom: "8px" }}>
-              {nom}
-            </li>
-          ))}
-        </ul>
+          {textes[langue].credits.map((credit, idx) =>
+            credit.donateurs ? (
+              <div key={idx} style={{ marginBottom: 10 }}>
+                <span style={{ fontWeight: 600 }}>{credit[langue]}</span>
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    marginTop: 10,
+                  }}
+                >
+                  <ul
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      listStyle: "none",
+                      padding: 0,
+                      margin: 0,
+                    }}
+                  >
+                    {credit.donateurs
+                      .filter((_, i) => i % 2 === 0)
+                      .map((nom, i) => (
+                        <li key={i} style={{ marginLeft: 18, marginBottom: 2 }}>
+                          {nom}
+                        </li>
+                      ))}
+                  </ul>
+                  <ul
+                    style={{
+                      flex: 1,
+                      minWidth: 0,
+                      listStyle: "none",
+                      padding: 0,
+                      margin: 0,
+                    }}
+                  >
+                    {credit.donateurs
+                      .filter((_, i) => i % 2 === 1)
+                      .map((nom, i) => (
+                        <li key={i} style={{ marginLeft: 18, marginBottom: 2 }}>
+                          {nom}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              </div>
+            ) : (
+              <div key={idx} style={{ marginBottom: 10 }}>
+                <span style={{ fontWeight: 600 }}>
+                  {credit[langue]}
+                  {credit.name && " : "}
+                </span>
+                {credit.name && (
+                  <span style={{ fontWeight: 400 }}>{credit.name}</span>
+                )}
+              </div>
+            )
+          )}
+        </div>
         <p style={{ marginTop: "36px", fontStyle: "italic", color: "#698958" }}>
           {textes[langue].merci}
         </p>

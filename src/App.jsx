@@ -8,6 +8,8 @@ import Preloader from "./components/Preloader";
 import LandingPage from "./LandingPage";
 import Reveil from "./Reveil";
 import Remerciements from "./components/Remerciements";
+import Bibliographie from "./components/Bibliographie"; // <-- ajouté
+import MentionsLegales from "./components/MentionsLegales"; // <-- ajouté
 
 import {
   FaTimes,
@@ -16,6 +18,8 @@ import {
   FaBook,
   FaInfoCircle,
   FaDoorOpen,
+  FaListAlt,
+  FaGavel,
 } from "react-icons/fa";
 import "./App.css";
 
@@ -66,7 +70,9 @@ export default function App() {
       home: "Accueil",
       room: "The Room",
       doc: "Visionner le documentaire",
-      biblio: "Bibliographie",
+      biblio: "Infographie",
+      bibliography: "Bibliographie", // <-- ajouté
+      legal: "Mentions légales", // <-- ajouté
       remerciements: "Remerciements",
       close: "Fermer",
     },
@@ -74,7 +80,9 @@ export default function App() {
       home: "홈",
       room: "방",
       doc: "전체 다큐멘터리",
-      biblio: "참고문헌",
+      biblio: "인포그래픽",
+      bibliography: "참고문헌", // <-- ajouté
+      legal: "법적 고지", // <-- ajouté
       remerciements: "후원자 명단",
       close: "닫기",
     },
@@ -253,6 +261,30 @@ export default function App() {
                         <FaInfoCircle size={20} />{" "}
                         <span>{sidebarTexts[langue].remerciements}</span>
                       </li>
+                      <li
+                        className={isActive("/bibliographie") ? "active" : ""}
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          navigate("/bibliographie");
+                        }}
+                      >
+                        <FaListAlt size={20} />{" "}
+                        <span>{sidebarTexts[langue].bibliography}</span>{" "}
+                        {/* modifié */}
+                      </li>
+                      <li
+                        className={
+                          isActive("/mentions-legales") ? "active" : ""
+                        }
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          navigate("/mentions-legales");
+                        }}
+                      >
+                        <FaGavel size={20} />{" "}
+                        <span>{sidebarTexts[langue].legal}</span>{" "}
+                        {/* modifié */}
+                      </li>
                     </ul>
                   </div>
                   {/* Interactive Room */}
@@ -271,7 +303,10 @@ export default function App() {
         />
         <Route path="/reveil" element={<Reveil />} />
         <Route path="/remerciements" element={<Remerciements />} />
-
+        <Route path="/bibliographie" element={<Bibliographie />} />{" "}
+        {/* ajouté */}
+        <Route path="/mentions-legales" element={<MentionsLegales />} />{" "}
+        {/* ajouté */}
         {/* Autres routes */}
       </Routes>
     </Preloader>
