@@ -65,7 +65,7 @@ export default function Scene1980({ onObjectClick }) {
       x: "11%",
       y: "58%",
       icon: <FaPlay />,
-      action: () => setStage("video-vimeo"),
+      action: () => setStage("video-vimeo-reveil"),
       bgColor: "#5E9197",
     },
     {
@@ -704,6 +704,105 @@ export default function Scene1980({ onObjectClick }) {
               title="Fermer"
             >
               ×
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Vimeo vidéo spéciale pour Réveil */}
+      {stage === "video-vimeo-reveil" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <iframe
+              src="https://player.vimeo.com/video/1096388548?h=252dc5565f&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: "12px",
+              }}
+              title="vid4"
+            ></iframe>
+            <motion.div
+              onClick={() => navigate("/reveil")}
+              style={{
+                position: "absolute",
+                bottom: "32px",
+                right: "32px",
+                background: "#698958",
+                color: "#fff",
+                padding: "10px 16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                zIndex: 3010,
+                fontSize: "14px",
+                fontWeight: "bold",
+              }}
+              whileHover={{ scale: 1.1 }}
+            >
+              Plus de détails
+            </motion.div>
+            <button
+              onClick={closeVimeoVideo}
+              style={{
+                position: "absolute",
+                top: "8px",
+                right: "16px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
             </button>
           </div>
         </div>

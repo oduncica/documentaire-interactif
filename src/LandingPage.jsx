@@ -369,6 +369,18 @@ export default function LandingPage() {
             style={{ height: "32px", pointerEvents: "auto" }}
           />
           <img
+            src="/logo3.png"
+            alt="Logo centre"
+            style={{
+              height: "38px",
+              pointerEvents: "auto",
+              position: "absolute",
+              left: "50%",
+              transform: "translateX(-50%)",
+              bottom: 0,
+            }}
+          />
+          <img
             src="/logo2.png"
             alt="Logo droite"
             style={{ height: "48px", pointerEvents: "auto" }}
