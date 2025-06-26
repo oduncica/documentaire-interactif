@@ -93,18 +93,20 @@ export default function Scene1980({ onObjectClick }) {
       action: () => navigate("/reveil#/9"),
       bgColor: "#A96860",
     },
-    {
-      id: "init-5",
-      x: "78%",
-      y: "66%",
-      icon: <FaPlay />,
-      action: () => setStage("video-vimeo-s6"),
-      bgColor: "#5E9197",
-    },
+    // {
+    //   // Objet
+    //   id: "init-5",
+    //   x: "78%",
+    //   y: "66%",
+    //   icon: <FaPlay />,
+    //   action: () => setStage("video-vimeo-s6"),
+    //   bgColor: "#5E9197",
+    // },
   ];
 
   const detailInteractiveObjects = [
     {
+      // Objet carnet
       id: "detail-2",
       x: "49%",
       y: "54%",
@@ -569,9 +571,12 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1095207454?h=7f96e3f495&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096389010?h=2456273caa&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={{
                 position: "absolute",
                 top: 0,
@@ -580,11 +585,10 @@ export default function Scene1980({ onObjectClick }) {
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="vid2"
+              title="Éducation sous pression - 2 - Uniforme"
             ></iframe>
-            {/* Bouton Plus de détails */}
-            <button
-              onClick={() => window.location.assign("/reveil#/5")}
+            <motion.div
+              onClick={() => navigate("/reveil#/27")}
               style={{
                 position: "absolute",
                 bottom: "32px",
@@ -597,12 +601,11 @@ export default function Scene1980({ onObjectClick }) {
                 zIndex: 3010,
                 fontSize: "14px",
                 fontWeight: "bold",
-                border: "none",
               }}
+              whileHover={{ scale: 1.1 }}
             >
               Plus de détails
-            </button>
-            {/* Bouton fermer */}
+            </motion.div>
             <button
               onClick={closeVimeoVideo}
               style={{
@@ -628,7 +631,7 @@ export default function Scene1980({ onObjectClick }) {
               aria-label="Fermer"
               title="Fermer"
             >
-              ×
+              <FaTimes size={22} />
             </button>
           </div>
         </div>
@@ -665,9 +668,12 @@ export default function Scene1980({ onObjectClick }) {
             }}
           >
             <iframe
-              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096391336?h=9339c5c4a1&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={{
                 position: "absolute",
                 top: 0,
@@ -676,7 +682,7 @@ export default function Scene1980({ onObjectClick }) {
                 height: "100%",
                 borderRadius: "12px",
               }}
-              title="vid3"
+              title="Éducation sous pression - 3 - Sac"
             ></iframe>
             <button
               onClick={closeVimeoVideo}

@@ -63,6 +63,7 @@ export default function Scene2025({ onObjectClick }) {
 
   const initialInteractiveObjects = [
     {
+      // Objet reveil présent
       id: "init-1",
       x: "12%",
       y: "51%",
@@ -71,6 +72,7 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#5E9197",
     },
     {
+      // Objet lampe présent
       id: "init-2",
       x: "46%",
       y: "38%",
@@ -79,6 +81,7 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#5E9197",
     },
     {
+      // Objet Sac à dos présent
       id: "init-3",
       x: "87%",
       y: "62%",
@@ -87,6 +90,7 @@ export default function Scene2025({ onObjectClick }) {
       bgColor: "#A96860",
     },
     {
+      // Objet Uniforme présent
       id: "info-2025",
       x: "53%",
       y: "25%",
@@ -467,11 +471,14 @@ export default function Scene2025({ onObjectClick }) {
         <div style={modalStyle}>
           <div style={modalContentStyle}>
             <iframe
-              src="https://player.vimeo.com/video/1095206164?h=186b21d686&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096388548?h=252dc5565f&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={iframeStyle}
-              title="vid1"
+              title="Éducation sous pression - 1 - Réveil"
             ></iframe>
             <motion.div
               onClick={() => {
@@ -500,11 +507,14 @@ export default function Scene2025({ onObjectClick }) {
         <div style={modalStyle}>
           <div style={modalContentStyle}>
             <iframe
-              src="https://player.vimeo.com/video/1095207454?h=7f96e3f495&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096389010?h=2456273caa&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={iframeStyle}
-              title="vid2"
+              title="Éducation sous pression - 2 - Uniforme"
             ></iframe>
             <motion.div
               onClick={() => {
@@ -533,11 +543,14 @@ export default function Scene2025({ onObjectClick }) {
         <div style={modalStyle}>
           <div style={modalContentStyle}>
             <iframe
-              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096391336?h=9339c5c4a1&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={iframeStyle}
-              title="vid3"
+              title="Éducation sous pression - 3 - Sac"
             ></iframe>
             <motion.div
               onClick={() => {
@@ -561,16 +574,19 @@ export default function Scene2025({ onObjectClick }) {
         </div>
       )}
 
-      {/* Modale vidéo Init 2 Vimeo */}
+      {/* Modale vidéo Init 2 Vimeo (Lampe) */}
       {showInit2Vimeo && (
         <div style={modalStyle}>
           <div style={modalContentStyle}>
             <iframe
-              src="https://player.vimeo.com/video/1095211377?h=fc073b2e70&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+              src="https://player.vimeo.com/video/1096392837?h=908ea6afc7&color=ffffff&title=0&byline=0&portrait=0"
+              width="640"
+              height="360"
               frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
               style={iframeStyle}
-              title="vid3"
+              title="Éducation sous pression - 4 - Lampe"
             ></iframe>
             <motion.div
               onClick={() => {
