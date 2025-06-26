@@ -65,7 +65,7 @@ L'examen intense de <b> huit heures </b>, qui teste diverses matières, est le r
         {
           img: "/examen-2.png",
           imgCredit: `Les élèves plus jeunes encouragent les lycéens alors qu’ils se rendent, ce jeudi, à l’examen d’entrée à l’université, déterminant pour leur avenir. Comme à l’accoutumée, la police a assuré l’escorte des candidats en retard. © Elise Hu/NPR`,
-          // title: "L’examen qui détermine une vie : Le Seungeung",
+          title: "L’examen qui détermine une vie : Le Seungeung",
           text: `Le jour de l'examen, les rues sont presque désertes, car même les bureaux et magasins ajustent leurs horaires pour permettre à tout le monde de se concentrer sur cet événement. 
           
           L'État déploie également des mesures de soutien, comme des augmentations du nombre de transports publics pour faciliter les déplacements des candidats et des policiers qui régulent la circulation pour éviter tout retard.
@@ -75,6 +75,8 @@ L'examen Seungeung n'est pas seulement une épreuve académique, il incarne tout
         {
           img: "/examen-3.png",
           imgCredit: `Des parents prient pour la réussite de leurs enfants dans un temple à Séoul. © Ed Jones/AFP/Getty Images`,
+          title: "L’examen qui détermine une vie : Le Seungeung",
+
           text: `L’intensité de l'examen Seungeung en Corée du Sud porte l’empreinte d’un passé où l'éducation a toujours été perçue comme le moyen ultime de réussite sociale.
           
           Depuis des siècles, la culture coréenne valorise le travail acharné et la discipline, des valeurs transmises de génération en génération.
@@ -113,7 +115,7 @@ Les vêtements sont standardisés à l’échelle nationale : chemise blanche, b
           img: "/uniforme-2.png",
           imgCredit: `Williams, Hanson A., Jr. (1952), Class in session, Pepperdine University Special Collections and University Archives, URL
 `,
-          // title: "The uniform",
+          title: "L’uniforme : un symbole historique",
           text: `Chaque élément de la tenue scolaire est minutieusement codifié. Il ne s’agit pas simplement d’une obligation de porter un uniforme, mais d’un contrôle exhaustif de l’apparence. Les écoles imposent des modèles validés par les rectorats, et le moindre écart est réprimandé.
 
 Chez les filles, la jupe doit descendre strictement jusqu’au niveau du genou. La moindre tentative de raccourcissement — geste souvent interprété comme une volonté d’autonomie ou de séduction — est immédiatement sanctionnée. Les garçons portent un pantalon droit, sans fioriture, coupé dans un tissu sombre. Les vêtements doivent être bien repassés, sans pli excessif, et les chemises parfaitement boutonnées. Les chaussures doivent être entières noires, sans semelles compensées ni marques visibles. Les lacets doivent être noués de manière réglementaire. Les chaussettes sont également normalisées : blanches ou noires unies, sans motifs, dentelles ou couleurs vives. La tenue comprend parfois des accessoires imposés comme une cravate, un insigne d’école ou un brassard de discipline. Tout ajout personnel — badge, broche, ceinture colorée — est considéré comme une infraction. Le port de sacs à dos est également réglementé : taille standard, couleurs neutres, et pas de décoration individuelle.
@@ -125,7 +127,7 @@ Cette attention obsessionnelle à la tenue traduit une vision de l’éducation 
           imgCredit: `Lycéennes prenant la pose devant leur établissement
 Années 1970
 Auteur inconnu`,
-          // title: "The uniform",
+          title: "L’uniforme : un symbole historique",
           text: `L’uniforme scolaire dans les années 1980 s’étend à des règles de contrôle physique extrêmement précises, notamment sur les cheveux, les accessoires corporels et l’expression de la féminité.
 
 Les garçons doivent avoir les cheveux courts, souvent coupés au-dessus des oreilles, avec la nuque et le front dégagés. Toute tentative de frange, de coupe stylisée ou d’utilisation de gel est proscrite. Les filles ne peuvent pas porter les cheveux détachés au-delà des épaules. Les cheveux longs doivent être attachés à l’arrière, sans accessoires visibles. Les barrettes colorées ou les élastiques fantaisie sont interdits. Le maquillage est prohibé : aucune trace de fond de teint, rouge à lèvres, eyeliner ou vernis à ongles n’est tolérée. Même un simple baume à lèvres est parfois considéré comme suspect. Les bijoux sont formellement bannis, y compris les boucles d’oreilles discrètes. Les perçages sont réprimandés et, dans certains cas, les enseignants peuvent exiger leur retrait immédiat, sous peine de sanction.
@@ -135,7 +137,7 @@ Certaines écoles organisent des contrôles physiques à l’entrée, où des en
         {
           img: "/uniforme-3.png",
           imgCredit: `Une classe de lycéens du lycée Hwanil en 1973. Source : site officiel du lycée Hwanil`,
-          // title: "The uniform",
+          title: "L’uniforme : un symbole historique",
           text: `Le non-respect des règles vestimentaires n’est pas une affaire mineure : il donne lieu à un système de sanctions formalisé, souvent humiliant pour les élèves. Chaque infraction — jupe raccourcie, mèche de cheveux teintée, maquillage visible — peut entraîner une série de punitions codifiées. Les sanctions varient selon les établissements mais suivent une logique commune :
 
         - Remarques inscrites dans le carnet scolaire, pouvant impacter la réputation de l’élève.
@@ -161,6 +163,8 @@ Source : Wikipédia`,
             "https://www.youtube.com/clip/UgkxEtL-olFDSGpTLiWz8vksLzyEuclBfKAV",
           imgCredit: `Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube
 `,
+          title:
+            "Les différentes influences de la culture réglementaire sud-coréenne ",
           // title:
           //   "Long thought lost, Tuition (수업료), Choi In-gyu, Bang Han-joon, 1940. Source : YouTube",
           text: `Le système éducatif sud-coréen actuel résulte également de la longue période d’occupation du pays par la puissance impériale japonaise (1910-1945) : en effet, l’éducation était un levier puissant pour la puissance coloniale, car elle permettait d’assimiler les coréens, par exemple en imposant le japonais comme langue principale, afin de former des individus obéissants. On retrouve l’influence de la colonisation japonaise dans différents éléments de la culture réglementaire sud-coréenne, notamment à travers les uniformes qui ont été introduits durant cette période, ou encore des rituels de début de classe comme le salut collectif envers le professeur, comme on peut le voir sur l’extrait à droite issu d’un film tourné lors de la colonisation japonaise. 
@@ -172,7 +176,8 @@ Source : Wikipédia`,
           img: "/livre-2.png",
           imgCredit: `Une classe de lycéens dans les années 70.
 Auteur inconnu`,
-          // title: "Les études supérieures en Corée du sud",
+          title:
+            "Les différentes influences de la culture réglementaire sud-coréenne ",
           text: `La culture réglementaire sud-coréenne est également influencée par la période dictatoriale du pays et son développement industriel : en effet, les dictatures sud-coréennes (1948-1987) ont instauré des structures autoritaires et hiérarchiques. Les régimes de Syngman Rhee (1948-1960) et Park Chung-hee (1963-1979) ont imposé une discipline stricte, promu le respect de l'autorité et renforcé l'obéissance collective. Sous la dictature de Park Chung-hee, la culture réglementaire a été ancrée dans une industrialisation rapide et un contrôle étatique rigoureux, favorisant l'efficacité et la conformité au détriment des libertés individuelles. L’éducation faisait également partie de son plan de modernisation du pays dans les années 70 qui visait à renforcer l’industrialisation du pays.  `,
         },
         // Objet photo
@@ -185,7 +190,10 @@ Auteur inconnu`,
         },
         {
           img: "/photo-2.png",
+
           imgCredit: `Université Nationale de Séoul, l’un des établissements les plus prestigieux du pays. Source : Wikipédia.`,
+          title: "Les études supérieures en Corée du sud",
+
           text: `Les examens d’entrée à l’université, et particulièrement le redouté Suneung, jouent un rôle crucial dans la société sud-coréenne. C’est un mécanisme de tri social : ceux qui les réussissent sécurisent un emploi, un statut social. Les familles investissent énormément d’argent pour envoyer leurs enfants dans une université prestigieuse, renforçant ainsi cette pression académique. Intégrer une grande université est souvent une garantie de succès futur, et parmi les plus reconnues, on retrouve le groupe SKY : Seoul National University, Korea University et Yonsei University. Ces établissements représentent l’élite académique et sont très sélectifs.  `,
         },
         //Objet Calendrier 1980
@@ -205,6 +213,8 @@ Au XVIIe siècle, les premières formes de hagwon apparaissent en Corée. On y a
           img: "/Calendrier-1980-2.png",
           imgCredit: `Bâtiment abritant de nombreux hagwon à 
 Dunsan-dong, Daejeon. Source : Wikipédia.`,
+          title:
+            "L’histoire des hagwon : l’éducation de l’ombre en Corée du sud : ",
           text: ` En 1970, on compte déjà plus de 1 400 hagwon. Ils deviennent une véritable industrie. Pour tenter de limiter cette fièvre éducative, le président Chun Doo-hwan met en place la réforme de l’éducation 7.3 : seuls les lycéens ayant échoué à l’examen d’entrée à l’université, ainsi que les étudiants en art ou en sport, peuvent fréquenter ces instituts. Sous son mandat, plusieurs examens sont supprimés, les programmes publics sont modifiés, et les attentes éducatives sont revues. Mais en 2000, cette réforme est jugée anticonstitutionnelle, relançant ainsi l’expansion des hagwon.
 
 En 2023, malgré la baisse du nombre d’élèves, les dépenses consacrées à l’éducation privée atteignent un record de 27,1 milliards de wons. Près de 80 % des élèves sud-coréens suivent des cours dans un hagwon. Ce coût, de plus en plus lourd, est souvent pointé du doigt comme l’un des facteurs de la chute du taux de natalité. 
@@ -227,6 +237,7 @@ Sous la dynastie Joseon, l’enseignement était destiné à former les élites 
         {
           img: "/sac-cours-1980-2.png",
           imgCredit: `Entraînement militaire dans les années 70. Source : site officiel du lycée Hwanil..`,
+          title: "L’évolution des matières enseignées au fil des époques : ",
           text: `Durant l’occupation japonaise (1910–1945), l’éducation devient un outil d’assimilation impériale. Le japonais s’impose comme langue unique d’enseignement, et les programmes scolaires sont orientés vers des matières modernes telles que l’arithmétique, l’histoire et la géographie, mais vues sous un prisme colonial. La culture coréenne est systématiquement effacée, tandis que l’école devient un espace de préparation à la guerre et de soumission à l’Empire.
 
 Après la Seconde Guerre mondiale, le rejet de cette domination se traduit immédiatement dans les réformes éducatives. La langue coréenne est réintroduite dans les salles de classe, et l’enseignement se recentre sur l’histoire nationale et l’idéologie patriotique. Les cours de défense (교련, gyoyun) militaire deviennent obligatoires au lycée, dans un contexte politique marqué par l’autoritarisme et la guerre froide.
@@ -234,6 +245,7 @@ Après la Seconde Guerre mondiale, le rejet de cette domination se traduit immé
         },
         {
           img: "/sac-cours-1980-3.png",
+          title: "L’évolution des matières enseignées au fil des époques : ",
           imgCredit: `"Pendant l’Exposition sur l'Éducation du Futur Global 2024, des élèves suivent un cours dans une salle de classe du futur en utilisant la réalité virtuelle.”
 Source : Journal de l’éducation Honam. 
 `,
@@ -256,6 +268,8 @@ Pour cela, les différents gouvernements qui ont se sont succédés au cours de 
           img: "/journal-2.png",
           imgCredit: `Le pont Mapo à Séoul, doté de capteurs et de photos représentant des “petits moments de la vie”, pour empêcher les personnes de suicider. Source : RFI / Frédéric Ojardias
 `,
+          title:
+            "Le suicide : la souffrance silencieuse au sein de l’éducation sud-coréenne",
           text: `En 2011, le gouvernement de Lee Myung-bak met en place le “Suicide Prevention Act”. Cette mesure a pour objectif de renforcer la prévention au suicide, avec notamment un suivi des personnes ayant fait une tentative de suicide. 
 
 Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider efficacement les jeunes qui souffrent.  Parmi les raisons qui poussent les jeunes à mettre fin à leurs jours, on retrouve des problématiques de santé mentale, des conflits familiaux, mais également la pression académique. Cette dernière pèse sur les épaules des sud-coréens dès leur entrée dans le monde éducatif, mais elle est encore plus lourde à la période du lycée, étape charnière pour leur avenir. En effet, les étudiants sud-coréens dédient une partie de leur enfance et adolescence aux révisions, notamment car les parents investissent beaucoup dans leur réussite académique. Les étudiants sud-coréens passent deux fois plus de temps à réviser que les étudiants américains par exemple, et ce notamment après les cours. Cet investissement académique est une cause de stress profond chez les étudiant, pouvant les pousser à commettre l’irréparable. 
@@ -265,6 +279,8 @@ Mais malgré ces efforts, le monde de l’éducation manque de moyens pour aider
           img: "/journal-3.png",
           imgCredit: `Des enseignants le 4 septembre 2023 suite au suicide de leur collègue. Source : JUNG YEON-JE / AFP
 `,
+          title:
+            "Le suicide : la souffrance silencieuse au sein de l’éducation sud-coréenne",
           text: `Mais dans le système éducatif sud-coréen, les élèves ne sont pas les seuls touchés par ce fléau du suicide : les enseignants subissent également une forte pression de la part des parents d’élèves, allant même jusqu’à l’harcèlement. Entre 2015 et 2023, 168 enseignants se sont donné la mort. En été 2023, une jeune institutrice est retrouvée morte dans un placard de salle de classe, provoquant l’émoi de la communauté enseignante. Dans son journal, elle parle de cette souffrance silencieuse qui l’a conduit à passer à l’acte : “j'ai la poitrine trop serrée. Je me sens dépassée par la folie du travail’. Une grève nationale a lieu le 4 septembre 2023, pour dénoncer cette intimidation de la part des parents d’élèves, prêts à tout pour la réussite de leurs enfants. `,
         },
         // Objet Calendrier 2025
@@ -294,6 +310,7 @@ Initialement, le nombre de lycées privés autonomes était limité, mais leur s
           img: "",
           imgCredit: `
 `,
+          title: "Règlementations",
           text: ` <strong> 2006 – Imposition d'un couvre-feu pour les instituts privés (hagwon) </strong>
 
 En septembre 2006, les autorités éducatives sud-coréennes ont révisé la « Loi sur l'établissement et l'exploitation des instituts d'enseignement privé et des leçons parascolaires » (학원의 설립·운영 및 과외교습에 관한 법률) pour permettre aux bureaux régionaux de l'éducation d'imposer des restrictions sur les horaires d'ouverture des hagwon. Cette révision visait à réduire la dépendance à l'enseignement privé et à alléger la charge des élèves. La loi a renforcé les pouvoirs des bureaux municipaux et provinciaux de l'éducation en matière de réglementation des hagwon. 
@@ -317,6 +334,7 @@ En réponse à ces restrictions, certains hagwon ont ajusté leurs horaires, en 
           img: "",
           imgCredit: `
 `,
+          title: "Règlementations",
           text: ` <b> 2008 – Lancement des lycées Meister (마이스터고) </b>
 
 En 2008, le gouvernement sud-coréen, sous l'administration du président Lee Myung-bak, a annoncé la création des lycées Meister (마이스터고), inspirés du modèle allemand des écoles professionnelles. Cette initiative visait à revitaliser l'enseignement professionnel secondaire en réponse à la désaffection croissante pour les lycées professionnels traditionnels et à la pénurie de main-d'œuvre qualifiée dans certains secteurs industriels.
@@ -342,6 +360,7 @@ Cependant, des études ont soulevé des questions sur la rentabilité de ces ét
           img: "",
           imgCredit: `
 `,
+          title: "Règlementations",
           text: ` <b> 2009 – Généralisation des lycées privés autonomes </b>
 
 En 2009, le gouvernement sud-coréen a lancé un plan ambitieux visant à établir 100 lycées privés autonomes (자율형 사립고) d'ici 2010. Ces établissements bénéficiaient d'une plus grande liberté en matière de sélection des élèves et de programmes, tout en restant soumis à certaines directives du ministère de l'Éducation. L'objectif était de diversifier l'offre éducative et de promouvoir l'excellence académique.
@@ -358,7 +377,7 @@ Malgré les intentions initiales, les lycées privés autonomes ont rencontré d
           imgCredit: `Séoul
 Image libre de droit | Pexels
 Par Paul Bill`,
-          title: "",
+          title: "Règlementations",
           text: `
 
 <b> 2009 – Renforcement du couvre-feu pour les hagwon </b>
@@ -399,12 +418,14 @@ Les élèves peuvent également porter des vestes personnalisées à l’effigie
 
 Ainsi, le rapport à l’uniforme s’est renversé : d’un outil de neutralisation de l’individu, il devient parfois un espace de distinction et de revendication esthétique, dans les limites du cadre scolaire. 
  `,
+          title: "L’uniforme aujourd’hui : vers un assouplissement ? ",
         },
         {
           img: "/uniforme-6.png",
           imgCredit: `Image libre de droit | Pexels
 Par Nguyễn Nguyên
 `,
+          title: "L’uniforme aujourd’hui : vers un assouplissement ? ",
           text: `L’un des changements les plus visibles depuis les années 1980 concerne la régulation de l’apparence corporelle. Alors qu’auparavant, la moindre teinte de cheveux ou trace de maquillage donnait lieu à des sanctions, les établissements adoptent aujourd’hui des approches plus nuancées.
 
 Les cheveux teints dans des tons naturels (brun, châtain clair) sont désormais largement acceptés, bien qu’interdits dans certaines écoles publiques plus conservatrices. Les coupes sont plus variées et souvent inspirées de la culture K-pop, tout en restant dans des limites de "propreté" visuelle.
@@ -421,6 +442,7 @@ photo@newsis.com
 URL : https://mobile.newsis.com/view/NISX20130708_0012212002#_PA 
 
 `,
+          title: "L’uniforme aujourd’hui : vers un assouplissement ? ",
           text: `Malgré un net assouplissement depuis les années 1980, le port de l’uniforme reste un outil de régulation sociale, et les règles associées sont rarement remises en question par les institutions. Les sanctions existent toujours, même si elles sont moins humiliantes qu’autrefois :
 
 - Remarques écrites dans le dossier scolaire,
@@ -451,6 +473,7 @@ Cette période est importante car on leur inculque différentes règles et norme
           img: "/peluche-2.png",
           imgCredit: `Des enfants sud-coréens suivent des cours privés à l'académie Jongno Hagwon, le 10 août 2016 à Séoul. ©AFP - YELIM LEE / AFP
 `,
+          title: "La culture réglementaire dès le plus jeune âge",
           text: `On les habitue également à la mémorisation : l’éducation sud-coréenne accorde beaucoup d’importance au fait d’apprendre par cœur une grande quantité de connaissances, au profit parfois de la créativité individuelle, même si cet aspect est en nette amélioration aujourd’hui comme on peut le voir à travers les entretiens. Les enfants sud-coréens sont envoyés dès l’âge de 4 ans dans les hagwon : ils sont ainsi éduqués à étudier après l’école (gwaweo, “études en dehors de l’école”), pendant de longues heures, à se réveiller tôt et à dormir tard. 
 
 Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, “habitués depuis l'enfance à étudier avec ardeur et sans relâche, les Coréens, sont, à l'âge adulte, capables de s'adapter à des conditions de travail nettement plus contraignantes que les nôtres”. `,
@@ -471,6 +494,7 @@ Comme l’explique Martine Prost, spécialiste de la société sud-coréenne, �
           video: "https://www.youtube.com/watch?v=xKudyIWrv-E",
           imgCredit: `Une animation qui représente bien l’ambiance des PC Bang. Source : YouTube
           // `,
+          title: "la Loi Cendrillon : la réglementation à travers les écrans :",
           text: `Mais cette Loi Cendrillon en dit long sur la manière dont la jeunesse est perçue dans la société sud-coréenne : elle doit être contrôlée, surveillée, afin de les formater à leur future vie d’adulte. Les jeux vidéos sont ainsi perçus comme une possible cause d’échec scolaire, et doivent être strictement encadrés. Finalement, la loi est abrogée en 2021, après dix ans de débats : elle est perçue comme irréaliste au vu de l’omniprésence des écrans dans la vie des plus jeunes et facilement contournable par ces derniers. 
 
 Cette loi soulève alors des questions plus profondes : faut-il contrôler la jeunesse au-delà de la sphère scolaire ? Faut-il les limiter même durant leurs moments de liberté ? `,
@@ -490,6 +514,7 @@ Cette loi soulève alors des questions plus profondes : faut-il contrôler la je
           img: "/casque-2.png",
           imgCredit: `Un PC Bang. Source : Seoul Insider Guide
 `,
+          title: "Les loisirs des lycéens en Corée du Sud :",
           text: `On retrouve également les fameux PC bang, des cybercafés haut de gamme, spécialisés dans le jeu vidéo en réseau : ce lieu est l’espace parfait pour s’évader du contexte scolaire ou familial, on peut y jouer pendant des heures et même consommer de la nourriture. Il sont accessibles jusqu’à tard le soir, mais certains établissements interdisent aux mineurs d’y rester après 22h (voir minuit selon les règles locales). 
 
 Ces lieux constituent des refuges temporaires contre le stress scolaire, et permettent aux lycéens d’oublier les révisions et les règles pendant quelques heures de liberté.
@@ -514,6 +539,8 @@ Ces lieux constituent des refuges temporaires contre le stress scolaire, et perm
 Korean students sleep just 5.5 hours a day: survey
 URL : https://www.koreaherald.com/article/3647929 
 `,
+          title:
+            "Les études supérieures en Corée du Sud : un avenir sous haute tension",
           text: `Le système éducatif évolue pourtant. Des filières alternatives émergent : écoles d’ingénierie appliquée, formations hybrides mêlant design, IA et soft skills. L’enseignement devient plus flexible, certains cursus sont disponibles entièrement en ligne, et l’anglais s’impose peu à peu comme langue d’enseignement dans de nombreux programmes internationaux.
 
 Mais cette transformation a ses limites. La pression à la performance reste omniprésente. L’obsession du classement universitaire continue de dicter les choix d’orientation. De nombreux étudiants décrivent leur quotidien comme une course d’endurance, où l’échec n’a pas sa place. La santé mentale devient un enjeu majeur : anxiété, burnout, sentiment d’isolement sont en hausse, dans un environnement où l’on parle peu de vulnérabilité.
@@ -525,6 +552,8 @@ Mais cette transformation a ses limites. La pression à la performance reste omn
 Image libre de droit | Pexels
 Par Paul Bill
 `,
+          title:
+            "Les études supérieures en Corée du Sud : un avenir sous haute tension",
           text: `Mais derrière les chiffres d’admission et les façades vitrées des campus modernes, la vie étudiante se heurte à des contradictions. L’agenda est millimétré, rythmé par les crédits à valider, les examens, les stages, les certifications de langues et les concours. Beaucoup d’étudiant·es vivent loin de leurs familles, dans des logements exigus, cumulant parfois des petits boulots pour subvenir à leurs besoins. Les moments de pause sont rares, et les espaces de respiration encore trop peu valorisés dans une culture où l’efficacité prime sur le lâcher-prise.
 
 À l’image d’une photo en haute définition, l’université sud-coréenne de 2025 montre à la fois une façade de modernité éclatante et des zones d’ombre persistantes. Le défi pour les années à venir ? Réconcilier excellence académique, justice sociale et bien-être individuel.
@@ -547,6 +576,8 @@ Par Paul Bill
           img: "",
           imgCredit: `
 `,
+          title:
+            "Ce que porte un élève en 2025 : vers une école à plusieurs vitesses",
           text: `Mais au-delà des outils, ce sont les contenus et les attentes qui ont profondément changé. Si les fondamentaux — mathématiques, sciences, langues — restent incontournables, on voit émerger dans certains établissements des modules d’intelligence émotionnelle, de coopération, de développement durable ou de culture numérique. Des matières naguère considérées comme périphériques deviennent stratégiques dans un monde où l’adaptabilité, la communication et la pensée critique sont des compétences clés.
 Cette évolution, cependant, n’est pas homogène. Le contraste est frappant entre les écoles bien dotées, souvent situées dans les quartiers favorisés ou les villes majeures, et celles qui peinent encore à se moderniser. Là où certains élèves apprennent à coder dès le primaire, d’autres doivent partager un seul ordinateur pour toute une classe. Cette fracture technologique renforce des inégalités déjà présentes dans un système où la performance scolaire reste le critère principal de réussite.
  `,
@@ -557,6 +588,8 @@ Cette évolution, cependant, n’est pas homogène. Le contraste est frappant en
 Image libre de droit | Pexels
 Par jason hu
 `,
+          title:
+            "Ce que porte un élève en 2025 : vers une école à plusieurs vitesses",
           text: `À cela s’ajoute une pression invisible, mais bien réelle : celle de devoir maîtriser toujours plus de choses, plus tôt, et plus vite. Le sac à dos devient alors le symbole d’une charge mentale croissante, entre attentes académiques, pression sociale et gestion des émotions. Il ne pèse pas qu’en kilos : il pèse en silence, en fatigue, en doutes. Et pourtant, il contient aussi l’espoir d’une école qui commence à s’ouvrir à d’autres formes de savoir, plus humaines, plus inclusives, plus ancrées dans le réel.
  `,
         },
