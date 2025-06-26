@@ -98,6 +98,7 @@ K.SORENSEN, Ariel. 일본과 한국의 그림자 교육의 역사, 야마구치 
 export default function Bibliographie() {
   const [langue, setLangue] = useState("fr");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [showVideo, setShowVideo] = useState(false); // Ajout pour la modale vidéo
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -156,6 +157,94 @@ export default function Bibliographie() {
           />
         </div>
       )}
+
+      {/* Modale vidéo documentaire complet */}
+      {showVideo && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
+            zIndex: 3000,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "900px",
+              width: "90vw",
+              height: "50vw",
+              maxHeight: "506px",
+              background: "#000",
+              borderRadius: "12px",
+              overflow: "hidden",
+              boxShadow: "0 2px 16px rgba(0,0,0,0.5)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                padding: "56.25% 0 0 0",
+                position: "relative",
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <iframe
+                src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "12px",
+                }}
+                title="Éducation sous pression"
+              ></iframe>
+            </div>
+            <button
+              onClick={() => setShowVideo(false)}
+              style={{
+                position: "absolute",
+                top: "20px",
+                right: "20px",
+                backgroundColor: "#698958",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50%",
+                width: "44px",
+                height: "44px",
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+                cursor: "pointer",
+                zIndex: 1001,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+              }}
+              aria-label="Fermer"
+              title="Fermer"
+            >
+              <FaTimes size={22} />
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Menu latéral complet */}
       <div className={`sidebar${isSidebarOpen ? " open" : ""}`}>
         <div className="sidebar-header">
@@ -185,19 +274,10 @@ export default function Bibliographie() {
           <li
             onClick={() => {
               setIsSidebarOpen(false);
-              navigate("/doc"); // à adapter si besoin
+              setShowVideo(true);
             }}
           >
             <FaFilm size={20} /> <span>{sidebarTexts[langue].doc}</span>
-          </li>
-          <li
-            className={isActive("/reveil") ? "active" : ""}
-            onClick={() => {
-              setIsSidebarOpen(false);
-              navigate("/reveil");
-            }}
-          >
-            <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
           </li>
           <li
             className={isActive("/bibliographie") ? "active" : ""}
@@ -208,6 +288,15 @@ export default function Bibliographie() {
           >
             <FaListAlt size={20} />{" "}
             <span>{sidebarTexts[langue].bibliography}</span>
+          </li>
+          <li
+            className={isActive("/reveil") ? "active" : ""}
+            onClick={() => {
+              setIsSidebarOpen(false);
+              navigate("/reveil");
+            }}
+          >
+            <FaBook size={20} /> <span>{sidebarTexts[langue].biblio}</span>
           </li>
           <li
             className={isActive("/mentions-legales") ? "active" : ""}
