@@ -140,9 +140,10 @@ export default function App() {
                       }}
                     >
                       <iframe
-                        src="https://player.vimeo.com/video/1095103053?badge=0&autopause=0&player_id=0&app_id=58479"
+                        src="https://player.vimeo.com/video/1096384424?h=f4a5a934dc&color=ffffff&title=0&byline=0&portrait=0"
                         frameBorder="0"
-                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                        allow="autoplay; fullscreen; picture-in-picture"
+                        allowFullScreen
                         style={{
                           position: "absolute",
                           top: 0,
@@ -242,6 +243,16 @@ export default function App() {
                         <span>{sidebarTexts[langue].doc}</span>
                       </li>
                       <li
+                        className={isActive("/bibliographie") ? "active" : ""}
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          navigate("/bibliographie");
+                        }}
+                      >
+                        <FaListAlt size={20} />{" "}
+                        <span>{sidebarTexts[langue].bibliography}</span>
+                      </li>
+                      <li
                         className={isActive("/reveil") ? "active" : ""}
                         onClick={() => {
                           setIsSidebarOpen(false);
@@ -250,27 +261,6 @@ export default function App() {
                       >
                         <FaBook size={20} />{" "}
                         <span>{sidebarTexts[langue].biblio}</span>
-                      </li>
-                      <li
-                        className={isActive("/remerciements") ? "active" : ""}
-                        onClick={() => {
-                          setIsSidebarOpen(false);
-                          navigate("/remerciements");
-                        }}
-                      >
-                        <FaInfoCircle size={20} />{" "}
-                        <span>{sidebarTexts[langue].remerciements}</span>
-                      </li>
-                      <li
-                        className={isActive("/bibliographie") ? "active" : ""}
-                        onClick={() => {
-                          setIsSidebarOpen(false);
-                          navigate("/bibliographie");
-                        }}
-                      >
-                        <FaListAlt size={20} />{" "}
-                        <span>{sidebarTexts[langue].bibliography}</span>{" "}
-                        {/* modifié */}
                       </li>
                       <li
                         className={
@@ -282,8 +272,17 @@ export default function App() {
                         }}
                       >
                         <FaGavel size={20} />{" "}
-                        <span>{sidebarTexts[langue].legal}</span>{" "}
-                        {/* modifié */}
+                        <span>{sidebarTexts[langue].legal}</span>
+                      </li>
+                      <li
+                        className={isActive("/remerciements") ? "active" : ""}
+                        onClick={() => {
+                          setIsSidebarOpen(false);
+                          navigate("/remerciements");
+                        }}
+                      >
+                        <FaInfoCircle size={20} />{" "}
+                        <span>{sidebarTexts[langue].remerciements}</span>
                       </li>
                     </ul>
                   </div>
