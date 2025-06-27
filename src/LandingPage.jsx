@@ -348,44 +348,69 @@ export default function LandingPage() {
           </div>
         </>
       )}
-      {/* Logos en bas à gauche et à droite */}
+      {/* Logos en bas à gauche, au centre et à droite */}
       {!isSidebarOpen && (
         <div
           style={{
             position: "absolute",
             bottom: 20,
             left: 0,
-            width: "95vw",
+            width: "100vw",
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            justifyContent: "center",
+            alignItems: "flex-end",
             pointerEvents: "none",
             zIndex: 1001,
-            padding: "0 32px",
+            gap: 0,
           }}
         >
-          <img
-            src="/logo.png"
-            alt="Logo gauche"
-            style={{ height: "32px", pointerEvents: "auto" }}
-          />
-          <img
-            src="/logo3.png"
-            alt="Logo centre"
+          <div
             style={{
-              height: "38px",
-              pointerEvents: "auto",
-              position: "absolute",
-              left: "50%",
-              transform: "translateX(-50%)",
-              bottom: 0,
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "flex-end",
+              paddingLeft: 32,
             }}
-          />
-          <img
-            src="/logo2.png"
-            alt="Logo droite"
-            style={{ height: "48px", pointerEvents: "auto" }}
-          />
+          >
+            <img
+              src="/logo.png"
+              alt="Logo gauche"
+              style={{ height: "32px", pointerEvents: "auto" }}
+            />
+          </div>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "flex-end",
+            }}
+          >
+            <img
+              src="/logo3.png"
+              alt="Logo centre"
+              style={{
+                height: "30px",
+                pointerEvents: "auto",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              flex: 1,
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "flex-end",
+              paddingRight: 32,
+            }}
+          >
+            <img
+              src="/logo2.png"
+              alt="Logo droite"
+              style={{ height: "48px", pointerEvents: "auto" }}
+            />
+          </div>
         </div>
       )}
     </div>
